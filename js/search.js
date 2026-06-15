@@ -100,7 +100,7 @@ function init() {
     // カードの生成・描画
     filtered.forEach(item => {
       const card = document.createElement('div');
-      card.className = 'id-item animate-on-scroll';
+      card.className = 'id-item';
       card.innerHTML = `
         <div class="id-item-label" style="font-size: var(--text-base);">${item.emoji || '🧱'} ${item.name}</div>
         ${item.description ? `<p style="font-size: var(--text-xs); color: var(--text-muted); margin: 4px 0 8px 0; line-height: 1.3;">${item.description}</p>` : ''}
