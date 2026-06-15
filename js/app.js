@@ -94,8 +94,8 @@ function initHeaderSearch(basePath) {
       if (e.key === 'Enter') {
         const query = encodeURIComponent(searchInput.value.trim());
         if (query) {
-          // ID一覧検索ページに遷移し、クエリパラメータを渡す
-          window.location.href = `${basePath}tools/id-list.html?q=${query}`;
+          // コマンド一覧ページに遷移し、クエリパラメータを渡す
+          window.location.href = `${basePath}commands/index.html?q=${query}`;
         }
       }
     });
