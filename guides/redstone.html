@@ -144,23 +144,55 @@
         <div class="card" style="margin-bottom: var(--space-4);">
           <h3 style="color: var(--accent-green); margin-bottom: var(--space-2);">1. ピストン自動ドア（じどうドア）</h3>
           <p style="font-size: var(--text-sm); line-height: 1.6; margin-bottom: var(--space-3);">
-            <strong>【使うもの】</strong> 粘着ピストン×4、感圧版×4、レッドストーンダスト、レッドストーントーチ×2、ブロック<br>
-            感圧版（かんどばん）を踏むと、電気が流れてドアブロックが引っ込み、自動で開くかっこいいドアだよ！
+            <strong>【使うもの】</strong> 粘着ピストン×4、感圧版×4、レッドストーンダスト、レッドストーントーチ×2、不透過ブロック（丸石や滑らかな石など）<br>
+            感圧版を踏むと、自動でドアが開く定番の仕掛けです。
           </p>
           
-          <div style="text-align: center; margin: var(--space-4) 0; background-color: rgba(255,255,255,0.02); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-default);">
-            <img src="../images/redstone_door.png" alt="自動ドアの回路図" style="max-width: 100%; max-height: 350px; object-fit: contain; border-radius: var(--radius-sm); border: 2px solid var(--border-default); box-shadow: var(--shadow-md);">
-            <p style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); margin-bottom: 0;">自動ドアの回路配置図（横から見た図）</p>
+          <h4 style="font-size: var(--text-sm); margin-bottom: var(--space-1); color: var(--accent-green);">🧭 回路の配置図（上から見た図）</h4>
+          <div style="overflow-x: auto; margin: var(--space-3) 0; background-color: rgba(0,0,0,0.2); padding: var(--space-2); border-radius: var(--radius-md);">
+            <table style="width: 100%; min-width: 500px; border-collapse: collapse; text-align: center; font-size: var(--text-xs); color: var(--text-primary);">
+              <thead>
+                <tr style="background-color: var(--bg-secondary);">
+                  <th style="padding: 6px; border: 1px solid var(--border-default); width: 80px;">高さ</th>
+                  <th style="padding: 6px; border: 1px solid var(--border-default);">左端</th>
+                  <th style="padding: 6px; border: 1px solid var(--border-default);">左中</th>
+                  <th style="padding: 6px; border: 1px solid var(--border-default);">中央 (左)</th>
+                  <th style="padding: 6px; border: 1px solid var(--border-default);">中央 (右)</th>
+                  <th style="padding: 6px; border: 1px solid var(--border-default);">右中</th>
+                  <th style="padding: 6px; border: 1px solid var(--border-default);">右端</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: var(--bg-secondary); font-weight: bold;">地上 (1階)</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #3d503e;">🟢 粘着ピストン</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: rgba(255,255,255,0.05); color: var(--text-muted);">(空気)</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #8c6e43; color: #fff; font-weight: bold;">🟫 感圧版</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #8c6e43; color: #fff; font-weight: bold;">🟫 感圧版</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: rgba(255,255,255,0.05); color: var(--text-muted);">(空気)</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #3d503e;">🟢 粘着ピストン</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: var(--bg-secondary); font-weight: bold;">地下 (配線)</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #575757; color: var(--accent-gold);">🧱 石 (上にダスト)</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #701c1c; color: #fff;">🟥 ダスト</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #701c1c; color: #fff;">🟥 ダスト</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #701c1c; color: #fff;">🟥 ダスト</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #701c1c; color: #fff;">🟥 ダスト</td>
+                  <td style="padding: 6px; border: 1px solid var(--border-default); background-color: #575757; color: var(--accent-gold);">🧱 石 (上にダスト)</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div style="background-color: var(--bg-code); padding: var(--space-3); border-radius: var(--radius-md); font-size: var(--text-sm);">
             <strong>つくりかたのステップ：</strong>
             <ol style="padding-left: var(--space-5); margin: 0; line-height: 1.6;">
-              <li><strong>ドアとピストンを置く：</strong> 中央にドアとなるブロックを置き、その両端に1マスあけて<strong>粘着（ねんちゃく）ピストン</strong>を内向きに2個ずつ重ねて置きます。</li>
-              <li><strong>トーチでピストンを動かす：</strong> ピストンの後ろ側のブロックの下に<strong>レッドストーントーチ</strong>を置きます。これでピストンが常に押されて、ドアが閉まった状態になります。</li>
-              <li><strong>感圧版とダストをつなぐ：</strong> ドアの手前と奥に<strong>感圧版</strong>を置き、その下の地面を2マス掘って<strong>レッドストーンダスト</strong>を敷き詰めます。</li>
-              <li><strong>トーチまでダストをのばす：</strong> 敷き詰めたダストを、両端のレッドストーントーチが刺さっているブロックの真下まで繋げます。</li>
-              <li>これで、感圧版を踏むと電気がダストを通ってトーチをOFFにし（消灯）、ピストンが引っ込んでドアが開きます！</li>
+              <li><strong>ピストンとドアブロックを置く：</strong> 中央の2マスをドアブロック（ガラスや木など）にし、その両端に1マス空けて、内向きの<strong>粘着ピストン</strong>を2個ずつ重ねて置きます。</li>
+              <li><strong>動作ブロックを作る：</strong> 左右のピストンの「下の段の後ろ」にそれぞれ<strong>石ブロック</strong>を置き、その上に<strong>レッドストーンダスト</strong>を載せます。</li>
+              <li><strong>トーチを置く：</strong> その石ブロックの下を1マス掘り、壁に向かって<strong>レッドストーントーチ</strong>を挿します。これでピストンが伸びてドアが閉まります。</li>
+              <li><strong>感圧版と配線：</strong> ドアの手前と奥の地面を2マス掘り、そこに<strong>感圧版</strong>を設置して、地下を掘って<strong>レッドストーンダスト</strong>を敷き詰めます。</li>
+              <li><strong>ダストをつなぐ：</strong> 感圧版の下のダストを、左右のレッドストーントーチがあるブロックの真下まで繋ぎます。これで感圧版を踏むとトーチの火が消え、ドアが開きます！</li>
             </ol>
           </div>
         </div>
@@ -170,12 +202,41 @@
           <h3 style="color: var(--accent-gold); margin-bottom: var(--space-2);">2. チカチカ点滅するクロック回路（コンパレーター式）</h3>
           <p style="font-size: var(--text-sm); line-height: 1.6; margin-bottom: var(--space-3);">
             <strong>【使うもの】</strong> レバー、コンパレーター、レッドストーンダスト3つ<br>
-            矢印が連発（れんぱつ）して飛び出る罠（わな）や、ピストンがガシャガシャ動き続ける装置を作れます！
+            信号が「ONとOFF」をもの凄い速さで繰り返す回路です。矢印を連発する装置などに使われます。
           </p>
 
-          <div style="text-align: center; margin: var(--space-4) 0; background-color: rgba(255,255,255,0.02); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-default);">
-            <img src="../images/redstone_clock.png" alt="コンパレータークロック回路図" style="max-width: 100%; max-height: 350px; object-fit: contain; border-radius: var(--radius-sm); border: 2px solid var(--border-default); box-shadow: var(--shadow-md);">
-            <p style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); margin-bottom: 0;">コンパレーターを使ったクロック回路（上から見た図）</p>
+          <h4 style="font-size: var(--text-sm); margin-bottom: var(--space-2); color: var(--accent-gold);">🧭 回路のつなぎ方（フロー図）</h4>
+          
+          <div style="display: flex; flex-direction: column; align-items: center; background-color: rgba(0,0,0,0.2); padding: var(--space-3); border-radius: var(--radius-md); margin-bottom: var(--space-3); gap: var(--space-2);">
+            <!-- 上段 -->
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center;">
+              <div style="padding: 6px 12px; background-color: #555; border: 2px solid #333; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: bold; color: #fff;">
+                🎚️ レバー (ONにする)
+              </div>
+              <div style="color: var(--accent-gold);">➔</div>
+              <div style="padding: 6px 12px; background-color: #8c8585; border: 2px solid var(--accent-gold); border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: bold; color: #fff; text-align: center;">
+                ⚖️ コンパレーター<br><span style="font-size: 9px; color: var(--accent-gold);">※クリックして先のランプを光らせる</span>
+              </div>
+              <div style="color: var(--accent-gold);">➔</div>
+              <div style="padding: 6px 12px; background-color: #701c1c; border: 2px solid #5a1212; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: bold; color: #fff;">
+                🟥 ダストA
+              </div>
+            </div>
+            <!-- 矢印 -->
+            <div style="display: flex; justify-content: space-between; width: 100%; max-width: 320px; font-size: 14px; color: var(--accent-red); padding: 0 40px; box-sizing: border-box;">
+              <span>▲ (横から入力)</span>
+              <span>▼ (下へのばす)</span>
+            </div>
+            <!-- 下段 -->
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center;">
+              <div style="padding: 6px 12px; background-color: #701c1c; border: 2px solid #5a1212; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: bold; color: #fff;">
+                🟥 ダストC
+              </div>
+              <div style="color: var(--accent-red);">◀━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+              <div style="padding: 6px 12px; background-color: #701c1c; border: 2px solid #5a1212; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: bold; color: #fff;">
+                🟥 ダストB
+              </div>
+            </div>
           </div>
 
           <div style="background-color: var(--bg-code); padding: var(--space-3); border-radius: var(--radius-md); font-size: var(--text-sm);">
@@ -183,8 +244,8 @@
             <ol style="padding-left: var(--space-5); margin: 0; line-height: 1.6;">
               <li><strong>コンパレーターを置く：</strong> コンパレーターを置き、カチッと1回クリックして<strong>先のランプを光らせます</strong>（減算モードになります）。</li>
               <li><strong>スイッチをつなぐ：</strong> コンパレーターの後ろ側にレバーを置いてON（オン）にします。</li>
-              <li><strong>ダストでループさせる：</strong> コンパレーターの前から<strong>レッドストーンダスト</strong>をのばし、ぐるっと曲げて<strong>コンパレーターの横（側面）</strong>に繋ぎます。</li>
-              <li>これで完了！電気が前に出て、横に回り込んで自分を引き算して消し、消えたからまた電気が出て…というループが超高速で繰り返されます。</li>
+              <li><strong>ダストでループさせる：</strong> コンパレーターの前から<strong>レッドストーンダスト</strong>を3つのばし、ぐるっと曲げて<strong>コンパレーターの横（側面）</strong>に繋ぎます。</li>
+              <li>これだけで完成！電気が前に流れたあと、横から自分自身にパワーが入ることで引き算されてOFFになり、消えたからまたONになる、という動作をもの凄いスピードで繰り返します。</li>
             </ol>
           </div>
         </div>
