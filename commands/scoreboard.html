@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>/scoreboard コマンドと表示（スコアボード）｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版の/scoreboard（点数カウンター）、/tag（タグ）、/title（大文字表示）の使い方をやさしく解説。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,scoreboard,tag,title,スコアボード,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="commands-scoreboard"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"コマンド一覧","url":"/MC_BE_Command/commands/index.html"},{"label":"📊 スコア・表示コマンド"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">📊 スコア・表示のコマンド</h1>
+        <p class="detail-desc">ゲームの得点をかぞえたり、画面に大きな文字を出すコマンドだよ！ミニゲームづくりに大活躍するよ！</p>
+      </section>
+
+      <!-- 1. scoreboard -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">📊 /scoreboard（点数を記録する・表示する）</h2>
+        <p>プレイヤーごとに得点（スコア）を記録し、それを画面上に表示させることができます。</p>
+        
+        <h3>■ コマンドの動かし方（3ステップ）</h3>
+        
+        <div class="syntax-box" style="margin-bottom: var(--space-4);">
+          <strong>ステップ 1 : スコアの項目（ボード）を作る</strong><br/>
+          /scoreboard objectives add &lt;ボード名&gt; dummy [画面に出す名前]<br/>
+          <span style="font-size: var(--text-xs); color: var(--text-muted);">※ dummyは「コマンドでしか点数が変わらない」という意味です。</span>
+        </div>
+        <div class="mc-code-block" data-command="/scoreboard objectives add point dummy 得点" data-explanation="「point」という名前の点数ボードを作ります。画面には「得点」と表示されます。"></div>
+
+        <div class="syntax-box" style="margin-bottom: var(--space-4); margin-top: var(--space-6);">
+          <strong>ステップ 2 : 画面にスコアを表示する</strong><br/>
+          /scoreboard objectives setdisplay &lt;場所&gt; &lt;ボード名&gt;<br/>
+          <span style="font-size: var(--text-xs); color: var(--text-muted);">※ &lt;場所&gt; : <code>sidebar</code> (画面の右側), <code>list</code> (一時停止メニュー), <code>belowname</code> (プレイヤーの頭の上)</span>
+        </div>
+        <div class="mc-code-block" data-command="/scoreboard objectives setdisplay sidebar point" data-explanation="さっき作った「point」の点数を、画面の右端（サイドバー）にいつでも表示されるようにします。"></div>
+
+        <div class="syntax-box" style="margin-bottom: var(--space-4); margin-top: var(--space-6);">
+          <strong>ステップ 3 : 点数を増やす・減らす</strong><br/>
+          /scoreboard players add &lt;プレイヤー&gt; &lt;ボード名&gt; &lt;増やす点数&gt;<br/>
+          /scoreboard players remove &lt;プレイヤー&gt; &lt;ボード名&gt; &lt;減らす点数&gt;<br/>
+          /scoreboard players set &lt;プレイヤー&gt; &lt;ボード名&gt; &lt;指定の点数&gt;
+        </div>
+        <div class="mc-code-block" data-command="/scoreboard players add @s point 10" data-explanation="自分の「point（得点）」を10点増やします。"></div>
+        <div class="mc-code-block" data-command="/scoreboard players remove @s point 5" data-explanation="自分の「point（得点）」を5点引きます。"></div>
+        <div class="mc-code-block" data-command="/scoreboard players set @s point 0" data-explanation="自分の「point（得点）」を0点（初期化）にします。"></div>
+      </section>
+
+      <!-- 2. tag -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🏷️ /tag（ターゲットに印・タグをつける）</h2>
+        <p>プレイヤーやモブに「目印（タグ）」をつけることができます。これを使うと、「鬼ごっこの鬼チーム」「逃げるチーム」などをコマンドで分類できます。</p>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/tag @s add oni" data-explanation="自分に「oni（おに）」というタグを追加します。"></div>
+        <div class="mc-code-block" data-command="/tag @s remove oni" data-explanation="自分から「oni（おに）」のタグを外します。"></div>
+        <div class="mc-code-block" data-command="/effect give @a[tag=oni] speed 10 1" data-explanation="「oni」のタグが付いている全員に、移動速度上昇（スピード）の効果を10秒間与えます。"></div>
+      </section>
+
+      <!-- 3. title -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">📺 /title（画面に大文字を表示する）</h2>
+        <p>画面のど真ん中に、映画やイベントのような大きな文字を表示します。ミニゲームのスタート合図やゴール時に使います。</p>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/title @a title スタート！" data-explanation="全員の画面中央に大きな赤や黄色の文字で「スタート！」と表示します。"></div>
+        <div class="mc-code-block" data-command="/title @a subtitle さいごまで生きのこれ！" data-explanation="画面中央の文字の下に、サブタイトルとして小さめの文字を表示します。"></div>
+        <div class="mc-code-block" data-command="/title @a actionbar 体力が減っているぞ！" data-explanation="アイテムスロットのちょうど上の部分に、小さな通知文字を一定時間表示します。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>さいきょう装備のコマンドレシピ｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版のコマンドで、最強のエンチャント効果が付いたネザライトの武器・防具・道具を一瞬で作る方法。">
+  <meta name="keywords" content="マイクラ,コマンド,最強装備,エンチャント,ネザライトの剣,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/pages.css">
+</head>
+<body data-page="recipes-strongest-gear"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"レシピ一覧","url":"/MC_BE_Command/guides/recipes/index.html"},{"label":"最強装備"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">👑 さいきょうの装備レシピ</h1>
+        <p class="detail-desc">すべての最強エンチャントが付いたネザライト装備を一瞬で作るコマンドの手順だよ！</p>
+      </section>
+
+      <!-- ステップ1: アイテムをだす -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">最強の「剣」を作ろう！</h2>
+        <p>まずは手にネザライトの剣をもらって、それをエンチャントで強化していくよ。</p>
+        
+        <p>① まず、以下のコマンドを実行してネザライトの剣をもらいます。</p>
+        <div class="mc-code-block" data-command="/give @s netherite_sword 1" data-explanation="ネザライトの剣をもらいます。手にもってね！"></div>
+        
+        <p>② 剣を手にもった状態で、次の3つのコマンドを1つずつ実行します。</p>
+        <div class="mc-code-block" data-command="/enchant @s sharpness 5" data-explanation="「ダメージ増加（するどさ） V」をつけます。"></div>
+        <div class="mc-code-block" data-command="/enchant @s fire_aspect 2" data-explanation="「火属性（攻撃した敵が燃える） II」をつけます。"></div>
+        <div class="mc-code-block" data-command="/enchant @s looting 3" data-explanation="「ドロップ増加（倒したモブが落とすアイテムが増える） III」をつけます。"></div>
+      </section>
+
+      <!-- ステップ2: 防具 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">最強の「防具」を作ろう！</h2>
+        <p>ダイヤモンドやネザライトのチェストプレート（鎧）などを強化するよ。</p>
+
+        <p>① 防具（例: チェストプレート）をもらって装備します。</p>
+        <div class="mc-code-block" data-command="/give @s netherite_chestplate 1" data-explanation="ネザライトのチェストプレートをもらいます。装備してね！"></div>
+
+        <p>② 手に「チェストプレート」をもった状態で、次のエンチャントをつけます。</p>
+        <div class="mc-code-block" data-command="/enchant @s protection 4" data-explanation="「ダメージ軽減（あらゆる攻撃に強くなる） IV」をつけます。"></div>
+        <div class="mc-code-block" data-command="/enchant @s thorns 3" data-explanation="「棘（攻撃してきた敵にカウンターでダメージを与える） III」をつけます。"></div>
+      </section>
+
+      <!-- ステップ3: 道具 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">最強の「ツルハシ」を作ろう！</h2>
+        <p>どんなブロックも一瞬で掘れるハイパーツルハシを作るよ。</p>
+
+        <p>① ツルハシをもらいます。</p>
+        <div class="mc-code-block" data-command="/give @s netherite_pickaxe 1" data-explanation="ネザライトのツルハシをもらいます。手にもってね！"></div>
+
+        <p>② 手にツルハシをもった状態で、次のエンチャントを順番につけます。</p>
+        <div class="mc-code-block" data-command="/enchant @s efficiency 5" data-explanation="「効率強化（掘るスピードが超爆速になる） V」をつけます。"></div>
+        <div class="mc-code-block" data-command="/enchant @s fortune 3" data-explanation="「幸運（鉱石を掘ったときに出るダイヤなどの数が増える） III」をつけます。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../../js/app.js"></script>
+</body>
+</html>

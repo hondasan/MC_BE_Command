@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>座標(ざひょう)の仕組みと相対座標(~ ^)の使い方｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラのXYZ座標の調べ方、相対座標(~ チルダ)とローカル座標(^ キャレット)の指定の仕方を小学生にもわかりやすく図解。">
+  <meta name="keywords" content="マイクラ,コマンド,座標,相対座標,チルダ,キャレット,XYZ,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="guides-coordinates"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"ざひょうの仕組み"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">📍 座標 (ざひょう) の仕組み</h1>
+        <p class="detail-desc">コマンドのワープ先やブロックを置く場所を決める、3つの数字（X Y Z）の解説だよ！</p>
+      </section>
+
+      <!-- ステップ1: 座標とは -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">座標（ざひょう）ってなに？</h2>
+        <p>座標は、マイクラのワールドでの<strong>「住所・位置」</strong>をあらわす3つの数字のことだよ。</p>
+        <p>マイクラの世界は、<strong>X, Y, Z</strong> の3つの方向で成り立っています。</p>
+        
+        <div style="margin: var(--space-4) 0; display: flex; flex-direction: column; gap: var(--space-2);">
+          <div style="background-color: var(--bg-primary); padding: var(--space-3); border-radius: var(--radius-md); border-left: 4px solid var(--accent-red);">
+            <strong>🟥 X 座標（東西）</strong>: 東（プラス）と西（マイナス）の向きの数字。
+          </div>
+          <div style="background-color: var(--bg-primary); padding: var(--space-3); border-radius: var(--radius-md); border-left: 4px solid var(--accent-green);">
+            <strong>🟩 Y 座標（上下・高さ）</strong>: 上（プラス）と下（マイナス）の向きの数字。地上がだいたい60〜80くらいで、一番底の岩盤エリアが -64 です。
+          </div>
+          <div style="background-color: var(--bg-primary); padding: var(--space-3); border-radius: var(--radius-md); border-left: 4px solid var(--accent-blue);">
+            <strong>🟦 Z 座標（南北）</strong>: 南（プラス）と北（マイナス）の向きの数字。
+          </div>
+        </div>
+      </section>
+
+      <!-- ステップ2: チルダ -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">今の場所から数える「~」（チルダ）</h2>
+        <p>座標を数字で書く代わりに<strong>「~」(チルダ・なみせん)</strong>を使うと、<strong>「今いる場所から数えて何マス先」</strong>という指定ができます（これを相対座標と呼びます）。</p>
+        
+        <ul>
+          <li><code>~ ~ ~</code> : 今自分がいる、ちょうどその場所。</li>
+          <li><code>~5 ~ ~</code> : 今の場所から、X方向に「+5マス」ずれた場所。</li>
+          <li><code>~ ~10 ~</code> : 今の場所から、Y方向（真上）に「10マス」ずれた場所。</li>
+          <li><code>~ ~-3 ~</code> : 今の場所から、真下に「3マス」ずれた場所。</li>
+        </ul>
+
+        <div class="mc-code-block" data-command="/setblock ~ ~-1 ~ netherite_block" data-explanation="自分のちょうど足元（~-1）のブロックを、ネザライトブロックに変えます。"></div>
+      </section>
+
+      <!-- ステップ3: キャレット -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">見ている方向から数える「^」（キャレット）</h2>
+        <p><strong>「^」(キャレット・山マーク)</strong>を使うと、自分が<strong>「見ている向き（視線）」</strong>を基準にして場所を指定できます。</p>
+        <p>「^ (左・右) ^ (上・下) ^ (前・後)」の順番で指定します。</p>
+
+        <ul>
+          <li><code>^ ^ ^5</code> : 今自分が<strong>向いている方向の「5マス先」</strong>。</li>
+          <li><code>^ ^3 ^</code> : 今向いている状態で、自分の「3マス上」。</li>
+        </ul>
+
+        <div class="mc-code-block" data-command="/tp @s ^ ^ ^10" data-explanation="自分が今向いている方向の「10マス前方」にワープします（壁をすり抜けることもあります）。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

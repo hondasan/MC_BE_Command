@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>ターゲットセレクター(@s @p @a @e @r)の使い方｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラのコマンドで効果をあてる相手を指定するターゲットセレクター(@s, @p, @a, @e, @r)と、条件をつける括弧[]の書き方をやさしく解説。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,セレクター,引数,絞り込み,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="guides-target-selector"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"ターゲットセレクター"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🎯 ターゲットセレクター</h1>
+        <p class="detail-desc">コマンドの効果を「だれ」にあてるかを選ぶ、「@」からはじまる記号の解説だよ！</p>
+      </section>
+
+      <!-- ステップ1: 基本のセレクター -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">基本の5つをおぼえよう！</h2>
+        <p>マイクラのコマンドには、対象（だれ・なに）を決めるための5つの記号が用意されています。</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm);">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-default); text-align: left;">
+              <th style="padding: var(--space-2); color: var(--accent-gold);">記号</th>
+              <th style="padding: var(--space-2); color: var(--accent-gold);">いみ</th>
+              <th style="padding: var(--space-2); color: var(--accent-gold);">つかいかたの例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">@s</td>
+              <td style="padding: var(--space-2);">自分 (self)</td>
+              <td style="padding: var(--space-2);">自分にアイテムをだす時</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">@p</td>
+              <td style="padding: var(--space-2);">一番近くにいる人 (player)</td>
+              <td style="padding: var(--space-2);">コマンドブロックを動かした人に効果をあてる時</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">@a</td>
+              <td style="padding: var(--space-2);">全員 (all)</td>
+              <td style="padding: var(--space-2);">全員のチャットにメッセージを出す時</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">@e</td>
+              <td style="padding: var(--space-2);">すべてのモブや物 (entity)</td>
+              <td style="padding: var(--space-2);">モンスターを一括で倒す時</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">@r</td>
+              <td style="padding: var(--space-2);">ランダムな誰か (random)</td>
+              <td style="padding: var(--space-2);">抽選などのゲーム仕掛けを作る時</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ステップ2: 条件の付け方 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">カギカッコ [ ] で条件をつける</h2>
+        <p>記号のあとに <code>[ ]</code> をつけると、「ゾンビだけ」「近くの5マス以内だけ」のようにターゲットを細かく絞り込むことができます。</p>
+        
+        <h3>1. type (モブの種類をしぼる)</h3>
+        <p><code>@e[type=zombie]</code> にすると、ワールドにいるすべてのエンティティ（@e）の中から「ゾンビ」だけを選び出します。</p>
+        <div class="mc-code-block" data-command="/kill @e[type=zombie]" data-explanation="ワールドにいるゾンビだけを一括で倒します。"></div>
+
+        <h3>2. r (半径何マス以内か)</h3>
+        <p><code>@e[r=10]</code> にすると、自分またはコマンドブロックから「半径10マス以内」にいるモブだけを選びます。</p>
+        <div class="mc-code-block" data-command="/effect give @e[r=5] regeneration 10 1" data-explanation="自分のまわり5マス以内にいるすべての生き物に、体力回復エフェクトを10秒間与えます。"></div>
+
+        <h3>3. type=! (〜以外のすべて)</h3>
+        <p>英語のイコールの手前に「!」を付けると、<strong>「〜以外」</strong>という意味になります。</p>
+        <div class="mc-code-block" data-command="/kill @e[type=!player]" data-explanation="プレイヤー「以外」のすべてのモブをたおします（ゾンビや牛、額縁などが消えます）。"></div>
+      </section>
+
+      <!-- ステップ3: 組み合わせ -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">条件を組み合わせて使おう</h2>
+        <p>絞り込み条件は、カンマ「,」で区切ることで複数同時に設定できます。</p>
+        
+        <div class="mc-code-block" data-command="/tp @e[type=creeper,r=20] 0 -60 0" data-explanation="自分から「半径20マス以内」にいる「クリーパー」だけを、ワールドの中心「0, -60, 0」へワープさせます。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

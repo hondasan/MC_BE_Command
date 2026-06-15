@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>/tp コマンド（瞬間移動・テレポート）｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版の/tp（テレポート）、/spreadplayers（ばらまく）、/spawnpoint（復活地点）の使い方と座標の指定方法。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,tp,テレポート,座標,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="commands-teleport"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"コマンド一覧","url":"/MC_BE_Command/commands/index.html"},{"label":"🚀 テレポートコマンド"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🚀 テレポートのコマンド</h1>
+        <p class="detail-desc">指定した座標（ざひょう）や、友達のいる場所に一瞬（いっしゅん）でワープするコマンドだよ！</p>
+      </section>
+
+      <!-- 1. tp -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🚀 /tp（テレポート・瞬間移動）</h2>
+        <p>自分を別の場所にワープさせたり、友達を自分の場所に呼び寄せたりすることができます。</p>
+        
+        <div class="alert-box">
+          <i data-lucide="info" class="alert-box-icon" style="color: var(--accent-blue);"></i>
+          <div class="alert-box-content">
+            <strong>座標（ざひょう）とは？</strong><br/>
+            マイクラの世界での住所のようなもので、X（東・西）, Y（高さ）, Z（南・北）の3つの数字で表します。チャットに <code>/gamerule showCoordinates true</code> と入力すると、画面左上に座標が表示されます。
+          </div>
+        </div>
+
+        <h3>■ コマンドのかたち</h3>
+        <div class="syntax-box">
+          /tp &lt;テレポートするプレイヤー&gt; &lt;場所(プレイヤー名または座標)&gt;
+        </div>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/tp @s 100 64 200" data-explanation="自分を「X: 100, Y: 64, Z: 200」の場所にテレポートさせます。"></div>
+        <div class="mc-code-block" data-command="/tp @s Steve" data-explanation="自分を「Steve（スティーブ）」くんのいる場所にテレポートさせます。"></div>
+        <div class="mc-code-block" data-command="/tp @a @s" data-explanation="ワールドにいるすべてのプレイヤーを、自分の場所に呼び寄せます。"></div>
+        <div class="mc-code-block" data-command="/tp @e[type=zombie] @s" data-explanation="ワールド内のすべてのゾンビを、自分の場所に一瞬で引き寄せます。"></div>
+        <div class="mc-code-block" data-command="/tp @s ~ ~10 ~" data-explanation="今いる場所から「10マス真上」にテレポートします（※チルト記号 <code>~</code> は今の場所からの距離を表します）。"></div>
+      </section>
+
+      <!-- 2. spreadplayers -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🎲 /spreadplayers（ばらまく）</h2>
+        <p>指定したエリアの範囲内に、プレイヤーやモブをランダムにばらばらにワープさせます。かくれんぼやPvPのスタート時に使います。</p>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/spreadplayers 0 0 10 100 @a" data-explanation="「X: 0, Z: 0」を中心に、半径10マス以上100マス以内の地面に、全員をランダムにばらまきます。"></div>
+      </section>
+
+      <!-- 3. spawnpoint / setworldspawn -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🏠 復活地点（スポーンポイント）をきめる</h2>
+        <p>死んでしまったときに生き返る場所を決めるコマンドです。</p>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/spawnpoint" data-explanation="自分が今いる場所を、自分の新しい復活地点にします。"></div>
+        <div class="mc-code-block" data-command="/spawnpoint Steve 10 64 -20" data-explanation="Steveくんの復活地点を「X: 10, Y: 64, Z: -20」の場所に指定します。"></div>
+        <div class="mc-code-block" data-command="/setworldspawn" data-explanation="今いる場所を、ワールド全体の初期スポーン地点（初めてワールドに入った時に降り立つ場所）にします。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

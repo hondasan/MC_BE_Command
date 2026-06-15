@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>マイクラ コマンドずかん｜統合版(Switch/スマホ)対応</title>
+  <meta name="description" content="小学生でもかんたん！Switchやスマホで使えるマイクラ統合版（BE）のコマンドをわかりやすく解説した図鑑サイト。やりたいコマンドがすぐに見つかるよ。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,PE,BE,一覧,ツール,小学生,子供向け,ふりがな">
+
+  <!-- OGP -->
+  <meta property="og:title" content="マイクラ コマンドずかん｜統合版(Switch/スマホ)対応">
+  <meta property="og:description" content="タップするだけでコマンドが作れる！ウォーデン召喚も最強装備もすぐ出せるよ。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hondasan.github.io/MC_BE_Command/">
+  <meta property="og:image" content="https://hondasan.github.io/MC_BE_Command/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="home"
+      data-breadcrumb='[{"label":"ホーム"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- ヒーローセクション -->
+      <section class="hero-section">
+        <div class="hero-particles">
+          <div class="hero-particle"></div>
+          <div class="hero-particle"></div>
+          <div class="hero-particle"></div>
+          <div class="hero-particle"></div>
+          <div class="hero-particle"></div>
+        </div>
+        <h1 class="hero-title">⛏️ マイクラ <span>コマンドずかん</span></h1>
+        <p class="hero-subtitle">
+          コマンドをおぼえて、マイクラのせかいをもっとたのしもう！<br/>
+          Switch（スイッチ）、スマホ、タブレット、PCのマイクラにぜんぶ対応しているよ。
+        </p>
+        <div class="hero-btns">
+          <a href="commands/index.html" class="btn btn-primary">
+            <i data-lucide="book-open"></i>
+            コマンドをしらべる
+          </a>
+          <a href="tools/generator.html" class="btn btn-secondary">
+            <i data-lucide="wrench"></i>
+            ツールを使ってみる
+          </a>
+        </div>
+      </section>
+
+      <!-- にんきコマンドセクション -->
+      <section class="animate-on-scroll">
+        <h2 class="section-title">🔥 にんきのコマンド</h2>
+        <p class="section-intro">みんながよくつかう、おすすめのコマンドだよ！タップしてつかいかたを見てみよう。</p>
+        
+        <div class="home-grid">
+          <!-- give -->
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">🎁</span>
+              <span>/give</span>
+            </div>
+            <div style="margin-bottom: var(--space-3);">
+              <span class="badge badge-give">アイテム</span>
+            </div>
+            <div class="card-description">
+              ダイヤモンドの剣やコマンドブロックなどのアイテムを、好きな数だけ手に入れられます。
+            </div>
+            <a href="commands/give.html" class="card-link">つかいかたを見る</a>
+          </div>
+
+          <!-- tp -->
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">🚀</span>
+              <span>/tp</span>
+            </div>
+            <div style="margin-bottom: var(--space-3);">
+              <span class="badge badge-basic">テレポート</span>
+            </div>
+            <div class="card-description">
+              指定した座標（ざひょう）や、友達がいる場所に一瞬（いっしゅん）でワープできます。
+            </div>
+            <a href="commands/teleport.html" class="card-link">つかいかたを見る</a>
+          </div>
+
+          <!-- summon -->
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">👾</span>
+              <span>/summon</span>
+            </div>
+            <div style="margin-bottom: var(--space-3);">
+              <span class="badge badge-summon">モブしょうかん</span>
+            </div>
+            <div class="card-description">
+              ウォーデンやエンダードラゴンなどのモブを、好きな場所に呼び出すことができます。
+            </div>
+            <a href="commands/summon.html" class="card-link">つかいかたを見る</a>
+          </div>
+
+          <!-- effect -->
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">✨</span>
+              <span>/effect</span>
+            </div>
+            <div style="margin-bottom: var(--space-3);">
+              <span class="badge badge-effect">効果 (こうか)</span>
+            </div>
+            <div class="card-description">
+              足が超（ちょう）速くなったり、高くジャンプしたり、無敵（むてき）になったりできます。
+            </div>
+            <a href="commands/effect.html" class="card-link">つかいかたを見る</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3ステップガイドバナー -->
+      <section class="start-guide-banner animate-on-scroll">
+        <h2 class="section-title" style="color: var(--accent-gold); margin-bottom: var(--space-2);">🎮 はじめてコマンドを使う人へ</h2>
+        <p>コマンドのつかいかたは、たったの3ステップ！</p>
+        
+        <ul class="steps-list">
+          <li class="step-item">
+            <div class="step-num">1</div>
+            <h3 class="step-title">チャット画面をひらく</h3>
+            <p class="step-desc">Switchなら十字キーの右ボタン、スマホなら画面の上のほうにあるふきだしマークを押そう。</p>
+          </li>
+          <li class="step-item">
+            <div class="step-num">2</div>
+            <h3 class="step-title">「/」からはじめる</h3>
+            <p class="step-desc">はじめに「/ (スラッシュ)」を入れてから、コマンドの英語をうつよ。</p>
+          </li>
+          <li class="step-item">
+            <div class="step-num">3</div>
+            <h3 class="step-title">ボタンを押して実行！</h3>
+            <p class="step-desc">文字をうったら、決定ボタンを押して実行しよう！マイクラの世界がかわるよ！</p>
+          </li>
+        </ul>
+        
+        <div style="text-align: center; margin-top: var(--space-6);">
+          <a href="guides/getting-started.html" class="btn btn-secondary" style="font-size: var(--text-sm);">
+            もっとくわしい使い方ガイドはこちら
+          </a>
+        </div>
+      </section>
+
+      <!-- カテゴリ紹介 -->
+      <section class="animate-on-scroll">
+        <h2 class="section-title">📂 カテゴリからさがす</h2>
+        <div class="home-grid">
+          
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">📚</span>
+              <span>コマンドをさがす</span>
+            </div>
+            <div class="card-description">
+              基本のコマンドから、建築（けんちく）、ゲームのルール変更など、全部のコマンドをわかりやすく解説！
+            </div>
+            <a href="commands/index.html" class="card-link">コマンド一覧へ</a>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">🛠️</span>
+              <span>べんりなツール</span>
+            </div>
+            <div class="card-description">
+              えらぶだけで自動でコマンドが作れるツールや、アイテムIDの英語名を探せる検索（けんさく）ページ。
+            </div>
+            <a href="tools/generator.html" class="card-link">ツール一覧へ</a>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">📖</span>
+              <span>基本ガイド</span>
+            </div>
+            <div class="card-description">
+              コマンドブロックの使い方、ターゲットセレクター、座標（ざひょう）のしくみなど、基本からやさしく学ぼう！
+            </div>
+            <a href="guides/index.html" class="card-link">ガイド一覧へ</a>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">🍳</span>
+              <span>コマンドレシピ</span>
+            </div>
+            <div class="card-description">
+              最強装備（さいきょうそうび）の作り方や、TNTを降らせる方法など、面白いアイデアの組み合わせレシピ集！
+            </div>
+            <a href="guides/recipes/index.html" class="card-link">レシピ集へ</a>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

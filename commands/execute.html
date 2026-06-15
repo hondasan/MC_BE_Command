@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>/execute コマンドのつかいかた｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版(新構文)の/execute（〜として実行、条件付き実行）の仕組みと使い方をやさしく解説。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,execute,実行,条件,新構文,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="commands-execute"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"コマンド一覧","url":"/MC_BE_Command/commands/index.html"},{"label":"🎯 executeコマンド"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🎯 /execute コマンド</h1>
+        <p class="detail-desc">「モブが〜したら」「だれがどこで」など、コマンドを動かす人や場所、条件を決める最強のコマンドだよ！</p>
+      </section>
+
+      <!-- 1. executeとは -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🔍 /execute ってなに？</h2>
+        <p>普通のコマンドは「実行したプレイヤー本人」が「今いる場所」で動きます。</p>
+        <p>しかし、/executeを使うと、<strong>「だれが(as)」「どこで(at)」「どんな条件で(if)」</strong>コマンドを実行するかを自由自在に指定できます。</p>
+        
+        <div class="tip-box" style="background-color: rgba(167, 139, 250, 0.05); border-color: var(--accent-purple);">
+          <i data-lucide="info" class="tip-box-icon" style="color: var(--accent-purple);"></i>
+          <div class="tip-box-content">
+            <strong>新しい書き方（新構文）に対応しているよ！</strong><br/>
+            統合版のバージョン1.19.50から、書き方が新しくなりました。このページでは最新の書き方を分かりやすく説明しています。
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. サブコマンドの解説 -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🛠️ よく使うサブコマンド</h2>
+        
+        <h3>1. as（だれとして実行するか）</h3>
+        <p>コマンドの「実行者」をチェンジします。これを使うと、モブ自身に自分の名前でコマンドを動かさせることができます。</p>
+        <div class="mc-code-block" data-command="/execute as @e[type=zombie] run say ウゴー！" data-explanation="ワールド内のすべてのゾンビが、自分で「ウゴー！」と喋ります。"></div>
+
+        <h3>2. at（どこで実行するか）</h3>
+        <p>コマンドが動く「基準の場所」を指定したモブやプレイヤーの場所にチェンジします。</p>
+        <div class="mc-code-block" data-command="/execute at @e[type=creeper] run setblock ~ ~-1 ~ redstone_block" data-explanation="すべてのクリーパーの足元を、一瞬で「レッドストーンブロック」に置き換えます。"></div>
+
+        <h3>3. as と at の組み合わせ</h3>
+        <p>「ゾンビとして、ゾンビのいる場所で」のように組み合わせて使うことが多いです。</p>
+        <div class="mc-code-block" data-command="/execute as @e[type=zombie] at @s run summon lightning_bolt ~ ~ ~" data-explanation="すべてのゾンビの場所に、上空から雷を落とします（※ <code>@s</code> は <code>as</code> でチェンジされたゾンビ自身を指します）。"></div>
+      </section>
+
+      <!-- 3. 条件分岐 if -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">❓ 条件（もし〜なら実行する）</h2>
+        <p><code>if</code> を使うと、「もし○○だったらコマンドを実行する」という条件付きの仕掛けを作ることができます。</p>
+
+        <h3>1. if block（もしそこに特定のブロックがあったら）</h3>
+        <div class="mc-code-block" data-command="/execute if block ~ ~-1 ~ gold_block run say 金ブロックの上にのっているよ！" data-explanation="もし自分の足元が「金ブロック」だったら、チャットで叫びます。"></div>
+
+        <h3>2. if entity（もし特定のモブが近くにいたら）</h3>
+        <div class="mc-code-block" data-command="/execute if entity @e[type=zombie,r=10] run say 近くにゾンビがいるぞ！" data-explanation="もし自分から半径10マス以内にゾンビが1体でも存在したら、チャットで叫びます。"></div>
+      </section>
+
+      <!-- おもしろい組み合わせレシピへのリンク -->
+      <section class="guide-step animate-on-scroll" style="border-color: var(--accent-gold);">
+        <h2 class="section-title">🍳 execute を使ったおすすめレシピ</h2>
+        <p>executeを使うと、普通のコマンドブロックでは作れないすごい仕掛けが作れるよ！やってみよう！</p>
+        
+        <div class="home-grid">
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">⛈️</span>
+              <span>TNTの雨を降らせる</span>
+            </div>
+            <div class="card-description">
+              自分のまわりの敵モンスターの場所に、空から大量のTNTを落とし続ける仕掛け。
+            </div>
+            <a href="../guides/recipes/tnt-rain.html" class="card-link">レシピを見る</a>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">⚔️</span>
+              <span>PvPアリーナの仕掛け</span>
+            </div>
+            <div class="card-description">
+              戦いエリアに入ったら自動でヘルメットを被らせるなどの、ハイテクアリーナの作り方。
+            </div>
+            <a href="../guides/recipes/arena.html" class="card-link">レシピを見る</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

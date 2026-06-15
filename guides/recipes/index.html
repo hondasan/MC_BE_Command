@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>コマンドレシピ(作例)一覧｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版のコマンドで作れるおもしろい仕掛けやミニゲームのアイデアレシピ（作例）一覧。">
+  <meta name="keywords" content="マイクラ,コマンド,作例,レシピ,最強装備,TNTの雨,ミニゲーム,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/pages.css">
+</head>
+<body data-page="recipes-index"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"レシピ一覧"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🍳 コマンドレシピ</h1>
+        <p class="detail-desc">コマンドを組み合わせてつくる、面白い仕掛けやおもしろ装置のアイデアレシピ集だよ！</p>
+      </section>
+
+      <!-- レシピカードグリッド -->
+      <section class="home-grid">
+        
+        <!-- 最強装備 -->
+        <div class="card">
+          <div class="card-title">
+            <span class="emoji">👑</span>
+            <span>さいきょうの装備</span>
+          </div>
+          <div style="margin-bottom: var(--space-2);">
+            <span class="badge badge-basic" style="background-color: rgba(74, 222, 128, 0.15); color: var(--accent-green);">かんたん</span>
+          </div>
+          <div class="card-description">
+            通常サバイバルでは絶対に作れない、全身エンチャントだらけの最強ネザライト装備の作り方。
+          </div>
+          <a href="strongest-gear.html" class="card-link">つくりかた</a>
+        </div>
+
+        <!-- TNTの雨 -->
+        <div class="card">
+          <div class="card-title">
+            <span class="emoji">⛈️</span>
+            <span>TNTの雨をふらせる</span>
+          </div>
+          <div style="margin-bottom: var(--space-2);">
+            <span class="badge badge-effect" style="background-color: rgba(251, 191, 36, 0.15); color: var(--accent-gold);">中くらい</span>
+          </div>
+          <div class="card-description">
+            コマンドブロックのリピート機能を使って、空から大量のTNTを降らせ続けるおもしろギミック。
+          </div>
+          <a href="tnt-rain.html" class="card-link">つくりかた</a>
+        </div>
+
+        <!-- バトルアリーナ -->
+        <div class="card">
+          <div class="card-title">
+            <span class="emoji">⚔️</span>
+            <span>バトルアリーナ</span>
+          </div>
+          <div style="margin-bottom: var(--space-2);">
+            <span class="badge badge-summon" style="background-color: rgba(167, 139, 250, 0.15); color: var(--accent-purple);">むずかしい</span>
+          </div>
+          <div class="card-description">
+            闘技場エリアに入ったら自動で装備を配ったり、モンスターを次々と沸かせるアリーナ装置。
+          </div>
+          <a href="arena.html" class="card-link">つくりかた</a>
+        </div>
+
+        <!-- ミニゲーム -->
+        <div class="card">
+          <div class="card-title">
+            <span class="emoji">🎮</span>
+            <span>ミニゲームを作ろう</span>
+          </div>
+          <div style="margin-bottom: var(--space-2);">
+            <span class="badge badge-summon" style="background-color: rgba(167, 139, 250, 0.15); color: var(--accent-purple);">むずかしい</span>
+          </div>
+          <div class="card-description">
+            スコアボード機能などを使って、「鬼ごっこ」や「制限時間タイマー」を作るミニゲームのしくみ。
+          </div>
+          <a href="mini-game.html" class="card-link">つくりかた</a>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../../js/app.js"></script>
+</body>
+</html>

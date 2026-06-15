@@ -1,0 +1,523 @@
+/* css/pages.css */
+
+/* ==========================================================================
+   1. Home Page (index.html)
+   ========================================================================== */
+
+.hero-section {
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 50%, #1a1a2e 100%);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--border-default);
+  margin-bottom: var(--space-10);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Floating particles in background */
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-green);
+  border-radius: var(--radius-sm);
+  animation: float-particle 6s infinite ease-in-out;
+}
+
+.hero-particle:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+.hero-particle:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; width: 8px; height: 8px; background-color: var(--accent-gold); }
+.hero-particle:nth-child(3) { top: 80%; left: 30%; animation-delay: 4s; }
+.hero-particle:nth-child(4) { top: 30%; left: 70%; animation-delay: 1s; }
+.hero-particle:nth-child(5) { top: 10%; left: 50%; animation-delay: 3s; background-color: var(--accent-blue); }
+
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-30px) scale(1.2); opacity: 0.8; }
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.05em;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title span {
+  color: var(--accent-green);
+}
+
+.hero-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--accent-green);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(74, 222, 128, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-green-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--accent-gold);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.section-intro {
+  margin-bottom: var(--space-8);
+  font-size: var(--text-base);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+/* Steps Guides Banner */
+.start-guide-banner {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.steps-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+  list-style: none;
+}
+
+.step-item {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  position: relative;
+}
+
+.step-num {
+  position: absolute;
+  top: -12px;
+  left: var(--space-4);
+  background-color: var(--accent-gold);
+  color: var(--text-inverse);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: bold;
+}
+
+.step-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+  margin-top: var(--space-2);
+  color: var(--text-primary);
+}
+
+.step-desc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   2. Command List Page (commands/index.html)
+   ========================================================================== */
+
+.category-group {
+  margin-bottom: var(--space-10);
+}
+
+.category-header {
+  border-bottom: 2px dashed var(--border-default);
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ==========================================================================
+   3. Command Detail Pages (commands/*.html)
+   ========================================================================== */
+
+.detail-header {
+  margin-bottom: var(--space-8);
+}
+
+.detail-desc {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.syntax-box {
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  font-family: var(--font-code);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-6);
+  overflow-x: auto;
+  color: var(--text-primary);
+}
+
+.syntax-legend {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+}
+
+.preset-tabs-nav {
+  display: flex;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--border-default);
+  margin-bottom: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.preset-tab-btn {
+  padding: var(--space-2) var(--space-4);
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.preset-tab-btn.active {
+  color: var(--accent-green);
+  border-bottom-color: var(--accent-green);
+}
+
+.preset-tab-panel {
+  display: none;
+}
+
+.preset-tab-panel.active {
+  display: block;
+}
+
+.id-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.id-item {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color var(--transition-fast);
+}
+
+.id-item:hover {
+  border-color: var(--accent-green);
+}
+
+.id-item-label {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.id-item-value-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-2);
+  gap: var(--space-1);
+}
+
+.id-item-value {
+  font-family: var(--font-code);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.id-item-copy {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.id-item-copy:hover {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   4. Command Generator Tool (tools/generator.html)
+   ========================================================================== */
+
+.generator-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .generator-container {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--accent-gold);
+}
+
+.form-select, .form-input {
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.form-select:focus, .form-input:focus {
+  outline: none;
+  border-color: var(--accent-green);
+}
+
+.generator-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.fav-history-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.fav-history-list {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.fav-history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: var(--text-sm);
+}
+
+.fav-history-cmd {
+  font-family: var(--font-code);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+
+.fav-history-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* ==========================================================================
+   5. ID List Page (tools/id-list.html)
+   ========================================================================== */
+
+.search-filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.filter-tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.filter-tag.active {
+  background-color: var(--accent-green);
+  color: var(--text-inverse);
+  border-color: var(--accent-green);
+}
+
+.search-results-info {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+}
+
+/* ==========================================================================
+   6. Guide & Recipe Pages (guides/)
+   ========================================================================== */
+
+.guide-step {
+  margin-bottom: var(--space-8);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  position: relative;
+}
+
+.guide-step-num {
+  position: absolute;
+  top: -16px;
+  left: var(--space-6);
+  background-color: var(--accent-gold);
+  color: var(--text-inverse);
+  padding: var(--space-1) var(--space-4);
+  font-family: var(--font-heading);
+  border-radius: var(--radius-md);
+  font-weight: bold;
+}
+
+.guide-step-title {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-4);
+  font-size: var(--text-xl);
+}
+
+.alert-box {
+  background-color: rgba(251, 146, 60, 0.1);
+  border-left: 4px solid var(--accent-orange);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.alert-box-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+}
+
+.alert-box-content {
+  font-size: var(--text-sm);
+}
+
+.tip-box {
+  background-color: rgba(74, 222, 128, 0.05);
+  border-left: 4px solid var(--accent-green);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.tip-box-icon {
+  color: var(--accent-green);
+  flex-shrink: 0;
+}
+
+.tip-box-content {
+  font-size: var(--text-sm);
+}

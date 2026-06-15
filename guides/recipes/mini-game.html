@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>ミニゲームのコマンドレシピ｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版のコマンドで、スコアボードとタイマーを使った制限時間付きミニゲームを作る方法を解説。">
+  <meta name="keywords" content="マイクラ,コマンド,ミニゲーム,作り方,タイマー,スコアボード,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/pages.css">
+</head>
+<body data-page="recipes-mini-game"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"レシピ一覧","url":"/MC_BE_Command/guides/recipes/index.html"},{"label":"ミニゲーム"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🎮 ミニゲームのレシピ</h1>
+        <p class="detail-desc">スコアボードやタイマーを使って、お友達と遊べる本格的なミニゲームを作る仕組みの解説だよ！</p>
+      </section>
+
+      <!-- ステップ1: スコアをつくる -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">ゲームの得点ボードを作る</h2>
+        <p>まずはゲームの得点（スコア）をカウントするボードを作成して、画面の右側に表示するよ！</p>
+        
+        <p>チャット欄に次の2つのコマンドを1つずつ入力して実行してね。</p>
+        <div class="mc-code-block" data-command="/scoreboard objectives add points dummy 得点" data-explanation="「points」という名前の点数ボードを作ります。"></div>
+        <div class="mc-code-block" data-command="/scoreboard objectives setdisplay sidebar points" data-explanation="画面の右端（サイドバー）に得点ボードを表示します。"></div>
+      </section>
+
+      <!-- ステップ2: タイマーをつくる -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">制限時間タイマーをつくる</h2>
+        <p>ゲームの残り時間を自動でカウントダウンする仕組みを作るよ！</p>
+
+        <p>① まず、残り時間を数えるためのボードを作ります。</p>
+        <div class="mc-code-block" data-command="/scoreboard objectives add timer dummy 残り時間" data-explanation="「timer」という名前の時間ボードを作ります。"></div>
+        <div class="mc-code-block" data-command="/scoreboard objectives setdisplay list timer" data-explanation="残り時間を画面上（または一時停止画面）に表示します。"></div>
+
+        <p>② <strong>「リピートコマンドブロック」</strong>を置き、設定を以下にします。</p>
+        <ul>
+          <li>・ブロックの種類: <strong>「リピート」</strong></li>
+          <li>・レッドストーン: <strong>「動力を必要とする」</strong> (レバーをオンにすると時間が減り始めます)</li>
+          <li>・遅延(ティック): <strong>「20」</strong>にする (※重要！20ティック＝1秒なので、これで1秒ごとにコマンドが動くようになります)</li>
+        </ul>
+        <p>③ ブロックのなかに、以下のコマンドを入力します。</p>
+        <div class="mc-code-block" data-command="/scoreboard players remove @a timer 1" data-explanation="1秒ごとに、全員の残り時間を1点ずつマイナスします。"></div>
+      </section>
+
+      <!-- ステップ3: 終了処理 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">時間がゼロになったらゲーム終了！</h2>
+        <p>残り時間が 0 になったら、画面に大きく「終了！」と出す仕掛けを作るよ。</p>
+
+        <p>① 新しい<strong>「リピートコマンドブロック」</strong>を置き、設定を <strong>「常にアクティブ」</strong> にします。</p>
+        <p>② ブロックのなかに、以下のコマンドを入力します。</p>
+        <div class="mc-code-block" data-command="/execute as @a[scores={timer=0}] run title @a title タイムアップ！" data-explanation="もし「残り時間が 0」になったプレイヤーがいたら、全員の画面に「タイムアップ！」と表示します。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../../js/app.js"></script>
+</body>
+</html>

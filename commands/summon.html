@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>/summon コマンド（モブを出す）｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版の/summon（モブ召喚）、/ride（乗り物に乗る）の使い方と、よく使うモブの召喚ID一覧。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,summon,モブID,ウォーデン,召喚,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="commands-summon"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"コマンド一覧","url":"/MC_BE_Command/commands/index.html"},{"label":"👾 モブ召喚コマンド"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">👾 モブ召喚のコマンド</h1>
+        <p class="detail-desc">ウォーデン、ゾンビ、エンダードラゴンなどの生き物を召喚するコマンドだよ！</p>
+      </section>
+
+      <!-- 1. summon -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">👾 /summon（モブを召喚する）</h2>
+        <p>指定したモブ（モンスターや動物）を、自分の目の前や特定の座標に呼び出すことができます。</p>
+        
+        <h3>■ コマンドのかたち</h3>
+        <div class="syntax-box">
+          /summon &lt;モブID&gt; [座標]
+          <div class="syntax-legend">
+            ・&lt;モブID&gt; : 呼び出したいモブの英語名（例: warden）<br/>
+            ・[座標] : 呼び出す場所（省略すると自分の場所になります。相対座標 <code>~ ~ ~</code> も使えます）
+          </div>
+        </div>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/summon warden" data-explanation="自分の足元に最強の敵「ウォーデン」を1体呼び出します。"></div>
+        <div class="mc-code-block" data-command="/summon ender_dragon" data-explanation="自分の場所に「エンダードラゴン」を呼び出します（※注意：まわりのブロックを破壊して飛び回ります）。"></div>
+        <div class="mc-code-block" data-command="/summon lightning_bolt ~ ~ ~" data-explanation="自分の足元に「雷」を落とします（ダメージを受けるので注意してください）。"></div>
+        <div class="mc-code-block" data-command="/summon zombie ~ ~5 ~" data-explanation="自分の「5マス上空」にゾンビを呼び出します。"></div>
+      </section>
+
+      <!-- よく使うモブID一覧 -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🐾 よく使うモブ・エンティティID (タップでコピー)</h2>
+        <p>モブを召喚する時につかう英語だよ。タップするとコピーできるよ！</p>
+        
+        <!-- タブナビゲーション -->
+        <div class="preset-tabs-nav" id="entity-tabs-nav">
+          <button class="preset-tab-btn active" data-tab="tab-boss">👑 ボス</button>
+          <button class="preset-tab-btn" data-tab="tab-enemy">👾 敵モンスター</button>
+          <button class="preset-tab-btn" data-tab="tab-friend">🐾 友好・動物</button>
+          <button class="preset-tab-btn" data-tab="tab-other">🚂 乗り物・その他</button>
+        </div>
+
+        <!-- タブ中身 -->
+        <div id="entity-tabs-content">
+          <!-- ボス -->
+          <div class="preset-tab-panel active" id="tab-boss">
+            <div class="id-grid" id="boss-id-grid"></div>
+          </div>
+          <!-- 敵 -->
+          <div class="preset-tab-panel" id="tab-enemy">
+            <div class="id-grid" id="enemy-id-grid"></div>
+          </div>
+          <!-- 友好 -->
+          <div class="preset-tab-panel" id="tab-friend">
+            <div class="id-grid" id="friend-id-grid"></div>
+          </div>
+          <!-- その他 -->
+          <div class="preset-tab-panel" id="tab-other">
+            <div class="id-grid" id="other-id-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ride -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🏇 /ride（モブに乗せる）</h2>
+        <p>自分をモブに乗せたり、モブ同士を重ねて乗せたりできます（例: 豚に乗ったゾンビなど）。</p>
+
+        <h3>■ コマンドのかたち</h3>
+        <div class="syntax-box">
+          /ride &lt;乗るモブ&gt; start_riding &lt;乗せるモブ&gt;
+        </div>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/ride @s start_riding @e[type=pig,c=1]" data-explanation="近くの豚（1体）の背中に自分が強制的に乗ります。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module">
+    import { ENTITIES } from '../js/data/entities.js';
+    import { showToast } from '../js/components/toast.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // タブの切り替え
+      const tabBtns = document.querySelectorAll('#entity-tabs-nav .preset-tab-btn');
+      const tabPanels = document.querySelectorAll('#entity-tabs-content .preset-tab-panel');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabPanels.forEach(p => p.classList.remove('active'));
+
+          btn.classList.add('active');
+          const tabId = btn.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+
+      // プリセットモブIDの描画
+      const presets = {
+        boss: ENTITIES.filter(e => e.category === 'boss'),
+        enemy: ENTITIES.filter(e => e.category === 'hostile').slice(0, 12),
+        friend: ENTITIES.filter(e => e.category === 'passive' || e.category === 'neutral').slice(0, 12),
+        other: ENTITIES.filter(e => e.category === 'vehicle').slice(0, 12)
+      };
+
+      Object.keys(presets).forEach(cat => {
+        const grid = document.getElementById(`${cat}-id-grid`);
+        if (!grid) return;
+
+        presets[cat].forEach(entity => {
+          const itemEl = document.createElement('div');
+          itemEl.className = 'id-item';
+          itemEl.innerHTML = `
+            <div class="id-item-label">${entity.emoji} ${entity.name}</div>
+            <div class="id-item-value-wrapper">
+              <span class="id-item-value" title="${entity.id}">${entity.id}</span>
+              <button class="id-item-copy" title="コピーする">
+                <i data-lucide="copy" style="width: 12px; height: 12px;"></i>
+              </button>
+            </div>
+          `;
+
+          itemEl.addEventListener('click', () => {
+            navigator.clipboard.writeText(entity.id).then(() => {
+              showToast(`${entity.name}のIDをコピーしたよ！`);
+            });
+          });
+
+          grid.appendChild(itemEl);
+        });
+      });
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

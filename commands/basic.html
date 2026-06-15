@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>基本のコマンド｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版の基本コマンド(/gamemode /time /weather /difficulty /kill /xp /seed)のつかいかたをやさしく解説！">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,基本,gamemode,time,weather,解説,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="commands-basic"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"コマンド一覧","url":"/MC_BE_Command/commands/index.html"},{"label":"⚙️ 基本コマンド"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">⚙️ 基本のコマンド</h1>
+        <p class="detail-desc">ワールドの設定や時間をかえる、一番よくつかうコマンドだよ！</p>
+      </section>
+
+      <!-- 1. gamemode -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🕹️ /gamemode（ゲームモードをかえる）</h2>
+        <p>ワールドのゲームモードを、クリエイティブやサバイバルにいつでも切りかえられます。</p>
+        
+        <h3>■ コマンドのかたち</h3>
+        <div class="syntax-box">
+          /gamemode &lt;モード&gt; [プレイヤー]
+          <div class="syntax-legend">
+            ・&lt;モード&gt; : 変更したいモード名（c, s, a, spectator など）<br/>
+            ・[プレイヤー] : 対象のプレイヤー（省略すると自分になります）
+          </div>
+        </div>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/gamemode creative" data-explanation="自分をクリエイティブモード（空を飛べる・無敵・ブロック無限）にします。"></div>
+        <div class="mc-code-block" data-command="/gamemode survival" data-explanation="自分をサバイバルモード（体力があり、素材を集めて生き残るモード）にします。"></div>
+        <div class="mc-code-block" data-command="/gamemode spectator @a" data-explanation="全員をスペクテイターモード（壁をすり抜けられる透明人間）にします。"></div>
+      </section>
+
+      <!-- 2. time -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">☀️ /time set（時間をかえる）</h2>
+        <p>ワールドの時間を、一瞬（いっしゅん）で朝や夜、お昼に変えられます。</p>
+        
+        <h3>■ コマンドのかたち</h3>
+        <div class="syntax-box">
+          /time set &lt;時間&gt;
+          <div class="syntax-legend">
+            ・&lt;時間&gt; : day（昼）, night（夜）, noon（正午）, midnight（真夜中）など
+          </div>
+        </div>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/time set day" data-explanation="時間を「昼」にします（一番明るくて作業しやすい時間です）。"></div>
+        <div class="mc-code-block" data-command="/time set night" data-explanation="時間を「夜」にします（モンスターが生まれる時間です）。"></div>
+        <div class="mc-code-block" data-command="/time set noon" data-explanation="時間を「お昼（正午）」にします。太陽が真上にきます。"></div>
+      </section>
+
+      <!-- 3. weather -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🌧️ /weather（天気をかえる）</h2>
+        <p>天気を「晴れ」「雨」「雷雨（かみなり）」に自由に変えられます。</p>
+        
+        <h3>■ コマンドのかたち</h3>
+        <div class="syntax-box">
+          /weather &lt;天気&gt; [長さ(秒)]
+          <div class="syntax-legend">
+            ・&lt;天気&gt; : clear（晴れ）, rain（雨）, thunder（雷雨）
+          </div>
+        </div>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/weather clear" data-explanation="天気を「晴れ」にします。"></div>
+        <div class="mc-code-block" data-command="/weather rain" data-explanation="天気を「雨」にします。"></div>
+        <div class="mc-code-block" data-command="/weather thunder 60" data-explanation="天気を「雷雨（かみなり）」に60秒間だけします。"></div>
+      </section>
+
+      <!-- 4. difficulty -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🛡️ /difficulty（難易度をかえる）</h2>
+        <p>モンスターを出したくない時は「ピースフル」、難しくしたい時は「ハード」に変えられます。</p>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/difficulty peaceful" data-explanation="難易度を「ピースフル（敵モンスターが消え、お腹が減らなくなる）」にします。"></div>
+        <div class="mc-code-block" data-command="/difficulty hard" data-explanation="難易度を「ハード（敵の攻撃力が上がり、満腹度がゼロになると餓死する）」にします。"></div>
+      </section>
+
+      <!-- 5. kill -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">💀 /kill（モブやプレイヤーをたおす）</h2>
+        <p>指定したターゲットを倒します。ワールド内にたまりすぎたモブをリセットしたい時にも便利です。</p>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/kill @s" data-explanation="自分をたおします（ゲームオーバーになります）。"></div>
+        <div class="mc-code-block" data-command="/kill @e[type=zombie]" data-explanation="ワールド内のすべてのゾンビだけをたおします。"></div>
+        <div class="mc-code-block" data-command="/kill @e[type=!player]" data-explanation="プレイヤー以外のすべてのモブやアイテムをたおします（※注意：額縁やボートも消えます）。"></div>
+      </section>
+
+      <!-- 6. xp -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">✨ /xp（経験値を手に入れる）</h2>
+        <p>エンチャントに必要な経験値（レベル）を一瞬で増やすことができます。</p>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/xp 50L" data-explanation="自分に経験値を50レベル分追加します（Lを付けるとレベル単位になります）。"></div>
+        <div class="mc-code-block" data-command="/xp 1000 @p" data-explanation="一番近くにいるプレイヤーに経験値オーブを1000ポイント分与えます。"></div>
+      </section>
+
+      <!-- 7. seed -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🌱 /seed（シード値を見る）</h2>
+        <p>ワールドの地形を決めている「シード値」をチャット画面に表示します。同じ地形のワールドをもう一度作りたい時に使います。</p>
+        <div class="mc-code-block" data-command="/seed" data-explanation="今遊んでいるワールドのシード値を表示します。"></div>
+      </section>
+
+      <!-- よくあるまちがい -->
+      <section class="guide-step animate-on-scroll" style="background-color: rgba(239, 68, 68, 0.05); border-color: var(--accent-red);">
+        <h2 class="section-title" style="color: var(--accent-red);">⚠️ よくあるまちがい</h2>
+        
+        <div class="alert-box">
+          <i data-lucide="alert-triangle" class="alert-box-icon"></i>
+          <div class="alert-box-content">
+            <strong>1. スラッシュ「/」を忘れている</strong><br/>
+            コマンドを入力するときは、かならず最初に「/」を入れてください。ないとチャットの普通の会話と判定されてしまいます。
+          </div>
+        </div>
+
+        <div class="alert-box">
+          <i data-lucide="alert-triangle" class="alert-box-icon"></i>
+          <div class="alert-box-content">
+            <strong>2. スペースを入れていない</strong><br/>
+            <code>/gamemodecreative</code> のように繋げてしまうと動きません。<code>/gamemode creative</code> のように、あいだに半角スペース（スペースキー）を1つ入れてください。
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

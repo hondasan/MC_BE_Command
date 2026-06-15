@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>コマンド一覧｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版で使えるコマンドの一覧ページ。基本・アイテム・モブ召喚・エフェクトなど、カテゴリごとにわかりやすく探せます。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,PE,BE,一覧,解説,小学生,ふりがな">
+
+  <!-- OGP -->
+  <meta property="og:title" content="コマンド一覧｜マイクラ コマンドずかん">
+  <meta property="og:description" content="やりたいコマンドがすぐに見つかる！統合版対応コマンド一覧。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hondasan.github.io/MC_BE_Command/commands/">
+  <meta property="og:image" content="https://hondasan.github.io/MC_BE_Command/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="commands-list"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"コマンド一覧"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">📚 コマンド一覧</h1>
+        <p class="detail-desc">マイクラ統合版でつかえる、すべてのコマンドをカテゴリごとにまとめたよ！</p>
+      </section>
+
+      <!-- リアルタイム検索窓 -->
+      <section class="search-filter-section animate-on-scroll" style="margin-bottom: var(--space-8);">
+        <div class="header-search" style="max-width: 100%;">
+          <i data-lucide="search" class="header-search-icon" style="left: var(--space-4); width: 20px; height: 20px;"></i>
+          <input type="text" class="header-search-input" id="command-search-input" placeholder="コマンド名やキーワードでさがす... (例: give, 時間, 天気)" style="padding-left: var(--space-12); padding-top: var(--space-3); padding-bottom: var(--space-3); border-radius: var(--radius-lg); font-size: var(--text-base);">
+        </div>
+        <div class="filter-tags" id="category-filter-tags">
+          <button class="filter-tag active" data-category="all">すべて</button>
+          <button class="filter-tag" data-category="basic">⚙️ 基本</button>
+          <button class="filter-tag" data-category="give">🎁 アイテム</button>
+          <button class="filter-tag" data-category="summon">👾 モブ召喚</button>
+          <button class="filter-tag" data-category="effect">⚡ エフェクト</button>
+          <button class="filter-tag" data-category="teleport">🚀 テレポート</button>
+          <button class="filter-tag" data-category="fill-clone">🏗️ 建築</button>
+          <button class="filter-tag" data-category="execute">🎯 実行</button>
+          <button class="filter-tag" data-category="scoreboard">📊 スコア</button>
+          <button class="filter-tag" data-category="gamerule">🎮 ルール</button>
+          <button class="filter-tag" data-category="message">💬 演出</button>
+        </div>
+      </section>
+
+      <!-- 動的に描画されるコマンドリストエリア -->
+      <section id="commands-container">
+        <!-- JSでここにカテゴリごとのグリッドが構築されます -->
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module">
+    import { COMMANDS_DATA } from '../js/data/commands.js';
+    import { createCommandCard } from '../js/components/command-card.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('commands-container');
+      const searchInput = document.getElementById('command-search-input');
+      const filterBtns = document.querySelectorAll('#category-filter-tags .filter-tag');
+
+      let currentCategory = 'all';
+      let searchQuery = '';
+
+      // カテゴリ分類の日本語ラベル定義
+      const CATEGORY_NAMES = {
+        basic: '⚙️ 基本コマンド (きほん)',
+        give: '🎁 アイテムに関するコマンド',
+        summon: '👾 モブを召喚するコマンド',
+        effect: '⚡ エフェクト (ステータス効果) のコマンド',
+        teleport: '🚀 テレポート (瞬間移動) のコマンド',
+        'fill-clone': '🏗️ 建築・ブロック操作のコマンド',
+        execute: '🎯 特殊実行コマンド (execute)',
+        scoreboard: '📊 スコアボード・画面表示コマンド',
+        gamerule: '🎮 ゲームのルール設定コマンド',
+        message: '💬 メッセージ・音・光の演出コマンド'
+      };
+
+      function render() {
+        container.innerHTML = '';
+
+        // 1. フィルタリング
+        const filtered = COMMANDS_DATA.filter(cmd => {
+          const matchCategory = currentCategory === 'all' || cmd.category === currentCategory;
+          const matchSearch = cmd.name.toLowerCase().includes(searchQuery) ||
+                              (cmd.description && cmd.description.includes(searchQuery)) ||
+                              (cmd.categoryLabel && cmd.categoryLabel.includes(searchQuery));
+          return matchCategory && matchSearch;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: var(--space-8);">見つかりませんでした。違うことばで探してみてね！</div>`;
+          return;
+        }
+
+        // 2. カテゴリごとにグループ化して描画
+        const groups = {};
+        filtered.forEach(cmd => {
+          if (!groups[cmd.category]) {
+            groups[cmd.category] = [];
+          }
+          groups[cmd.category].push(cmd);
+        });
+
+        Object.keys(groups).forEach(cat => {
+          const groupTitle = CATEGORY_NAMES[cat] || cat;
+          
+          const section = document.createElement('div');
+          section.className = 'category-group animate-on-scroll';
+          
+          const header = document.createElement('h2');
+          header.className = 'category-header';
+          header.textContent = groupTitle;
+          
+          const grid = document.createElement('div');
+          grid.className = 'category-grid';
+
+          groups[cat].forEach(cmd => {
+            grid.appendChild(createCommandCard(cmd));
+          });
+
+          section.appendChild(header);
+          section.appendChild(grid);
+          container.appendChild(section);
+        });
+
+        // IntersectionObserverのアニメーション発火
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+        
+        // アニメーション追加
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+      }
+
+      // 検索イベント
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        render();
+      });
+
+      // フィルターイベント
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.getAttribute('data-category');
+          render();
+        });
+      });
+
+      // 初期描画
+      render();
+    });
+  </script>
+</body>
+</html>

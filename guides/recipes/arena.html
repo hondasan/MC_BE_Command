@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>バトルアリーナ自動装備のコマンドレシピ｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版のコマンドで、バトルアリーナを自動建築し、エリアに入った人に自動で装備を着せる仕掛けの作り方。">
+  <meta name="keywords" content="マイクラ,コマンド,アリーナ,自動装備,replaceitem,execute,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/pages.css">
+</head>
+<body data-page="recipes-arena"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"レシピ一覧","url":"/MC_BE_Command/guides/recipes/index.html"},{"label":"バトルアリーナ"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">⚔️ バトルアリーナのレシピ</h1>
+        <p class="detail-desc">アリーナのエリアに入ったプレイヤーの頭や体に、自動で防具（よろい）を着せるハイテク仕掛けだよ！</p>
+      </section>
+
+      <!-- ステップ1: アリーナを作る -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">アリーナの壁を一瞬で作る</h2>
+        <p>まずは戦うための闘技場（アリーナ）を <code>/fill</code> コマンドで作ろう！</p>
+        <p>アリーナを作りたい場所の中心に立って、チャット欄に次のコマンドをうってね。</p>
+        <div class="mc-code-block" data-command="/fill ~-10 ~ ~-10 ~10 ~3 ~10 glass hollow" data-explanation="自分を中心に、中が空洞になった21×21マスの「ガラスの闘技場（アリーナ）」を作ります。壁の高さは4マスです。"></div>
+      </section>
+
+      <!-- ステップ2: コマンドブロック -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">自動装備ブロックを置く</h2>
+        <p>アリーナに入った瞬間に、自動で鉄のヘルメットを被せる仕掛けを作るよ。</p>
+        
+        <p>① アリーナの外（または壁のした）に<strong>「リピートコマンドブロック」</strong>を置き、設定を以下にします。</p>
+        <ul>
+          <li>・ブロックの種類: <strong>「リピート」</strong></li>
+          <li>・レッドストーン: <strong>「常にアクティブ」</strong></li>
+        </ul>
+        <p>② ブロックのなかに、以下のコマンドを入力します。</p>
+        
+        <div class="mc-code-block" data-command="/execute at @p[r=9] run replaceitem entity @s slot.armor.head 0 iron_helmet" data-explanation="もしコマンドブロックの場所から「半径9マス以内（アリーナの中）」にプレイヤーが入ったら、そのプレイヤーの頭スロットに自動で「鉄のヘルメット」を着せます。"></div>
+      </section>
+
+      <!-- ステップ3: 応用 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">応用：全身にフル装備を着せる</h2>
+        <p>ブロックをもういくつか増やして、体や足にも装備を着せよう！</p>
+        <p>新しいリピートブロックを用意して、コマンドの最後の部分を変えて入力してね。</p>
+        
+        <h3>・体（よろい）を着せる</h3>
+        <div class="mc-code-block" data-command="/execute at @p[r=9] run replaceitem entity @s slot.armor.chest 0 iron_chestplate" data-explanation="アリーナに入った人の体に「鉄のチェストプレート」を着せます。"></div>
+
+        <h3>・足（ズボン）を着せる</h3>
+        <div class="mc-code-block" data-command="/execute at @p[r=9] run replaceitem entity @s slot.armor.legs 0 iron_leggings" data-explanation="アリーナに入った人の足に「鉄のレギンス」を着せます。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* js/components/code-block.js */
+import { showToast } from './toast.js';
+
+// コマンドのシンタックスハイライト関数
+export function highlightCommand(cmdText) {
+  if (!cmdText) return '';
+  
+  // 文字エスケープなど基本処理
+  let html = cmdText;
+
+  // 1. スラッシュのハイライト
+  html = html.replace(/^(\/)/, '<span class="cmd-slash">$1</span>');
+
+  // 2. セレクターのハイライト (@s, @p, @a, @e, @r 及び引数 [@a[type=zombie]など])
+  html = html.replace(/(@[spaer](\[[^\]]*\])?)/g, '<span class="cmd-selector">$1</span>');
+
+  // 3. 数値のハイライト (単体の整数や小数、~5 や ^-3 など)
+  // 座標記号 (~, ^) の直後も含めマッチさせる
+  html = html.replace(/(?<=[\s~^])(-?\d+(\.\d+)?)(?=\s|$)/g, '<span class="cmd-number">$1</span>');
+
+  // 4. キーワードのハイライト (true, false)
+  html = html.replace(/\b(true|false)\b/g, '<span class="cmd-keyword">$1</span>');
+
+  // 5. 文字列 (ダブルクォーテーションで囲まれた部分)
+  html = html.replace(/(".*?")/g, '<span class="cmd-string">$1</span>');
+
+  return html;
+}
+
+export function initCodeBlocks() {
+  const blocks = document.querySelectorAll('.mc-code-block');
+  
+  blocks.forEach(block => {
+    const command = block.getAttribute('data-command') || block.textContent.trim();
+    const explanation = block.getAttribute('data-explanation') || '';
+    
+    // 既存のコンテンツをクリアして再構成
+    block.textContent = '';
+    
+    const wrapper = document.createElement('div');
+    wrapper.className = 'code-block-wrapper';
+    
+    // コピーボタン付きのヘッダー
+    const header = document.createElement('div');
+    header.className = 'code-block-header';
+    header.innerHTML = `
+      <button class="copy-btn" title="コピーする">
+        <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
+        <span>コピー</span>
+      </button>
+    `;
+    
+    // ハイライトされたコマンド本文
+    const content = document.createElement('div');
+    content.className = 'code-block-content';
+    content.innerHTML = highlightCommand(command);
+    
+    wrapper.appendChild(header);
+    wrapper.appendChild(content);
+    
+    // 説明文がある場合
+    if (explanation) {
+      const desc = document.createElement('div');
+      desc.className = 'code-block-desc';
+      desc.innerHTML = `→ ${explanation}`;
+      wrapper.appendChild(desc);
+    }
+    
+    block.appendChild(wrapper);
+    
+    // コピーイベントの設定
+    const copyBtn = header.querySelector('.copy-btn');
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(command).then(() => {
+        showToast('コピーしたよ！');
+        
+        // アイコンを一時的にチェックマークに変える
+        const icon = copyBtn.querySelector('i');
+        const text = copyBtn.querySelector('span');
+        
+        icon.setAttribute('data-lucide', 'check');
+        copyBtn.style.color = 'var(--accent-green)';
+        text.textContent = 'コピー完了';
+        
+        if (window.lucide) lucide.createIcons({ attrs: { class: 'lucide' } });
+        
+        setTimeout(() => {
+          icon.setAttribute('data-lucide', 'copy');
+          copyBtn.style.color = '';
+          text.textContent = 'コピー';
+          if (window.lucide) lucide.createIcons({ attrs: { class: 'lucide' } });
+        }, 1500);
+      }).catch(err => {
+        console.error('コピー失敗:', err);
+      });
+    });
+  });
+}

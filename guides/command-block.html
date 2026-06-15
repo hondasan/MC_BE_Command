@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>コマンドブロックの使い方ガイド｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版のコマンドブロックの手に入れ方や設定項目、インパルス・チェーン・リピートの違いをやさしく解説。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,コマンドブロック,入手方法,リピート,チェーン,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="guides-command-block"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"コマンドブロックの使い方"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">👾 コマンドブロックの使い方</h1>
+        <p class="detail-desc">コマンドを自動でずーっと動かしたり、レッドストーン信号とつなげられる魔法のブロックだよ！</p>
+      </section>
+
+      <!-- ステップ1: 手に入れ方 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">コマンドブロックを手に入れよう</h2>
+        <p>コマンドブロックは、インベントリ（クリエイティブ画面）のアイテムリストには載っていません。手に入れるには<strong>専用のコマンド</strong>をチャットに入力します。</p>
+        
+        <div class="mc-code-block" data-command="/give @s command_block" data-explanation="自分にコマンドブロックを1個与えます。"></div>
+        
+        <div class="tip-box">
+          <i data-lucide="lightbulb" class="tip-box-icon"></i>
+          <div class="tip-box-content">
+            <strong>設置・編集するときのルール：</strong><br/>
+            コマンドブロックを地面に置いたり、叩いて設定を開くには、自分が<strong>「クリエイティブモード」</strong>である必要があります。サバイバルでは使えないので注意してください。
+          </div>
+        </div>
+      </section>
+
+      <!-- ステップ2: 3つの種類 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">3つの種類（色）と役割</h2>
+        <p>コマンドブロックをタップして設定を開くと、左側の「ブロックの種類」から色を変更できます。</p>
+        
+        <div style="margin: var(--space-4) 0; display: flex; flex-direction: column; gap: var(--space-4);">
+          <div style="background-color: var(--bg-primary); padding: var(--space-4); border-radius: var(--radius-lg); border-left: 6px solid var(--accent-orange);">
+            <h3 style="margin-top: 0; color: var(--accent-orange);">🟧 インパルス (オレンジ色)</h3>
+            <p style="font-size: var(--text-sm);">レッドストーン信号（ボタンやレバーなど）が入った瞬間に、<strong>1回だけ</strong>コマンドを実行します。普通のボタンと同じように使います。</p>
+          </div>
+          
+          <div style="background-color: var(--bg-primary); padding: var(--space-4); border-radius: var(--radius-lg); border-left: 6px solid var(--accent-purple);">
+            <h3 style="margin-top: 0; color: var(--accent-purple);">🟪 リピート (紫色)</h3>
+            <p style="font-size: var(--text-sm);">信号が入っているあいだ、1秒間に20回の早さで<strong>ずーっとコマンドを実行し続けます</strong>。常に効果を出し続けたい時に使います。</p>
+          </div>
+
+          <div style="background-color: var(--bg-primary); padding: var(--space-4); border-radius: var(--radius-lg); border-left: 6px solid var(--accent-green);">
+            <h3 style="margin-top: 0; color: var(--accent-green);">🟩 チェーン (緑色)</h3>
+            <p style="font-size: var(--text-sm);">自分に矢印が向いている手前のコマンドブロックが動いた直後に、<strong>続いて自動で実行</strong>されます。コマンドを連続して動かしたい時に使います。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ステップ3: 設定項目 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">よく使う設定項目</h2>
+        <p>ブロックを開いたときによく変える、代表的な設定だよ。</p>
+        
+        <ul>
+          <li><strong>条件 (条件付き / 無条件)</strong>: 「条件付き」にすると、手前のブロックが成功した時だけ実行します。</li>
+          <li><strong>レッドストーン (動力を必要とする / 常にアクティブ)</strong>: 「常にアクティブ」にすると、ボタンやレバーを繋げなくても常にコマンドが動き出します。リピートブロックなどでよく使います。</li>
+        </ul>
+      </section>
+
+      <!-- ステップ4: 実践 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">4</div>
+        <h2 class="guide-step-title">ためしてみよう！</h2>
+        <p>コマンドブロックをリピートに設定して、常に動かしてみよう！</p>
+        
+        <ol style="margin-left: var(--space-4); margin-bottom: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2);">
+          <li>1. コマンドブロックを地面に置く。</li>
+          <li>2. ブロックの設定を開き、種類を「リピート」、レッドストーンを「常にアクティブ」にする。</li>
+          <li>3. コマンド入力欄に以下のコマンドを入力する。</li>
+        </ol>
+
+        <div class="mc-code-block" data-command="/effect give @p speed 1 1 true" data-explanation="近くのプレイヤーに1秒間スピードを与える処理を常にループ実行します。ブロックの近くにいる間、無限に足が速くなります！"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

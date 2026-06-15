@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>/give コマンド（アイテムをもらう）｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版の/give（アイテムをもらう）、/clear（消去）、/enchant（エンチャント）の使い方と、よくつかうアイテムID一覧。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,give,enchant,clear,アイテムID,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="commands-give"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"コマンド一覧","url":"/MC_BE_Command/commands/index.html"},{"label":"🎁 アイテムコマンド"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🎁 アイテムのコマンド</h1>
+        <p class="detail-desc">アイテムをだしたり、消したり、エンチャントで最強にするコマンドだよ！</p>
+      </section>
+
+      <!-- 1. give -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🎁 /give（アイテムをもらう）</h2>
+        <p>ダイヤモンドの剣やコマンドブロックなど、マイクラにあるすべてのアイテムを自由にもらえます。</p>
+        
+        <h3>■ コマンドのかたち</h3>
+        <div class="syntax-box">
+          /give &lt;プレイヤー&gt; &lt;アイテムID&gt; [数]
+          <div class="syntax-legend">
+            ・&lt;プレイヤー&gt; : @s (自分), @p (近くの人), @a (全員) など<br/>
+            ・&lt;アイテムID&gt; : ほしいアイテムの英語名（例: diamond_sword）<br/>
+            ・[数] : ほしい個数（省略すると1個になります）
+          </div>
+        </div>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/give @s diamond_sword" data-explanation="自分にダイヤの剣を1つ与えます。"></div>
+        <div class="mc-code-block" data-command="/give @s golden_apple 64" data-explanation="自分に金のリンゴを64個（1スタック）与えます。"></div>
+        <div class="mc-code-block" data-command="/give @s command_block" data-explanation="自分にコマンドブロックを与えます（クリエイティブモードの時だけ設置できます）。"></div>
+      </section>
+
+      <!-- よくつかうアイテムID一覧 -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🧱 よくつかうアイテムID (タップでコピー)</h2>
+        <p>コマンドの「アイテムID」の部分にいれる英語だよ。タップするとコピーできるよ！</p>
+        
+        <!-- タブナビゲーション -->
+        <div class="preset-tabs-nav" id="item-tabs-nav">
+          <button class="preset-tab-btn active" data-tab="tab-weapon">⚔️ 武器・防具</button>
+          <button class="preset-tab-btn" data-tab="tab-tool">⛏️ 道具</button>
+          <button class="preset-tab-btn" data-tab="tab-food">🍖 食べ物</button>
+          <button class="preset-tab-btn" data-tab="tab-block">🧱 ブロック</button>
+          <button class="preset-tab-btn" data-tab="tab-rare">💎 レア</button>
+        </div>
+
+        <!-- タブ中身 -->
+        <div id="item-tabs-content">
+          <!-- 武器・防具 -->
+          <div class="preset-tab-panel active" id="tab-weapon">
+            <div class="id-grid" id="weapon-id-grid"></div>
+          </div>
+          <!-- 道具 -->
+          <div class="preset-tab-panel" id="tab-tool">
+            <div class="id-grid" id="tool-id-grid"></div>
+          </div>
+          <!-- 食べ物 -->
+          <div class="preset-tab-panel" id="tab-food">
+            <div class="id-grid" id="food-id-grid"></div>
+          </div>
+          <!-- ブロック -->
+          <div class="preset-tab-panel" id="tab-block">
+            <div class="id-grid" id="block-id-grid"></div>
+          </div>
+          <!-- レア -->
+          <div class="preset-tab-panel" id="tab-rare">
+            <div class="id-grid" id="rare-id-grid"></div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-6);">
+          <a href="../tools/id-list.html" class="btn btn-secondary" style="font-size: var(--text-sm);">
+            すべてのアイテムIDをさがせる検索ページはこちら
+          </a>
+        </div>
+      </section>
+
+      <!-- 2. clear -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">🧹 /clear（アイテムを消す）</h2>
+        <p>インベントリ（手持ち）の中に入っているアイテムをすべて消します。特定のアイテムだけを狙って消すことも可能です。</p>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/clear @s" data-explanation="自分の持ち物をぜんぶ消します（すっきり片付けたい時に使います）。"></div>
+        <div class="mc-code-block" data-command="/clear @s tnt" data-explanation="自分の持ち物の中から「TNT」だけを全部消します。"></div>
+      </section>
+
+      <!-- 3. enchant -->
+      <section class="guide-step animate-on-scroll">
+        <h2 class="section-title">✨ /enchant（エンチャントをつける）</h2>
+        <p>自分が今「手に持っている武器や道具」に、好きなエンチャント（特殊効果）をつけることができます。</p>
+        
+        <div class="tip-box">
+          <i data-lucide="lightbulb" class="tip-box-icon"></i>
+          <div class="tip-box-content">
+            <strong>注意：</strong>サバイバルモードの制限を超えたレベル（例: ダメージ増加レベル10など）は付けられません。制限を超えた最強装備を作りたい時は、レシピ集の<a href="../guides/recipes/strongest-gear.html">「さいきょうのそうびの作り方」</a>をみてください。
+          </div>
+        </div>
+
+        <h3>■ コマンドのかたち</h3>
+        <div class="syntax-box">
+          /enchant &lt;プレイヤー&gt; &lt;エンチャントID&gt; [レベル]
+        </div>
+
+        <h3>■ つかいかたの例</h3>
+        <div class="mc-code-block" data-command="/enchant @s sharpness 5" data-explanation="今手に持っている剣に「ダメージ増加（するどさ） V」をつけます。"></div>
+        <div class="mc-code-block" data-command="/enchant @s efficiency 5" data-explanation="今手に持っているツルハシに「効率強化（掘るのが早くなる） V」をつけます。"></div>
+        <div class="mc-code-block" data-command="/enchant @s fire_aspect 2" data-explanation="今手に持っている剣に「火属性（燃える） II」をつけます。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module">
+    import { ITEMS } from '../js/data/items.js';
+    import { showToast } from '../js/components/toast.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // タブの切り替え
+      const tabBtns = document.querySelectorAll('#item-tabs-nav .preset-tab-btn');
+      const tabPanels = document.querySelectorAll('#item-tabs-content .preset-tab-panel');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabPanels.forEach(p => p.classList.remove('active'));
+
+          btn.classList.add('active');
+          const tabId = btn.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+
+      // プリセットIDカードの描画
+      const presets = {
+        weapon: ITEMS.filter(i => i.category === 'weapon' || i.category === 'armor').slice(0, 12),
+        tool: ITEMS.filter(i => i.category === 'tool').slice(0, 12),
+        food: ITEMS.filter(i => i.category === 'food').slice(0, 12),
+        block: ITEMS.filter(i => i.category === 'block' && !i.id.includes('_')).slice(0, 12), // シンプルなブロック
+        rare: ITEMS.filter(i => i.category === 'rare').slice(0, 12)
+      };
+
+      Object.keys(presets).forEach(cat => {
+        const grid = document.getElementById(`${cat}-id-grid`);
+        if (!grid) return;
+
+        presets[cat].forEach(item => {
+          const itemEl = document.createElement('div');
+          itemEl.className = 'id-item';
+          itemEl.innerHTML = `
+            <div class="id-item-label">${item.emoji} ${item.name}</div>
+            <div class="id-item-value-wrapper">
+              <span class="id-item-value" title="${item.id}">${item.id}</span>
+              <button class="id-item-copy" title="コピーする">
+                <i data-lucide="copy" style="width: 12px; height: 12px;"></i>
+              </button>
+            </div>
+          `;
+
+          // コピー処理
+          itemEl.addEventListener('click', () => {
+            navigator.clipboard.writeText(item.id).then(() => {
+              showToast(`${item.name}のIDをコピーしたよ！`);
+            });
+          });
+
+          grid.appendChild(itemEl);
+        });
+      });
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

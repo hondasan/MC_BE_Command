@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>ID一覧けんさく（アイテム・モブ）｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版のアイテムID、モブID、エフェクトIDなどを日本語名や英語名でかんたん検索。タップしてコピーできます。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,アイテムID,モブID,エフェクトID,検索,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="tools-id-list"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"🛠️ ツール","url":"/MC_BE_Command/commands/index.html"},{"label":"ID一覧けんさく"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🔍 ID一覧けんさく</h1>
+        <p class="detail-desc">コマンドのなかに入れるアイテムやモブの「えいご名（ID）」をさがせる検索ツールだよ！</p>
+      </section>
+
+      <!-- 検索・切り替えコントロール -->
+      <section class="search-filter-section animate-on-scroll">
+        <!-- タイプ切り替えタブ -->
+        <div class="preset-tabs-nav" id="search-type-tabs" style="border-bottom: none; margin-bottom: 0;">
+          <button class="preset-tab-btn active" data-type="item">🧱 アイテム・ブロック</button>
+          <button class="preset-tab-btn" data-type="entity">👾 モブ・生き物</button>
+          <button class="preset-tab-btn" data-type="effect">⚡ エフェクト (効果)</button>
+          <button class="preset-tab-btn" data-type="enchantment">✨ エンチャント</button>
+        </div>
+
+        <!-- 検索入力 -->
+        <div class="header-search" style="max-width: 100%;">
+          <i data-lucide="search" class="header-search-icon" style="left: var(--space-4); width: 20px; height: 20px;"></i>
+          <input type="text" class="header-search-input" id="id-search-input" placeholder="なまえ や えいご名 でさがす... (例: 剣, sword, zombie)" style="padding-left: var(--space-12); padding-top: var(--space-3); padding-bottom: var(--space-3); border-radius: var(--radius-lg); font-size: var(--text-base);">
+        </div>
+
+        <!-- サブカテゴリフィルター (アイテムなどの時のみ表示) -->
+        <div class="filter-tags" id="sub-filter-tags" style="gap: var(--space-2);">
+          <!-- JSで動的に構築されます -->
+        </div>
+
+        <div class="search-results-info" id="results-count-info">
+          見つかった数: 0 けん
+        </div>
+      </section>
+
+      <!-- 検索結果表示エリア -->
+      <section class="animate-on-scroll" style="margin-top: var(--space-4);">
+        <div class="id-grid" id="search-results-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+          <!-- JSで検索結果カードが流し込まれます -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/search.js"></script>
+</body>
+</html>

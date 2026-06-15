@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>はじめてのコマンド使い方ガイド｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラのコマンドを初めて使う人向けに、チャット画面の開き方やスラッシュ(/)の意味、最初に試すコマンドをやさしく解説。">
+  <meta name="keywords" content="マイクラ,コマンド,Switch,スマホ,チャットの開き方,初心者,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="guides-getting-started"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"はじめてのコマンド"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🎮 はじめてのコマンド</h1>
+        <p class="detail-desc">コマンドってなに？どうやってうつの？という基本をていねいに解説するよ！</p>
+      </section>
+
+      <!-- ステップ1: コマンドって何？ -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">コマンドってなに？</h2>
+        <p>コマンドは、マイクラのゲームに<strong>「おねがい（命令）」</strong>を送るための特別な言葉だよ。</p>
+        <p>ふつうに遊ぶだけでは手に入らないアイテムを出したり、時間を一瞬で昼にしたり、ゲームのルールをかえたりできます。</p>
+      </section>
+
+      <!-- ステップ2: チャットをひらく -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">チャット画面をひらこう</h2>
+        <p>コマンドは「チャット欄」に入力して実行するよ。ゲーム機によって開き方がちがうよ！</p>
+        
+        <div style="margin: var(--space-4) 0; display: flex; flex-direction: column; gap: var(--space-2);">
+          <div style="background-color: var(--bg-primary); padding: var(--space-3); border-radius: var(--radius-md); border-left: 4px solid var(--accent-green);">
+            <strong>🎮 Switch（スイッチ）</strong>: コントローラーの十字キーの<strong>「右ボタン」</strong>を押す。
+          </div>
+          <div style="background-color: var(--bg-primary); padding: var(--space-3); border-radius: var(--radius-md); border-left: 4px solid var(--accent-gold);">
+            <strong>📱 スマホ・タブレット</strong>: 画面の上にある<strong>「吹き出し（コメント）マーク」</strong>をタップする。
+          </div>
+          <div style="background-color: var(--bg-primary); padding: var(--space-3); border-radius: var(--radius-md); border-left: 4px solid var(--accent-blue);">
+            <strong>💻 PC (パソコン)</strong>: キーボードの<strong>「T」キー</strong>または<strong>「/」キー</strong>を押す。
+          </div>
+        </div>
+      </section>
+
+      <!-- ステップ3: スラッシュを入力する -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">「/」（スラッシュ）からはじめる</h2>
+        <p>チャットが開いたら、かならず最初に<strong>「/」 (スラッシュ)</strong>を入れてね！</p>
+        <p>「/」をいれることで、マイクラが「これはチャットのおしゃべりじゃなくて、コマンドのお願いだな！」と判断してくれます。</p>
+      </section>
+
+      <!-- ステップ4: ためしてみよう -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">4</div>
+        <h2 class="guide-step-title">ためしてほしい3つのコマンド</h2>
+        <p>まずは以下のコマンドをコピーして、チャット欄にうって実行してみてね！</p>
+
+        <h3>1. 昼にするコマンド</h3>
+        <div class="mc-code-block" data-command="/time set day" data-explanation="ワールドの時間を一瞬でお昼にします。"></div>
+
+        <h3>2. クリエイティブモードにするコマンド</h3>
+        <div class="mc-code-block" data-command="/gamemode creative" data-explanation="空を飛べて、死ななくなるクリエイティブモードになります。"></div>
+
+        <h3>3. ダイヤの剣をもらうコマンド</h3>
+        <div class="mc-code-block" data-command="/give @s diamond_sword" data-explanation="自分に「ダイヤの剣」を1個与えます。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

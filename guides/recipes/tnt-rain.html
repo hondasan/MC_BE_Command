@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>TNTの雨をふらせるコマンドレシピ｜マイクラ コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版のコマンドブロック(リピート)を使って、空から大量のTNTの雨を降らせるおもしろい仕掛けの作り方。">
+  <meta name="keywords" content="マイクラ,コマンド,TNTの雨,コマンドブロック,リピート,おもしろ仕掛け,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/pages.css">
+</head>
+<body data-page="recipes-tnt-rain"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"レシピ一覧","url":"/MC_BE_Command/guides/recipes/index.html"},{"label":"TNTの雨"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">⛈️ TNTの雨をふらせるレシピ</h1>
+        <p class="detail-desc">コマンドブロックをループさせて、空から大量の着火されたTNTを降らせ続けるおもしろギミックだよ！</p>
+      </section>
+
+      <!-- 危険性の注意喚起 -->
+      <section class="guide-step animate-on-scroll" style="background-color: rgba(239, 68, 68, 0.05); border-color: var(--accent-red);">
+        <h2 class="section-title" style="color: var(--accent-red);"><i data-lucide="alert-triangle" style="vertical-align: middle;"></i> あそぶ前のちゅうい！</h2>
+        <p style="color: var(--text-primary);"><strong>※とても重くなってゲームがフリーズ（クラッシュ）する危険があります！</strong></p>
+        <p>必ず次のルールを守って遊んでね：</p>
+        <ul>
+          <li>・自分が新しく作った「てすと用ワールド」で試してください（お気に入りの建築があるワールドでは絶対にやらないこと！）。</li>
+          <li>・重くて動けなくなったら、すぐにコマンドブロックを壊すか、レバーをオフにしてください。</li>
+        </ul>
+      </section>
+
+      <!-- ステップ1: コマンドブロックの準備 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">ブロックを用意して設定する</h2>
+        
+        <p>① まずチャット欄でコマンドブロックを手に入れます。</p>
+        <div class="mc-code-block" data-command="/give @s command_block" data-explanation="コマンドブロックをもらいます。"></div>
+
+        <p>② コマンドブロックを地面に置き、タップして設定画面を開いて、次の通りに変えます。</p>
+        <ul>
+          <li>・ブロックの種類 : <strong>「リピート」</strong>にする（ブロックが紫色にかわります）</li>
+          <li>・レッドストーン : <strong>「動力を必要とする」</strong>にする</li>
+        </ul>
+        <p>③ ブロックの上に<strong>「レバー」</strong>を貼り付けます（レバーをオンにすると雨が降り、オフにすると止まるようにします）。</p>
+      </section>
+
+      <!-- ステップ2: コマンド入力 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">コマンドを入力する</h2>
+        <p>ブロックの中に、以下のコマンドを入力して閉じてね！</p>
+
+        <h3>【レシピA】 自分の頭上から降らせる</h3>
+        <div class="mc-code-block" data-command="/execute at @p run summon tnt ~ ~15 ~" data-explanation="自分のちょうど「15マス上空」に、着火されたTNTを召喚し続けます。"></div>
+
+        <h3>【レシピB】 周囲の敵モンスターの頭上から降らせる</h3>
+        <div class="mc-code-block" data-command="/execute at @e[type=zombie] run summon tnt ~ ~10 ~" data-explanation="近くにいる「ゾンビ」の頭上10マスの位置にTNTを落とします。自動でゾンビを爆撃します。"></div>
+      </section>
+
+      <!-- ステップ3: 止める方法 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">もし重くなって止まらなくなったら</h2>
+        <p>TNTが爆発しすぎて動けなくなったら、チャット画面を開いて次のコマンドをうって実行してね！地面にたまっているTNTが一瞬でぜんぶ消えるよ。</p>
+        <div class="mc-code-block" data-command="/kill @e[type=tnt]" data-explanation="爆発する前のTNTをすべて消し去ります。"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../../js/app.js"></script>
+</body>
+</html>
