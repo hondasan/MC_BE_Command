@@ -5,24 +5,34 @@ import { showToast } from './toast.js';
 export function highlightCommand(cmdText) {
   if (!cmdText) return '';
   
-  // 文字エスケープなど基本処理
   let html = cmdText;
 
-  // 1. スラッシュのハイライト
+  // 1. 文字列を一時退避 (HTMLタグの属性値のダブルクォーテーションと干渉するのを防ぐ)
+  const strings = [];
+  html = html.replace(/(".*?")/g, (match) => {
+    const placeholder = `___CMD_STR_${strings.length}___`;
+    strings.push({ placeholder, original: match });
+    return placeholder;
+  });
+
+  // 2. スラッシュのハイライト
   html = html.replace(/^(\/)/, '<span class="cmd-slash">$1</span>');
 
-  // 2. セレクターのハイライト (@s, @p, @a, @e, @r 及び引数 [@a[type=zombie]など])
+  // 3. セレクターのハイライト (@s, @p, @a, @e, @r 及び引数 [@a[type=zombie]など])
   html = html.replace(/(@[spaer](\[[^\]]*\])?)/g, '<span class="cmd-selector">$1</span>');
 
-  // 3. 数値のハイライト (単体の整数や小数、~5 や ^-3 など)
+  // 4. 数値のハイライト (単体の整数や小数、~5 や ^-3 など)
   // 座標記号 (~, ^) の直後も含めマッチさせる
   html = html.replace(/(?<=[\s~^])(-?\d+(\.\d+)?)(?=\s|$)/g, '<span class="cmd-number">$1</span>');
 
-  // 4. キーワードのハイライト (true, false)
+  // 5. キーワードのハイライト (true, false)
   html = html.replace(/\b(true|false)\b/g, '<span class="cmd-keyword">$1</span>');
 
-  // 5. 文字列 (ダブルクォーテーションで囲まれた部分)
-  html = html.replace(/(".*?")/g, '<span class="cmd-string">$1</span>');
+  // 6. 退避した文字列をハイライトして戻す
+  strings.forEach(item => {
+    const highlighted = `<span class="cmd-string">${item.original}</span>`;
+    html = html.replace(item.placeholder, highlighted);
+  });
 
   return html;
 }
