@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>レッドストーン回路の基本とパーツの使い方｜マイクラ統合版 コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版（Switch/スマホ/PC対応）のレッドストーン回路の基本を小学生向けにやさしく解説！リピーターやコンパレーター（比較装置）の使い方や、どんな時に使うかも紹介しています。">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,Switch,レッドストーン,回路,コンパレーター,リピーター,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="guides-redstone"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"📖 基本ガイド","url":"/MC_BE_Command/guides/index.html"},{"label":"レッドストーンの基本"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">⚡ レッドストーン回路の基本</h1>
+        <p class="detail-desc">レッドストーンをつかうと、自動ドアや自動のりものなど、マイクラの世界で動くマシンが作れるよ！</p>
+      </section>
+
+      <!-- 1. レッドストーンってなに？ -->
+      <section class="detail-section">
+        <h2 class="section-title">🔌 レッドストーンってなに？</h2>
+        <div class="card" style="border-left: 4px solid var(--accent-red); background-color: rgba(248, 113, 113, 0.05);">
+          <p>
+            レッドストーンは、マイクラの世界の<strong>「電気（でんき）」</strong>のようなものです。<br>
+            ボタンを押したり、レバーをたおしたりするとパワーが生まれ、レッドストーンの粉（ダスト）を通って、ドアやピストンを動かすことができます。<br>
+            このパワーを伝える仕組み全体のことを<strong>「レッドストーン<ruby>回路<rp>(</rp><rt>かいろ</rt><rp>)</rp></ruby>」</strong>と呼びます。
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. 回路の3つの基本 -->
+      <section class="detail-section">
+        <h2 class="section-title">🧱 回路の3つのグループ</h2>
+        <p class="section-intro">レッドストーン回路は、3つの役割（やくわり）をもったブロックを組み合わせて作ります。</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+          <div class="card">
+            <h3 style="color: var(--accent-gold); margin-bottom: var(--space-2);">① パワーを出すもの（入力）</h3>
+            <p style="font-size: var(--text-sm);">
+              回路を動かすための「スイッチ」です。<br>
+              <strong>レバー、ボタン、感圧版（かんあつばん）、レッドストーンブロック</strong>などがあります。
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="color: var(--accent-blue); margin-bottom: var(--space-2);">② パワーを伝えるもの（導線）</h3>
+            <p style="font-size: var(--text-sm);">
+              電気を運ぶ「電線（でんせん）」の役割です。<br>
+              地面に敷いた<strong>レッドストーンダスト</strong>がこれにあたります。
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="color: var(--accent-green); margin-bottom: var(--space-2);">③ パワーで動くもの（出力）</h3>
+            <p style="font-size: var(--text-sm);">
+              パワーを受けて仕事をするマシンです。<br>
+              <strong>ドア、ピストン、レッドストーンランプ、TNT、ディスペンサー</strong>などがあります。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 大事なパーツたち -->
+      <section class="detail-section">
+        <h2 class="section-title">🛠️ よく使う大事なパーツ</h2>
+        <p class="section-intro">回路を大きくしたり、複雑（ふくざつ）にしたりする時に大活躍するパーツを紹介するよ！</p>
+
+        <!-- リピーター -->
+        <div class="card" style="margin-bottom: var(--space-4);">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--space-2);">
+            <span style="font-size: 24px;">🔄</span>
+            <h3 style="margin: 0;">レッドストーンリピーター（<ruby>反復装置<rp>(</rp><rt>はんぷくそうち</rt><rp>)</rp></ruby>）</h3>
+          </div>
+          <p style="font-size: var(--text-sm); line-height: 1.6;">
+            <strong>3つのすごい能力をもつ超べんりパーツ！</strong>
+          </p>
+          <ul style="font-size: var(--text-sm); padding-left: var(--space-5); line-height: 1.6;">
+            <li><strong>パワーをのばす：</strong> レッドストーンのパワーは15マス先で消えてしまいますが、これを置くと再び満タン（15マス分）に回復（かいふく）します。</li>
+            <li><strong>時間を遅らせる（ちえん）：</strong> カチカチとクリックして設定を変えることで、パワーが届く時間を少しだけ遅らせることができます。</li>
+            <li><strong>一方通行にする：</strong> パワーを後ろから前へと、決まった方向にしか流さないようにします。</li>
+          </ul>
+        </div>
+
+        <!-- コンパレーター -->
+        <div class="card" style="border-left: 4px solid var(--accent-gold);">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--space-2);">
+            <span style="font-size: 24px;">⚖️</span>
+            <h3 style="margin: 0;">レッドストーンコンパレーター（<ruby>比較装置<rp>(</rp><rt>ひかくそうち</rt><rp>)</rp></ruby>）</h3>
+          </div>
+          <p style="font-size: var(--text-sm); line-height: 1.6;">
+            <strong>ちょっと難しいけれど、使いこなせば天才になれる特別なパーツ！主に2つの使い道があります。</strong>
+          </p>
+          
+          <div style="margin-top: var(--space-3); border-top: 1px solid var(--border-default); padding-top: var(--space-3);">
+            <h4 style="color: var(--accent-gold); margin-bottom: var(--space-1);">能力①：中身（なかみ）を調べる【チェッカー機能】</h4>
+            <p style="font-size: var(--text-sm); margin-bottom: var(--space-2);">
+              チェスト、かまど、ホッパー、ドロッパーなどの後ろにくっつけて置くと、<strong>「中にどれくらいアイテムが入っているか」</strong>を調べてくれます。<br>
+              中身が多ければ多いほど、強いパワー（最大15マス分）を出します。空っぽならパワーは0になります。
+            </p>
+            <div style="background-color: rgba(0,0,0,0.2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-xs); color: var(--text-secondary);">
+              💡 <strong>例えば：</strong> かまどに肉が入ったら自動で火をつける、チェストが満タンになったらランプを光らせる、といった仕掛けが作れます！
+            </div>
+          </div>
+
+          <div style="margin-top: var(--space-4); border-top: 1px solid var(--border-default); padding-top: var(--space-3);">
+            <h4 style="color: var(--accent-gold); margin-bottom: var(--space-1);">能力②：パワーの強さを比べる・引き算する</h4>
+            <p style="font-size: var(--text-sm); margin-bottom: var(--space-2);">
+              コンパレーターの後ろから入るパワーと、<strong>横から入るパワー</strong>の強さを比べます。<br>
+              コンパレーターの上の赤いランプの状態（クリックでON/OFF）でモードが変わります。
+            </p>
+            <ul style="font-size: var(--text-sm); padding-left: var(--space-5); line-height: 1.6;">
+              <li><strong>比較モード（ランプOFF）：</strong> 後ろのパワーが横のパワーと同じか強ければ、そのままパワーを前に出します。横の方が強ければ、パワーは0になります。</li>
+              <li><strong>減算モード（ランプON）：</strong> 「後ろのパワー」から「横のパワー」を引き算した強さでパワーを出します。（例: 後ろが15で横が10なら、引いて 5 のパワーを出します）</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 簡単な回路のつくりかた -->
+      <section class="detail-section">
+        <h2 class="section-title">⚙️ よくつかわれる簡単レシピ</h2>
+        <p class="section-intro">まずはこれをマネして作ってみよう！回路の仕組みがよくわかるよ。</p>
+
+        <!-- 自動ドア -->
+        <div class="card" style="margin-bottom: var(--space-4);">
+          <h3 style="color: var(--accent-green); margin-bottom: var(--space-2);">1. 感圧版で開く自動ドア</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.6;">
+            <strong>【使うもの】</strong> 感圧版、レッドストーンダスト、ピストン（または鉄のドア）<br>
+            感圧版をふむと、その下を通したレッドストーンダストにパワーが伝わり、ピストンが動いてドアが自動で開きます。足をはなすと閉まります。
+          </p>
+        </div>
+
+        <!-- クロック回路 -->
+        <div class="card" style="margin-bottom: var(--space-4);">
+          <h3 style="color: var(--accent-gold); margin-bottom: var(--space-2);">2. チカチカ点滅するクロック回路（コンパレーター式）</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.6;">
+            <strong>【使うもの】</strong> レバー、コンパレーター、レッドストーンダスト3つ<br>
+            矢印が連発（れんぱつ）して飛び出る罠（わな）や、ピストンがガシャガシャ動き続ける装置を作れます！
+          </p>
+          <div style="background-color: var(--bg-code); padding: var(--space-3); border-radius: var(--radius-md); font-size: var(--text-sm); margin-top: var(--space-2);">
+            <strong>つくりかた：</strong>
+            <ol style="padding-left: var(--space-5); margin: 0; line-height: 1.6;">
+              <li>コンパレーターを置き、カチッと1回クリックして<strong>先のランプを光らせます</strong>（減算モード）。</li>
+              <li>コンパレーターの後ろにレバーを置いてONにします。</li>
+              <li>コンパレーターの前にレッドストーンダストを置き、ぐるっとコの字型に曲げて<strong>コンパレーターの横</strong>に繋ぎます。</li>
+              <li>これだけで、電気が「出たり消えたり」をものすごい速さで繰り返すようになります！</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. コマンドでレッドストーンをあやつる -->
+      <section class="detail-section">
+        <h2 class="section-title">💻 コマンドで回路を動かす</h2>
+        <p class="section-intro">コマンドブロックを使えば、レッドストーン回路をコマンドで遠隔（えんかく）操作できるよ！</p>
+        
+        <div class="code-block-wrapper">
+          <div class="code-block">
+            <pre><code class="language-minecraft">/setblock ~ ~ ~ redstone_block</code></pre>
+            <button class="code-copy-btn" title="コードをコピー">
+              <i data-lucide="copy" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+          <div class="code-desc">→ 指定した場所に「レッドストーンブロック」を置いて、回路に電気を流します。</div>
+        </div>
+
+        <div class="code-block-wrapper" style="margin-top: var(--space-3);">
+          <div class="code-block">
+            <pre><code class="language-minecraft">/setblock ~ ~ ~ air</code></pre>
+            <button class="code-copy-btn" title="コードをコピー">
+              <i data-lucide="copy" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+          <div class="code-desc">→ 指定した場所のブロックを消して、電気を止めます。</div>
+        </div>
+      </section>
+
+      <!-- 6. 関連リンク -->
+      <section class="detail-section" style="margin-top: var(--space-8);">
+        <h2 class="section-title">🔗 関連ガイド</h2>
+        <div class="home-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">👾</span>
+              <span>コマンドブロックの使い方</span>
+            </div>
+            <a href="command-block.html" class="card-link">よむ</a>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              <span class="emoji">🍳</span>
+              <span>最強装備の作り方</span>
+            </div>
+            <a href="recipes/strongest-gear.html" class="card-link">よむ</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>
