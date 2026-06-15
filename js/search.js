@@ -5,7 +5,7 @@ import { EFFECTS } from './data/effects.js';
 import { ENCHANTMENTS } from './data/enchantments.js';
 import { showToast } from './components/toast.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
   const typeTabs = document.querySelectorAll('#search-type-tabs .preset-tab-btn');
   const searchInput = document.getElementById('id-search-input');
   const subFilterTags = document.getElementById('sub-filter-tags');
@@ -144,4 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 初期化起動
   renderSubFilters();
   performSearch();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
