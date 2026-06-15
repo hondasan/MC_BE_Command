@@ -142,27 +142,49 @@
 
         <!-- 自動ドア -->
         <div class="card" style="margin-bottom: var(--space-4);">
-          <h3 style="color: var(--accent-green); margin-bottom: var(--space-2);">1. 感圧版で開く自動ドア</h3>
-          <p style="font-size: var(--text-sm); line-height: 1.6;">
-            <strong>【使うもの】</strong> 感圧版、レッドストーンダスト、ピストン（または鉄のドア）<br>
-            感圧版をふむと、その下を通したレッドストーンダストにパワーが伝わり、ピストンが動いてドアが自動で開きます。足をはなすと閉まります。
+          <h3 style="color: var(--accent-green); margin-bottom: var(--space-2);">1. ピストン自動ドア（じどうドア）</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.6; margin-bottom: var(--space-3);">
+            <strong>【使うもの】</strong> 粘着ピストン×4、感圧版×4、レッドストーンダスト、レッドストーントーチ×2、ブロック<br>
+            感圧版（かんどばん）を踏むと、電気が流れてドアブロックが引っ込み、自動で開くかっこいいドアだよ！
           </p>
+          
+          <div style="text-align: center; margin: var(--space-4) 0; background-color: rgba(255,255,255,0.02); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-default);">
+            <img src="../images/redstone_door.png" alt="自動ドアの回路図" style="max-width: 100%; max-height: 350px; object-fit: contain; border-radius: var(--radius-sm); border: 2px solid var(--border-default); box-shadow: var(--shadow-md);">
+            <p style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); margin-bottom: 0;">自動ドアの回路配置図（横から見た図）</p>
+          </div>
+
+          <div style="background-color: var(--bg-code); padding: var(--space-3); border-radius: var(--radius-md); font-size: var(--text-sm);">
+            <strong>つくりかたのステップ：</strong>
+            <ol style="padding-left: var(--space-5); margin: 0; line-height: 1.6;">
+              <li><strong>ドアとピストンを置く：</strong> 中央にドアとなるブロックを置き、その両端に1マスあけて<strong>粘着（ねんちゃく）ピストン</strong>を内向きに2個ずつ重ねて置きます。</li>
+              <li><strong>トーチでピストンを動かす：</strong> ピストンの後ろ側のブロックの下に<strong>レッドストーントーチ</strong>を置きます。これでピストンが常に押されて、ドアが閉まった状態になります。</li>
+              <li><strong>感圧版とダストをつなぐ：</strong> ドアの手前と奥に<strong>感圧版</strong>を置き、その下の地面を2マス掘って<strong>レッドストーンダスト</strong>を敷き詰めます。</li>
+              <li><strong>トーチまでダストをのばす：</strong> 敷き詰めたダストを、両端のレッドストーントーチが刺さっているブロックの真下まで繋げます。</li>
+              <li>これで、感圧版を踏むと電気がダストを通ってトーチをOFFにし（消灯）、ピストンが引っ込んでドアが開きます！</li>
+            </ol>
+          </div>
         </div>
 
         <!-- クロック回路 -->
         <div class="card" style="margin-bottom: var(--space-4);">
           <h3 style="color: var(--accent-gold); margin-bottom: var(--space-2);">2. チカチカ点滅するクロック回路（コンパレーター式）</h3>
-          <p style="font-size: var(--text-sm); line-height: 1.6;">
+          <p style="font-size: var(--text-sm); line-height: 1.6; margin-bottom: var(--space-3);">
             <strong>【使うもの】</strong> レバー、コンパレーター、レッドストーンダスト3つ<br>
             矢印が連発（れんぱつ）して飛び出る罠（わな）や、ピストンがガシャガシャ動き続ける装置を作れます！
           </p>
-          <div style="background-color: var(--bg-code); padding: var(--space-3); border-radius: var(--radius-md); font-size: var(--text-sm); margin-top: var(--space-2);">
-            <strong>つくりかた：</strong>
+
+          <div style="text-align: center; margin: var(--space-4) 0; background-color: rgba(255,255,255,0.02); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-default);">
+            <img src="../images/redstone_clock.png" alt="コンパレータークロック回路図" style="max-width: 100%; max-height: 350px; object-fit: contain; border-radius: var(--radius-sm); border: 2px solid var(--border-default); box-shadow: var(--shadow-md);">
+            <p style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); margin-bottom: 0;">コンパレーターを使ったクロック回路（上から見た図）</p>
+          </div>
+
+          <div style="background-color: var(--bg-code); padding: var(--space-3); border-radius: var(--radius-md); font-size: var(--text-sm);">
+            <strong>つくりかたのステップ：</strong>
             <ol style="padding-left: var(--space-5); margin: 0; line-height: 1.6;">
-              <li>コンパレーターを置き、カチッと1回クリックして<strong>先のランプを光らせます</strong>（減算モード）。</li>
-              <li>コンパレーターの後ろにレバーを置いてONにします。</li>
-              <li>コンパレーターの前にレッドストーンダストを置き、ぐるっとコの字型に曲げて<strong>コンパレーターの横</strong>に繋ぎます。</li>
-              <li>これだけで、電気が「出たり消えたり」をものすごい速さで繰り返すようになります！</li>
+              <li><strong>コンパレーターを置く：</strong> コンパレーターを置き、カチッと1回クリックして<strong>先のランプを光らせます</strong>（減算モードになります）。</li>
+              <li><strong>スイッチをつなぐ：</strong> コンパレーターの後ろ側にレバーを置いてON（オン）にします。</li>
+              <li><strong>ダストでループさせる：</strong> コンパレーターの前から<strong>レッドストーンダスト</strong>をのばし、ぐるっと曲げて<strong>コンパレーターの横（側面）</strong>に繋ぎます。</li>
+              <li>これで完了！電気が前に出て、横に回り込んで自分を引き算して消し、消えたからまた電気が出て…というループが超高速で繰り返されます。</li>
             </ol>
           </div>
         </div>
