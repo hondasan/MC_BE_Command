@@ -21,11 +21,12 @@ export function renderHeader(container) {
         <span></span>
         <span></span>
       </button>
-      <a href="${basePath}" class="header-logo-wrapper" style="display: flex; align-items: center; gap: 8px;">
+      <a href="${basePath}" class="header-logo-wrapper" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
         <div class="header-logo-icon">
           <i data-lucide="box" style="width: 20px; height: 20px; color: #fff;"></i>
         </div>
         <div class="header-logo-text">マイクラ <span>コマンドずかん</span></div>
+        <span class="header-badge" style="font-size: 10px; background-color: var(--accent-green); color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: bold; border: 1px solid #fff; white-space: nowrap;">統合版(Switch/スマホ)対応</span>
       </a>
     </div>
 
