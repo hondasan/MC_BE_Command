@@ -89,6 +89,13 @@ export const ITEMS = [
   { id: 'lava_bucket', name: '溶岩入りバケツ', nameKana: 'ようがんいりばけつ', category: 'tool', emoji: '🪣' },
   { id: 'powder_snow_bucket', name: '粉雪入りバケツ', nameKana: 'こなゆきいりばけつ', category: 'tool', emoji: '🪣' },
   { id: 'milk_bucket', name: '牛乳', nameKana: 'ぎゅうにゅう', category: 'tool', emoji: '🥛' },
+  { id: 'bundle', name: 'バンドル', nameKana: 'ばんどる', category: 'tool', emoji: '🎒' },
+  { id: 'minecart', name: 'トロッコ', nameKana: 'とろっこ', category: 'tool', emoji: '🛒' },
+  { id: 'chest_minecart', name: 'チェスト付きトロッコ', nameKana: 'ちぇすとつきとろっこ', category: 'tool', emoji: '🛒' },
+  { id: 'tnt_minecart', name: 'TNT付きトロッコ', nameKana: 'てぃーえぬてぃーつきとろっこ', category: 'tool', emoji: '🛒' },
+  { id: 'hopper_minecart', name: 'ホッパー付きトロッコ', nameKana: 'ほっぱーつきとろっこ', category: 'tool', emoji: '🛒' },
+  { id: 'command_block_minecart', name: 'コマンドブロック付きトロッコ', nameKana: 'こまんどぶろっくつきとろっこ', category: 'tool', emoji: '🛒' },
+  { id: 'armor_stand', name: '防具立て', nameKana: 'ぼうぐたて', category: 'tool', emoji: '🗿' },
 
   // --- 食べ物 (food) ---
   { id: 'apple', name: 'リンゴ', nameKana: 'りんご', category: 'food', emoji: '🍎' },
@@ -157,6 +164,7 @@ export const ITEMS = [
   { id: 'copper_ore', name: '銅鉱石', nameKana: 'どうこうせき', category: 'block', emoji: '🪨' },
   { id: 'deepslate', name: '深層岩', nameKana: 'しんそうがん', category: 'block', emoji: '🪨' },
   { id: 'tuff', name: '凝灰岩', nameKana: 'ぎょうかいがん', category: 'block', emoji: '🪨' },
+  { id: 'tuff_bricks', name: '凝灰岩レンガ', nameKana: 'ぎょうかいがんれんが', category: 'block', emoji: '🧱' },
   { id: 'obsidian', name: '黒曜石', nameKana: 'こくようせき', category: 'block', emoji: '🔮' },
   { id: 'crying_obsidian', name: '泣く黒曜石', nameKana: 'なくこくようせき', category: 'block', emoji: '🔮' },
   { id: 'glowstone', name: 'グロウストーン', nameKana: 'ぐろうすとーん', category: 'block', emoji: '✨' },
@@ -179,6 +187,9 @@ export const ITEMS = [
   { id: 'dark_oak_log', name: 'ダークオークの原木', nameKana: 'だーくおーくのげんぼく', category: 'block', emoji: '🪵' },
   { id: 'mangrove_log', name: 'マングローブの原木', nameKana: 'まんぐろーぶのげんぼく', category: 'block', emoji: '🪵' },
   { id: 'cherry_log', name: '桜の原木', nameKana: 'さくらのげんぼく', category: 'block', emoji: '🪵' },
+  { id: 'pale_oak_log', name: 'ペイルオークの原木', nameKana: 'ぺいるおーくのげんぼく', category: 'block', emoji: '🪵' },
+  { id: 'crimson_stem', name: '真紅の幹', nameKana: 'しんくのかん', category: 'block', emoji: '🪵' },
+  { id: 'warped_stem', name: '歪んだ幹', nameKana: 'ゆがんだかん', category: 'block', emoji: '🪵' },
   { id: 'oak_planks', name: 'オークの木材', nameKana: 'おーくのもくざい', category: 'block', emoji: '🪵' },
   { id: 'spruce_planks', name: 'トウヒの木材', nameKana: 'とうひのもくざい', category: 'block', emoji: '🪵' },
   { id: 'birch_planks', name: '白樺の木材', nameKana: 'しらかばのもくざい', category: 'block', emoji: '🪵' },
@@ -188,6 +199,15 @@ export const ITEMS = [
   { id: 'mangrove_planks', name: 'マングローブの木材', nameKana: 'まんぐろーぶのもくざい', category: 'block', emoji: '🪵' },
   { id: 'cherry_planks', name: '桜の木材', nameKana: 'さくらのもくざい', category: 'block', emoji: '🪵' },
   { id: 'bamboo_planks', name: '竹の板', nameKana: 'たけのいた', category: 'block', emoji: '🪵' },
+  { id: 'pale_oak_planks', name: 'ペイルオークの木材', nameKana: 'ぺいるおーくのもくざい', category: 'block', emoji: '🪵' },
+  { id: 'crimson_planks', name: '真紅の木材', nameKana: 'しんくのもくざい', category: 'block', emoji: '🪵' },
+  { id: 'warped_planks', name: '歪んだ木材', nameKana: 'ゆがんだもくざい', category: 'block', emoji: '🪵' },
+  { id: 'resin_block', name: '樹脂ブロック', nameKana: 'じゅしぶろっく', category: 'block', emoji: '🧱' },
+  { id: 'resin_bricks', name: '樹脂レンガ', nameKana: 'じゅしれんが', category: 'block', emoji: '🧱' },
+  { id: 'creaking_heart', name: 'クリーキングの心臓', nameKana: 'くりーきんぐのしんぞう', category: 'block', emoji: '🪵' },
+  { id: 'item_frame', name: '額縁', nameKana: 'がくぶち', category: 'block', emoji: '🖼️' },
+  { id: 'glow_item_frame', name: '輝く額縁', nameKana: 'かがやくがくぶち', category: 'block', emoji: '🖼️' },
+  { id: 'painting', name: '絵画', nameKana: 'かいが', category: 'block', emoji: '🖼️' },
 
   // --- レアアイテム (rare) ---
   { id: 'barrier', name: 'バリアブロック', nameKana: 'ばりあぶろっく', category: 'rare', emoji: '🚫' },
@@ -202,6 +222,8 @@ export const ITEMS = [
   { id: 'deny', name: '拒否ブロック', nameKana: 'きょひぶろっく', category: 'rare', emoji: '🔴' },
   { id: 'border_block', name: '境界ブロック', nameKana: 'きょうかいぶろっく', category: 'rare', emoji: '🧱' },
   { id: 'mob_spawner', name: 'モンスタースポナー', nameKana: 'もんすたーすぽなー', category: 'rare', emoji: '🕸️' },
+  { id: 'trial_spawner', name: 'トライアルスポナー', nameKana: 'とらいあるすぽなー', category: 'rare', emoji: '🕸️' },
+  { id: 'vault', name: '宝物庫', nameKana: 'ほうもつこ', category: 'rare', emoji: '📦' },
   { id: 'nether_star', name: 'ネザースター', nameKana: 'ねざーすたー', category: 'rare', emoji: '⭐' },
   { id: 'beacon', name: 'ビーコン', nameKana: 'びーこん', category: 'rare', emoji: '🗼' },
   { id: 'dragon_egg', name: 'ドラゴンの卵', nameKana: 'どらごんのたまご', category: 'rare', emoji: '🥚' },
@@ -210,6 +232,9 @@ export const ITEMS = [
   { id: 'conduit', name: 'コンジット', nameKana: 'こんじっと', category: 'rare', emoji: '🐚' },
   { id: 'recovery_compass', name: 'リカバリーコンパス', nameKana: 'りかばりーこんぱす', category: 'rare', emoji: '🧭' },
   { id: 'goat_horn', name: 'ヤギの角', nameKana: 'やぎのつの', category: 'rare', emoji: '📯' },
+  { id: 'heavy_core', name: 'ヘビーコア', nameKana: 'へびーこあ', category: 'rare', emoji: '🔘' },
+  { id: 'trial_key', name: '試練の鍵', nameKana: 'しれんのかぎ', category: 'rare', emoji: '🔑' },
+  { id: 'ominous_trial_key', name: '不吉な試練の鍵', nameKana: 'ふきつなしれんのかぎ', category: 'rare', emoji: '🔑' },
 
   // --- レッドストーン (redstone) ---
   { id: 'redstone', name: 'レッドストーンダスト', nameKana: 'れっどすとーんだすと', category: 'redstone', emoji: '🔴' },
@@ -237,6 +262,7 @@ export const ITEMS = [
   { id: 'sculk_sensor', name: 'スカルクセンサー', nameKana: 'すかるくせんさー', category: 'redstone', emoji: '👾' },
   { id: 'calibrated_sculk_sensor', name: '調律されたスカルクセンサー', nameKana: 'ちょうりつされたすかるくせんさー', category: 'redstone', emoji: '👾' },
   { id: 'crafter', name: 'クラフター', nameKana: 'くらふたー', category: 'redstone', emoji: '🧱' },
+  { id: 'copper_bulb', name: '銅の電球', nameKana: 'どうのでんきゅう', category: 'redstone', emoji: '💡' },
 
   // --- 素材 (material) ---
   { id: 'coal', name: '石炭', nameKana: 'せきたん', category: 'material', emoji: '🪨' },
@@ -267,6 +293,7 @@ export const ITEMS = [
   { id: 'glowstone_dust', name: 'グロウストーンダスト', nameKana: 'ぐろうすとーんだすと', category: 'material', emoji: '✨' },
   { id: 'redstone_dust', name: 'レッドストーンダスト', nameKana: 'れっどすとーんだすと', category: 'material', emoji: '🔴' },
   { id: 'blaze_rod', name: 'ブレイズロッド', nameKana: 'ぶれいずろっど', category: 'material', emoji: '🥢' },
+  { id: 'breeze_rod', name: 'ブリーズロッド', nameKana: 'ぶりーずろっど', category: 'material', emoji: '🥢' },
   { id: 'blaze_powder', name: 'ブレイズパウダー', nameKana: 'ぶれいずぱうだー', category: 'material', emoji: '✨' },
   { id: 'ghast_tear', name: 'ガストの涙', nameKana: 'がすとのなみだ', category: 'material', emoji: '💧' },
   { id: 'nether_wart', name: 'ネザーウォート', nameKana: 'ねざーうぉーと', category: 'material', emoji: '🍄' },
@@ -281,6 +308,45 @@ export const ITEMS = [
   { id: 'book', name: '本', nameKana: 'ほん', category: 'material', emoji: '📖' },
   { id: 'sugar', name: '砂糖', nameKana: 'さとう', category: 'material', emoji: '🧂' },
   { id: 'clay_ball', name: '粘土玉', nameKana: 'ねんどだま', category: 'material', emoji: '⚪' },
+  { id: 'resin_clump', name: '樹脂の塊', nameKana: 'じゅしのかたまり', category: 'material', emoji: '🟠' },
+  { id: 'resin_brick', name: '樹脂レンガ', nameKana: 'じゅしれんが', category: 'material', emoji: '🧱' },
+  // 鍛冶型
+  { id: 'netherite_upgrade_smithing_template', name: '鍛冶型（ネザライト強化）', nameKana: 'かじがたねざらいときょうか', category: 'material', emoji: '⚙️' },
+  { id: 'sentry_armor_trim_smithing_template', name: '鍛冶型（番人）', nameKana: 'かじがたばんにん', category: 'material', emoji: '⚙️' },
+  { id: 'dune_armor_trim_smithing_template', name: '鍛冶型（砂丘）', nameKana: 'かじがたさきゅう', category: 'material', emoji: '⚙️' },
+  { id: 'coast_armor_trim_smithing_template', name: '鍛冶型（海岸）', nameKana: 'かじがたかいがん', category: 'material', emoji: '⚙️' },
+  { id: 'wild_armor_trim_smithing_template', name: '鍛冶型（野生）', nameKana: 'かじがたやせい', category: 'material', emoji: '⚙️' },
+  { id: 'tide_armor_trim_smithing_template', name: '鍛冶型（潮風）', nameKana: 'かじがたしおかぜ', category: 'material', emoji: '⚙️' },
+  { id: 'ward_armor_trim_smithing_template', name: '鍛冶型（監視）', nameKana: 'かじがたかんし', category: 'material', emoji: '⚙️' },
+  { id: 'vex_armor_trim_smithing_template', name: '鍛冶型（ヴェックス）', nameKana: 'かじがたゔぇっくす', category: 'material', emoji: '⚙️' },
+  { id: 'rib_armor_trim_smithing_template', name: '鍛冶型（あばら骨）', nameKana: 'かじがたあばらぼね', category: 'material', emoji: '⚙️' },
+  { id: 'snout_armor_trim_smithing_template', name: '鍛冶型（鼻先）', nameKana: 'かじがたはなさき', category: 'material', emoji: '⚙️' },
+  { id: 'eye_armor_trim_smithing_template', name: '鍛冶型（目魂）', nameKana: 'かじがためだま', category: 'material', emoji: '⚙️' },
+  { id: 'spire_armor_trim_smithing_template', name: '鍛冶型（尖塔）', nameKana: 'かじがたせんとう', category: 'material', emoji: '⚙️' },
+  { id: 'wayfinder_armor_trim_smithing_template', name: '鍛冶型（先導者）', nameKana: 'かじがたせんどうしゃ', category: 'material', emoji: '⚙️' },
+  { id: 'raiser_armor_trim_smithing_template', name: '鍛冶型（育物）', nameKana: 'かじがたいくもの', category: 'material', emoji: '⚙️' },
+  { id: 'shaper_armor_trim_smithing_template', name: '鍛冶型（塑造者）', nameKana: 'かじがたそぞうしゃ', category: 'material', emoji: '⚙️' },
+  { id: 'host_armor_trim_smithing_template', name: '鍛冶型（宿主）', nameKana: 'かじがたしゅくしゅ', category: 'material', emoji: '⚙️' },
+  { id: 'silence_armor_trim_smithing_template', name: '鍛冶型（静寂）', nameKana: 'かじがたせいじゃく', category: 'material', emoji: '⚙️' },
+  { id: 'flow_armor_trim_smithing_template', name: '鍛冶型（フロー）', nameKana: 'かじがたふろー', category: 'material', emoji: '⚙️' },
+  { id: 'bolt_armor_trim_smithing_template', name: '鍛冶型（ボルト）', nameKana: 'かじがたぼると', category: 'material', emoji: '⚙️' },
+  // 染料
+  { id: 'white_dye', name: '白色の染料', nameKana: 'しろいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'light_gray_dye', name: '薄灰色の染料', nameKana: 'うすはいいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'gray_dye', name: '灰色の染料', nameKana: 'はいいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'black_dye', name: '黒色の染料', nameKana: 'くろいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'red_dye', name: '赤色の染料', nameKana: 'あかいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'orange_dye', name: '橙色の染料', nameKana: 'だいだいいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'yellow_dye', name: '黄色の染料', nameKana: 'きいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'lime_dye', name: '黄緑色の染料', nameKana: 'きみどりいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'green_dye', name: '緑色の染料', nameKana: 'みどりいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'cyan_dye', name: '青緑色の染料', nameKana: 'あおみどりいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'light_blue_dye', name: '空色の染料', nameKana: 'そらいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'blue_dye', name: '青色の染料', nameKana: 'あおいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'purple_dye', name: '紫色の染料', nameKana: 'むらさきいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'magenta_dye', name: '赤紫色の染料', nameKana: 'あかむらさきいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'pink_dye', name: '桃色の染料', nameKana: 'ももいろのせんりょう', category: 'material', emoji: '🎨' },
+  { id: 'brown_dye', name: '茶色の染料', nameKana: 'ちゃいろのせんりょう', category: 'material', emoji: '🎨' },
 
   // --- ポーション (potion) ---
   { id: 'glass_bottle', name: 'ガラス瓶', nameKana: 'がらすびん', category: 'potion', emoji: '🧪' },
@@ -288,6 +354,7 @@ export const ITEMS = [
   { id: 'splash_potion', name: 'スプラッシュポーション', nameKana: 'すぷらっしゅぽーしょん', category: 'potion', emoji: '🧪' },
   { id: 'lingering_potion', name: '残留ポーション', nameKana: 'ざんりゅうぽーしょん', category: 'potion', emoji: '🧪' },
   { id: 'honey_bottle', name: 'ハチミツの瓶', nameKana: 'はちみつびん', category: 'potion', emoji: '🍯' },
+  { id: 'ominous_bottle', name: '不吉な瓶', nameKana: 'ふきつなびん', category: 'potion', emoji: '🧪' },
   { id: 'dragon_breath', name: 'ドラゴンブレス', nameKana: 'どらごんぶれす', category: 'potion', emoji: '💨' }
 ];
 
@@ -409,6 +476,14 @@ COLORS.forEach(color => {
     category: 'block',
     emoji: '🕯️'
   });
+  // バンドル (bundle)
+  ITEMS.push({
+    id: `${color.id}_bundle`,
+    name: `${color.name}バンドル`,
+    nameKana: `${color.nameKana}ばんどる`,
+    category: 'tool',
+    emoji: '🎒'
+  });
 });
 
 // 木のバリエーションの動的追加
@@ -420,64 +495,87 @@ const WOOD_TYPES = [
   { id: 'acacia', name: 'アカシア', nameKana: 'あかしあ' },
   { id: 'dark_oak', name: 'ダークオーク', nameKana: 'だーくおーく' },
   { id: 'mangrove', name: 'マングローブ', nameKana: 'まんぐろーぶ' },
-  { id: 'cherry', name: 'サクラ', nameKana: 'さくら' }
+  { id: 'cherry', name: 'サクラ', nameKana: 'さくら' },
+  { id: 'crimson', name: '真紅', nameKana: 'しんく' },
+  { id: 'warped', name: '歪んだ', nameKana: 'ゆがんだ' },
+  { id: 'pale_oak', name: 'ペイルオーク', nameKana: 'ぺいるおーく' }
 ];
 
 WOOD_TYPES.forEach(wood => {
+  const connector = wood.id === 'warped' ? '' : 'の';
+
   // ハーフブロック
   ITEMS.push({
     id: `${wood.id}_slab`,
-    name: `${wood.name}のハーフブロック`,
-    nameKana: `${wood.nameKana}のはーふぶろっく`,
+    name: `${wood.name}${connector}ハーフブロック`,
+    nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}はーふぶろっく`,
     category: 'block',
     emoji: '🪵'
   });
   // 階段
   ITEMS.push({
     id: `${wood.id}_stairs`,
-    name: `${wood.name}の階段`,
-    nameKana: `${wood.nameKana}のかいだん`,
+    name: `${wood.name}${connector}階段`,
+    nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}かいだん`,
     category: 'block',
     emoji: '🪵'
   });
   // フェンス
   ITEMS.push({
     id: `${wood.id}_fence`,
-    name: `${wood.name}のフェンス`,
-    nameKana: `${wood.nameKana}のふぇんす`,
+    name: `${wood.name}${connector}フェンス`,
+    nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}ふぇんす`,
     category: 'block',
     emoji: '🪵'
   });
   // フェンスゲート
   ITEMS.push({
     id: `${wood.id}_fence_gate`,
-    name: `${wood.name}のフェンスゲート`,
-    nameKana: `${wood.nameKana}のふぇんすげーと`,
+    name: `${wood.name}${connector}フェンスゲート`,
+    nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}ふぇんすげーと`,
     category: 'block',
     emoji: '🪵'
   });
   // ドア
   ITEMS.push({
     id: `${wood.id}_door`,
-    name: `${wood.name}のドア`,
-    nameKana: `${wood.nameKana}のどあ`,
+    name: `${wood.name}${connector}ドア`,
+    nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}どあ`,
     category: 'block',
     emoji: '🚪'
   });
   // トラップドア
   ITEMS.push({
     id: `${wood.id}_trapdoor`,
-    name: `${wood.name}のトラップドア`,
-    nameKana: `${wood.nameKana}のとらっぷどあ`,
+    name: `${wood.name}${connector}トラップドア`,
+    nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}とらっぷどあ`,
     category: 'block',
     emoji: '🚪'
   });
   // 吊り看板
   ITEMS.push({
     id: `${wood.id}_hanging_sign`,
-    name: `${wood.name}の吊り看板`,
-    nameKana: `${wood.nameKana}のつりかんばん`,
+    name: `${wood.name}${connector}吊り看板`,
+    nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}つりかんばん`,
     category: 'block',
     emoji: '🪧'
   });
+
+  // ボート（ネザー木材には存在しない）
+  if (wood.id !== 'crimson' && wood.id !== 'warped') {
+    ITEMS.push({
+      id: `${wood.id}_boat`,
+      name: `${wood.name}${connector}ボート`,
+      nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}ぼーと`,
+      category: 'tool',
+      emoji: '🛶'
+    });
+    ITEMS.push({
+      id: `${wood.id}_chest_boat`,
+      name: `${wood.name}${connector}チェスト付きボート`,
+      nameKana: `${wood.nameKana}${connector === 'の' ? 'の' : ''}ちぇすとつきぼーと`,
+      category: 'tool',
+      emoji: '🛶'
+    });
+  }
 });

@@ -46,6 +46,7 @@ export const ENTITIES = [
   { id: 'evoker', name: 'エヴォーカー', nameKana: 'えゔぉーかー', category: 'hostile', emoji: '🧙‍♂️' },
   { id: 'breeze', name: 'ブリーズ', nameKana: 'ぶりーず', category: 'hostile', emoji: '🌀' },
   { id: 'bogged', name: 'ボグド (毒スケルトン)', nameKana: 'ぼぐど', category: 'hostile', emoji: '💀' },
+  { id: 'creaking', name: 'クリーキング', nameKana: 'くりーきんぐ', category: 'hostile', emoji: '🪵' },
 
   // --- 中立モブ (neutral) ---
   { id: 'enderman', name: 'エンダーマン', nameKana: 'えんだーまん', category: 'neutral', emoji: '🔮' },
