@@ -609,5 +609,63 @@
   margin: 0;
 }
 
+/* 軽めのページ用の控えめなスタイル (Compact style for inner pages) */
+.recommendations-light {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px dashed var(--border-default);
+}
+
+.recommendations-light .section-title {
+  font-size: var(--text-lg) !important;
+  margin-top: 0 !important;
+}
+
+.recommendations-light .section-intro {
+  font-size: var(--text-xs) !important;
+  margin-bottom: var(--space-4) !important;
+}
+
+.recommendations-light .recommendations-grid {
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.recommendations-light .recommendation-image-wrapper {
+  height: 120px; /* 200pxから縮小 */
+}
+
+.recommendations-light .recommendation-image {
+  max-height: 100px; /* 180pxから縮小 */
+}
+
+.recommendations-light .recommendation-title {
+  font-size: var(--text-sm) !important;
+}
+
+.recommendations-light .recommendation-desc {
+  font-size: var(--text-xs) !important;
+  margin-bottom: var(--space-3) !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 3行以上の説明文を省略 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.recommendations-light .recommendation-btn {
+  padding: var(--space-2);
+  font-size: var(--text-xs);
+}
+
+.recommendations-light .support-banner {
+  margin-top: var(--space-6);
+  padding: var(--space-3);
+}
+
+.recommendations-light .support-icon {
+  font-size: var(--text-2xl);
+}
+
+
 
 

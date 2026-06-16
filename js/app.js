@@ -26,10 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // おすすめコーナーの挿入（トップページかつ要素が存在する場合）
+  // おすすめコーナーの挿入
   const recommendationsContainer = document.getElementById('recommendations-container');
-  if (recommendationsContainer && document.body.dataset.page === 'home') {
+  const pageType = document.body.dataset.page;
+  const hubPages = ['commands-list', 'guides-index', 'recipes-index'];
+
+  if (recommendationsContainer && pageType === 'home') {
+    // トップページ（既存要素に適用）
     renderRecommendations(recommendationsContainer);
+  } else if (mainContent && pageType && hubPages.includes(pageType)) {
+    // ハブページ（一覧ページ等）に邪魔にならないよう自動挿入
+    const container = mainContent.querySelector('.container');
+    if (container) {
+      const recContainer = document.createElement('section');
+      recContainer.id = 'recommendations-container';
+      recContainer.className = 'recommendations-light animate-on-scroll';
+      container.appendChild(recContainer);
+      renderRecommendations(recContainer);
+    }
   }
 
   // フッターを動的に挿入
