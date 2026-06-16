@@ -1,16 +1,17 @@
-/* js/app.js */
 import { renderHeader, getBasePath } from './components/header.js';
 import { renderSidebar } from './components/sidebar.js';
 import { renderBreadcrumb } from './components/breadcrumb.js';
+import { renderFooter } from './components/footer.js';
 import { initCodeBlocks } from './components/code-block.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const basePath = getBasePath();
 
-  // 1. ヘッダー・サイドバー・パンくずの挿入
+  // 1. ヘッダー・サイドバー・パンくず・フッターの挿入
   const headerContainer = document.getElementById('site-header');
   const sidebarContainer = document.getElementById('site-sidebar');
   const breadcrumbContainer = document.getElementById('breadcrumb');
+  const mainContent = document.getElementById('main-content');
 
   if (headerContainer) renderHeader(headerContainer);
   if (sidebarContainer) renderSidebar(sidebarContainer);
@@ -23,6 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('パンくずデータのパースに失敗しました:', e);
     }
   }
+
+  // フッターを動的に挿入
+  if (mainContent) {
+    const footerContainer = document.createElement('footer');
+    footerContainer.id = 'site-footer';
+    document.body.appendChild(footerContainer);
+    renderFooter(footerContainer);
+  }
+
 
   // 2. Lucideアイコンの初期化 (CDN経由で読み込まれている場合)
   if (window.lucide) {

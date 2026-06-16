@@ -418,3 +418,39 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+/* Footer Component */
+.site-footer {
+  background-color: var(--bg-header);
+  border-top: 2px solid var(--border-default);
+  padding: var(--space-8) var(--space-4) var(--space-6) var(--space-4);
+  margin-top: var(--space-16);
+  width: 100%;
+}
+
+.footer-container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.footer-sections {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.5fr;
+  gap: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .footer-sections {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+  }
+}
+
+
