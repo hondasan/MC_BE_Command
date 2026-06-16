@@ -2,6 +2,7 @@ import { renderHeader, getBasePath } from './components/header.js';
 import { renderSidebar } from './components/sidebar.js';
 import { renderBreadcrumb } from './components/breadcrumb.js';
 import { renderFooter } from './components/footer.js';
+import { renderRecommendations } from './components/recommendations.js';
 import { initCodeBlocks } from './components/code-block.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // おすすめコーナーの挿入（トップページかつ要素が存在する場合）
+  const recommendationsContainer = document.getElementById('recommendations-container');
+  if (recommendationsContainer && document.body.dataset.page === 'home') {
+    renderRecommendations(recommendationsContainer);
+  }
+
   // フッターを動的に挿入
   if (mainContent) {
     const footerContainer = document.createElement('footer');
@@ -32,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(footerContainer);
     renderFooter(footerContainer);
   }
+
 
 
   // 2. Lucideアイコンの初期化 (CDN経由で読み込まれている場合)
