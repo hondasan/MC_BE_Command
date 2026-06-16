@@ -46,7 +46,7 @@ export function renderFooter(container) {
             <span class="email-note" style="font-size: var(--text-xs); color: var(--text-muted); display: block; padding-left: 18px;">※ [at] を @ に書き換えて送信してください</span>
           </p>
           <div class="footer-amazon-notice" style="font-size: var(--text-xs); color: var(--text-muted); line-height: 1.4; background-color: rgba(0, 0, 0, 0.2); padding: var(--space-2); border-radius: var(--radius-sm); border: 1px solid var(--border-default);">
-            <p>当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラム of 参加者です。</p>
+            <p>当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>
           </div>
         </div>
       </div>
