@@ -192,11 +192,7 @@ const GENERATOR_DEFS = [
       {
         key: 'value',
         label: '設定値',
-        type: 'select',
-        options: [
-          { label: 'オンにします (true)', value: 'true' },
-          { label: 'オフにします (false)', value: 'false' }
-        ]
+        type: 'gamerule_value_select'
       }
     ]
   }
@@ -213,6 +209,42 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeDef = GENERATOR_DEFS[0]; // 初期アクティブ
   const formData = {};
 
+  // コピーのフォールバック処理
+  function copyText(text, successCallback) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          if (successCallback) successCallback();
+        })
+        .catch(err => {
+          fallbackCopyText(text, successCallback);
+        });
+    } else {
+      fallbackCopyText(text, successCallback);
+    }
+  }
+
+  function fallbackCopyText(text, successCallback) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        if (successCallback) successCallback();
+      } else {
+        alert('コピーに失敗しました。直接選択してコピーしてください：\n' + text);
+      }
+    } catch (err) {
+      alert('コピーに失敗しました。直接選択してコピーしてください：\n' + text);
+    }
+    document.body.removeChild(textArea);
+  }
+
   // 1. コマンド選択ボタンの描画
   function renderCommandSelect() {
     if (!commandSelectNav) return;
@@ -226,6 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#gen-command-select .filter-tag').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         activeDef = def;
+        // コマンド切り替え時はデータをクリア
+        for (const key in formData) {
+          delete formData[key];
+        }
         renderFields();
       });
       commandSelectNav.appendChild(btn);
@@ -239,7 +275,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // フォームデータを初期化
     activeDef.args.forEach(arg => {
-      formData[arg.key] = arg.default || '';
+      if (formData[arg.key] === undefined) {
+        formData[arg.key] = arg.default !== undefined ? arg.default : '';
+      }
     });
 
     activeDef.args.forEach(arg => {
@@ -310,8 +348,14 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (arg.type === 'item_select') {
         const select = document.createElement('select');
         select.className = 'form-select';
-        // 代表的な15アイテムのみをリストにセット (あまり多すぎると動作が重いため)
-        const commonItems = ITEMS.filter(i => !i.id.includes('_')).slice(0, 20);
+        // 人気のマイクラアイテムを抽出して表示
+        const popularIds = [
+          'diamond_sword', 'netherite_sword', 'diamond_pickaxe', 'netherite_pickaxe',
+          'diamond_axe', 'bow', 'crossbow', 'trident', 'mace', 'shield',
+          'golden_apple', 'enchanted_golden_apple', 'diamond_helmet', 'elytra',
+          'command_block', 'tnt', 'ender_pearl', 'totem_of_undying', 'netherite_chestplate'
+        ];
+        const commonItems = ITEMS.filter(i => popularIds.includes(i.id));
         commonItems.forEach(item => {
           const o = document.createElement('option');
           o.value = item.id;
@@ -367,16 +411,58 @@ document.addEventListener('DOMContentLoaded', () => {
         GAMERULES.forEach(rule => {
           const o = document.createElement('option');
           o.value = rule.id;
-          o.textContent = `${rule.id} (${rule.name.substring(0, 15)}...)`;
+          o.textContent = `${rule.id} (${rule.name})`;
           select.appendChild(o);
         });
         select.value = formData[arg.key] || GAMERULES[0].id;
         formData[arg.key] = select.value;
         select.addEventListener('change', () => {
           formData[arg.key] = select.value;
-          updateOutput();
+          // 新しいルールのデフォルト値に合わせて設定値も変更
+          const newRule = GAMERULES.find(r => r.id === select.value);
+          if (newRule) {
+            formData['value'] = newRule.default;
+          }
+          renderFields();
         });
         group.appendChild(select);
+      }
+      else if (arg.type === 'gamerule_value_select') {
+        const currentRuleId = formData['rule'] || GAMERULES[0].id;
+        const currentRule = GAMERULES.find(r => r.id === currentRuleId) || GAMERULES[0];
+        
+        if (currentRule.type === 'number') {
+          const input = document.createElement('input');
+          input.type = 'number';
+          input.className = 'form-input';
+          input.value = (formData[arg.key] !== undefined && formData[arg.key] !== 'true' && formData[arg.key] !== 'false') ? formData[arg.key] : currentRule.default;
+          formData[arg.key] = input.value;
+          input.addEventListener('input', () => {
+            formData[arg.key] = input.value;
+            updateOutput();
+          });
+          group.appendChild(input);
+        } else {
+          const select = document.createElement('select');
+          select.className = 'form-select';
+          const options = [
+            { label: 'オンにします (true)', value: 'true' },
+            { label: 'オフにします (false)', value: 'false' }
+          ];
+          options.forEach(opt => {
+            const o = document.createElement('option');
+            o.value = opt.value;
+            o.textContent = opt.label;
+            select.appendChild(o);
+          });
+          select.value = (formData[arg.key] === 'true' || formData[arg.key] === 'false') ? formData[arg.key] : String(currentRule.default);
+          formData[arg.key] = select.value;
+          select.addEventListener('change', () => {
+            formData[arg.key] = select.value;
+            updateOutput();
+          });
+          group.appendChild(select);
+        }
       }
 
       fieldsContainer.appendChild(group);
@@ -391,7 +477,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let template = activeDef.template;
     Object.keys(formData).forEach(key => {
-      template = template.replace(`{${key}}`, formData[key]);
+      let val = formData[key];
+      // エフェクトのレベルの場合、統合版では0がレベル1に相当するため、内部的に値を -1 する
+      if (activeDef.id === 'effect' && key === 'level') {
+        const levelNum = parseInt(val, 10);
+        if (!isNaN(levelNum)) {
+          val = Math.max(0, levelNum - 1);
+        }
+      }
+      template = template.replace(`{${key}}`, val);
     });
 
     outputCmd.innerHTML = highlightCommand(template);
@@ -408,7 +502,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const cmd = outputCmd.getAttribute('data-raw');
       if (!cmd) return;
 
-      navigator.clipboard.writeText(cmd).then(() => {
+      copyText(cmd, () => {
         showToast('コピーしたよ！');
         addHistory(cmd);
       });
@@ -448,25 +542,43 @@ document.addEventListener('DOMContentLoaded', () => {
     favs.forEach((cmd, idx) => {
       const li = document.createElement('li');
       li.className = 'fav-history-item';
-      li.innerHTML = `
-        <span class="fav-history-cmd" title="${cmd}">${cmd}</span>
-        <div class="fav-history-actions">
-          <button class="copy-small-btn" title="コピー" style="color: var(--accent-green);"><i data-lucide="copy" style="width: 14px; height: 14px;"></i></button>
-          <button class="delete-small-btn" title="さくじょ" style="color: var(--accent-red);"><i data-lucide="trash-2" style="width: 14px; height: 14px;"></i></button>
-        </div>
-      `;
+      
+      const span = document.createElement('span');
+      span.className = 'fav-history-cmd';
+      span.title = cmd;
+      span.textContent = cmd;
+      li.appendChild(span);
+      
+      const actionsDiv = document.createElement('div');
+      actionsDiv.className = 'fav-history-actions';
+      
+      const copySmallBtn = document.createElement('button');
+      copySmallBtn.className = 'copy-small-btn';
+      copySmallBtn.title = 'コピー';
+      copySmallBtn.style.color = 'var(--accent-green)';
+      copySmallBtn.innerHTML = '<i data-lucide="copy" style="width: 14px; height: 14px;"></i>';
+      
+      const deleteSmallBtn = document.createElement('button');
+      deleteSmallBtn.className = 'delete-small-btn';
+      deleteSmallBtn.title = 'さくじょ';
+      deleteSmallBtn.style.color = 'var(--accent-red)';
+      deleteSmallBtn.innerHTML = '<i data-lucide="trash-2" style="width: 14px; height: 14px;"></i>';
+      
+      actionsDiv.appendChild(copySmallBtn);
+      actionsDiv.appendChild(deleteSmallBtn);
+      li.appendChild(actionsDiv);
 
       // コピーボタン
-      li.querySelector('.copy-small-btn').addEventListener('click', (e) => {
+      copySmallBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        navigator.clipboard.writeText(cmd).then(() => {
+        copyText(cmd, () => {
           showToast('コピーしたよ！');
           addHistory(cmd);
         });
       });
 
       // 削除ボタン
-      li.querySelector('.delete-small-btn').addEventListener('click', (e) => {
+      deleteSmallBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         favs.splice(idx, 1);
         localStorage.setItem('mc_cmd_favorites', JSON.stringify(favs));
@@ -506,15 +618,26 @@ document.addEventListener('DOMContentLoaded', () => {
     hist.forEach(cmd => {
       const li = document.createElement('li');
       li.className = 'fav-history-item';
-      li.innerHTML = `
-        <span class="fav-history-cmd" title="${cmd}">${cmd}</span>
-        <div class="fav-history-actions">
-          <button class="copy-small-btn" style="color: var(--accent-green);"><i data-lucide="copy" style="width: 14px; height: 14px;"></i></button>
-        </div>
-      `;
+      
+      const span = document.createElement('span');
+      span.className = 'fav-history-cmd';
+      span.title = cmd;
+      span.textContent = cmd;
+      li.appendChild(span);
+      
+      const actionsDiv = document.createElement('div');
+      actionsDiv.className = 'fav-history-actions';
+      
+      const copySmallBtn = document.createElement('button');
+      copySmallBtn.className = 'copy-small-btn';
+      copySmallBtn.style.color = 'var(--accent-green)';
+      copySmallBtn.innerHTML = '<i data-lucide="copy" style="width: 14px; height: 14px;"></i>';
+      
+      actionsDiv.appendChild(copySmallBtn);
+      li.appendChild(actionsDiv);
 
-      li.querySelector('.copy-small-btn').addEventListener('click', () => {
-        navigator.clipboard.writeText(cmd).then(() => {
+      copySmallBtn.addEventListener('click', () => {
+        copyText(cmd, () => {
           showToast('コピーしたよ！');
         });
       });

@@ -51,6 +51,7 @@
         <div class="guide-step-num">2</div>
         <h2 class="guide-step-title">自動装備ブロックを置く</h2>
         <p>アリーナに入った瞬間に、自動で鉄のヘルメットを被せる仕掛けを作るよ。</p>
+        <p><small style="color: var(--text-secondary);">※マイクラのバージョンが古い（v1.20.10より前）ばあいは、<code>item replace entity</code> の部分を <code>replaceitem entity</code> に、<code>with</code> を <code>0</code> に書き換えてください。</small></p>
         
         <p>① アリーナの外（または壁のした）に<strong>「リピートコマンドブロック」</strong>を置き、設定を以下にします。</p>
         <ul>
@@ -59,7 +60,7 @@
         </ul>
         <p>② ブロックのなかに、以下のコマンドを入力します。</p>
         
-        <div class="mc-code-block" data-command="/execute at @p[r=9] run replaceitem entity @s slot.armor.head 0 iron_helmet" data-explanation="もしコマンドブロックの場所から「半径9マス以内（アリーナの中）」にプレイヤーが入ったら、そのプレイヤーの頭スロットに自動で「鉄のヘルメット」を着せます。"></div>
+        <div class="mc-code-block" data-command="/execute at @p[r=9] run item replace entity @s slot.armor.head 0 with iron_helmet" data-explanation="もしコマンドブロックの場所から「半径9マス以内（アリーナの中）」にプレイヤーが入ったら、そのプレイヤーの頭スロットに自動で「鉄のヘルメット」を着せます。"></div>
       </section>
 
       <!-- ステップ3: 応用 -->
@@ -70,17 +71,17 @@
         <p>新しいリピートブロックを用意して、コマンドの最後の部分を変えて入力してね。</p>
         
         <h3>・体（よろい）を着せる</h3>
-        <div class="mc-code-block" data-command="/execute at @p[r=9] run replaceitem entity @s slot.armor.chest 0 iron_chestplate" data-explanation="アリーナに入った人の体に「鉄のチェストプレート」を着せます。"></div>
+        <div class="mc-code-block" data-command="/execute at @p[r=9] run item replace entity @s slot.armor.chest 0 with iron_chestplate" data-explanation="アリーナに入った人の体に「鉄のチェストプレート」を着せます。"></div>
 
         <h3>・足（ズボン）を着せる</h3>
-        <div class="mc-code-block" data-command="/execute at @p[r=9] run replaceitem entity @s slot.armor.legs 0 iron_leggings" data-explanation="アリーナに入った人の足に「鉄のレギンス」を着せます。"></div>
+        <div class="mc-code-block" data-command="/execute at @p[r=9] run item replace entity @s slot.armor.legs 0 with iron_leggings" data-explanation="アリーナに入った人の足に「鉄のレギンス」を着せます。"></div>
       </section>
 
     </div>
   </main>
 
   <!-- JS -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.394.0/dist/umd/lucide.min.js"></script>
   <script type="module" src="../../js/app.js"></script>
 </body>
 </html>

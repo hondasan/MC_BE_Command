@@ -6,6 +6,41 @@ import { ENCHANTMENTS } from './data/enchantments.js';
 import { showToast } from './components/toast.js';
 
 function init() {
+  function copyText(text, successCallback) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          if (successCallback) successCallback();
+        })
+        .catch(err => {
+          fallbackCopyText(text, successCallback);
+        });
+    } else {
+      fallbackCopyText(text, successCallback);
+    }
+  }
+
+  function fallbackCopyText(text, successCallback) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        if (successCallback) successCallback();
+      } else {
+        alert('コピーに失敗しました。直接選択してコピーしてください：\n' + text);
+      }
+    } catch (err) {
+      alert('コピーに失敗しました。直接選択してコピーしてください：\n' + text);
+    }
+    document.body.removeChild(textArea);
+  }
+
   const typeTabs = document.querySelectorAll('#search-type-tabs .preset-tab-btn');
   const searchInput = document.getElementById('id-search-input');
   const subFilterTags = document.getElementById('sub-filter-tags');
@@ -113,7 +148,7 @@ function init() {
       `;
 
       card.addEventListener('click', () => {
-        navigator.clipboard.writeText(item.id).then(() => {
+        copyText(item.id, () => {
           showToast(`${item.name}のIDをコピーしたよ！`);
         });
       });

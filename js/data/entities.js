@@ -27,7 +27,7 @@ export const ENTITIES = [
   { id: 'spider', name: 'クモ', nameKana: 'くも', category: 'hostile', emoji: '🕷️' },
   { id: 'cave_spider', name: '洞窟クモ', nameKana: 'どうくつくも', category: 'hostile', emoji: '🕷️' },
   { id: 'phantom', name: 'ファントム', nameKana: 'ふぁんとむ', category: 'hostile', emoji: '🦅' },
-  { id: 'slimes', name: 'スライム', nameKana: 'すらいむ', category: 'hostile', emoji: '🟢' },
+  { id: 'slime', name: 'スライム', nameKana: 'すらいむ', category: 'hostile', emoji: '🟢' },
   { id: 'magma_cube', name: 'マグマキューブ', nameKana: 'まぐまきゅーぶ', category: 'hostile', emoji: '🔥' },
   { id: 'witch', name: 'ウィッチ', nameKana: 'うぃっち', category: 'hostile', emoji: '🧙‍♀️' },
   { id: 'guardian', name: 'ガーディアン', nameKana: 'がーでぃあん', category: 'hostile', emoji: '🐡' },
@@ -60,7 +60,6 @@ export const ENTITIES = [
   { id: 'piglin', name: 'ピグリン', nameKana: 'ぴぐりん', category: 'neutral', emoji: '🐷' },
   { id: 'zombified_piglin', name: 'ゾンビピグリン', nameKana: 'ぞんびぴぐりん', category: 'neutral', emoji: '🧟' },
   { id: 'dolphin', name: 'イルカ', nameKana: 'いるか', category: 'neutral', emoji: '🐬' },
-  { id: 'spider', name: 'クモ (明るい時中立)', nameKana: 'くも', category: 'neutral', emoji: '🕷️' },
   { id: 'iron_golem', name: 'アイアンゴーレム', nameKana: 'あいあんごーれむ', category: 'neutral', emoji: '🤖' },
 
   // --- 友好モブ (passive) ---

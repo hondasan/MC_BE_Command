@@ -44,11 +44,13 @@
         
         <h3>■ コマンドのかたち</h3>
         <div class="syntax-box">
-          /playsound &lt;サウンドID&gt; @a [座標] [音量] [ピッチ]
+          /playsound &lt;サウンドID&gt; [プレイヤー] [鳴らす場所] [音の大きさ] [音の高さ]
           <div class="syntax-legend">
             ・&lt;サウンドID&gt; : 鳴らしたい音の英語名（例: random.levelup）<br/>
-            ・[音量] : 音の大きさ（基本は <code>1.0</code> です）<br/>
-            ・[ピッチ] : 音の高さ（0.0 〜 2.0。数値が大きいほど高い音、低いほど低い音になります）
+            ・[プレイヤー] : 音をきかせたい人（省略すると自分 <code>@s</code> になります）<br/>
+            ・[鳴らす場所] : 音を発生させたい場所（<code>~ ~ ~</code> など）<br/>
+            ・[音の大きさ] : 音の大きさ（基本は <code>1.0</code> です）<br/>
+            ・[音の高さ] : 音の高さ（0.0 〜 2.0。数値が大きいほど高い音、低いほど低い音になります）
           </div>
         </div>
 
@@ -90,7 +92,7 @@
   </main>
 
   <!-- JS -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.394.0/dist/umd/lucide.min.js"></script>
   <script type="module" src="../js/app.js"></script>
 </body>
 </html>

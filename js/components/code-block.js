@@ -38,6 +38,41 @@ export function highlightCommand(cmdText) {
 }
 
 export function initCodeBlocks() {
+  function copyText(text, successCallback, failCallback) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          if (successCallback) successCallback();
+        })
+        .catch(err => {
+          fallbackCopyText(text, successCallback, failCallback);
+        });
+    } else {
+      fallbackCopyText(text, successCallback, failCallback);
+    }
+  }
+
+  function fallbackCopyText(text, successCallback, failCallback) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        if (successCallback) successCallback();
+      } else {
+        if (failCallback) failCallback();
+      }
+    } catch (err) {
+      if (failCallback) failCallback();
+    }
+    document.body.removeChild(textArea);
+  }
+
   const blocks = document.querySelectorAll('.mc-code-block');
   
   blocks.forEach(block => {
@@ -81,7 +116,7 @@ export function initCodeBlocks() {
     // コピーイベントの設定
     const copyBtn = header.querySelector('.copy-btn');
     copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(command).then(() => {
+      copyText(command, () => {
         showToast('コピーしたよ！');
         
         // アイコンを一時的にチェックマークに変える
@@ -100,8 +135,9 @@ export function initCodeBlocks() {
           text.textContent = 'コピー';
           if (window.lucide) lucide.createIcons({ attrs: { class: 'lucide' } });
         }, 1500);
-      }).catch(err => {
+      }, (err) => {
         console.error('コピー失敗:', err);
+        alert('コピーに失敗しました。直接選択してコピーしてください：\n' + command);
       });
     });
   });

@@ -27,8 +27,8 @@
 
   /* テキスト */
   --text-primary: #e2e8f0;        /* メインテキスト */
-  --text-secondary: #94a3b8;      /* サブテキスト */
-  --text-muted: #64748b;          /* さらに薄いテキスト */
+  --text-secondary: #cbd5e1;      /* サブテキスト */
+  --text-muted: #8394ab;          /* さらに薄いテキスト */
   --text-inverse: #1a1a2e;        /* 逆色テキスト */
 
   /* ボーダー */

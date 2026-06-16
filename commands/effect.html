@@ -72,18 +72,17 @@
       <!-- 2. effect clear -->
       <section class="guide-step animate-on-scroll">
         <h2 class="section-title">🧼 /effect clear（効果をけす）</h2>
-        <p>ついているエフェクト効果を途中でけしたいときに使います。牛乳を飲んだときと同じ効果です。</p>
+        <p>ついているエフェクト効果を途中でけしたいときに使います。牛乳を飲んだときと同じ効果です。<br><small style="color: var(--text-secondary);">※統合版では、1つの効果だけを選んで消すことはできません。すべての効果がいっしょに消えます。</small></p>
 
         <h3>■ つかいかたの例</h3>
-        <div class="mc-code-block" data-command="/effect @s clear" data-explanation="自分についているすべてのエフェクト効果を今すぐぜんぶ消します。"></div>
-        <div class="mc-code-block" data-command="/effect clear @s speed" data-explanation="自分についている「移動速度上昇（スピード）」効果だけを消します。"></div>
+        <div class="mc-code-block" data-command="/effect clear @s" data-explanation="自分についているすべてのエフェクト効果を今すぐぜんぶ消します。"></div>
       </section>
 
     </div>
   </main>
 
   <!-- JS -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.394.0/dist/umd/lucide.min.js"></script>
   <script type="module" src="../js/app.js"></script>
   <script type="module">
     import { EFFECTS } from '../js/data/effects.js';

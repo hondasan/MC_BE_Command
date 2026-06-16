@@ -32,7 +32,7 @@ export function renderHeader(container) {
 
     <div class="header-search">
       <i data-lucide="search" class="header-search-icon"></i>
-      <input type="text" class="header-search-input" id="header-search-input" placeholder="コマンドをけんさく...">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="コマンドをけんさく..." aria-label="コマンドを検索">
     </div>
 
     <div style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;">

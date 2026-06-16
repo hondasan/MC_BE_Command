@@ -83,11 +83,12 @@
       <!-- 3. title -->
       <section class="guide-step animate-on-scroll">
         <h2 class="section-title">📺 /title（画面に大文字を表示する）</h2>
-        <p>画面のど真ん中に、映画やイベントのような大きな文字を表示します。ミニゲームのスタート合図やゴール時に使います。</p>
+        <p>画面のど真ん中に、映画やイベントのような大きな文字を表示します。ミニゲームのスタート合図やゴール時に使います。<br/>
+        <small style="color: var(--text-secondary);">※文字に色をつけたいときは、文字の前に <code>§c</code>（赤色）や <code>§e</code>（黄色）などの色コード（セクション記号）を入れてください。</small></p>
 
         <h3>■ つかいかたの例</h3>
-        <div class="mc-code-block" data-command="/title @a title スタート！" data-explanation="全員の画面中央に大きな赤や黄色の文字で「スタート！」と表示します。"></div>
-        <div class="mc-code-block" data-command="/title @a subtitle さいごまで生きのこれ！" data-explanation="画面中央の文字の下に、サブタイトルとして小さめの文字を表示します。"></div>
+        <div class="mc-code-block" data-command="/title @a title スタート！" data-explanation="全員の画面中央に大きな文字で「スタート！」と表示します。"></div>
+        <div class="mc-code-block" data-command="/title @a subtitle さいごまで生きのこれ！" data-explanation="画面中央のメインタイトルの下に、小さめのサブタイトルを表示します（※先に <code>/title</code> コマンドでメインタイトルを表示する必要があります）。"></div>
         <div class="mc-code-block" data-command="/title @a actionbar 体力が減っているぞ！" data-explanation="アイテムスロットのちょうど上の部分に、小さな通知文字を一定時間表示します。"></div>
       </section>
 
@@ -95,7 +96,7 @@
   </main>
 
   <!-- JS -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.394.0/dist/umd/lucide.min.js"></script>
   <script type="module" src="../js/app.js"></script>
 </body>
 </html>

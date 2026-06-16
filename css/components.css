@@ -380,6 +380,10 @@
 
 /* Responsive styles */
 @media (max-width: 1023px) {
+  .code-block-content {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
   .site-sidebar {
     transform: translateX(-100%);
   }
