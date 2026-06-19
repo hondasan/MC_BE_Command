@@ -52,6 +52,10 @@ export function renderFooter(container) {
       </div>
 
       <div class="footer-bottom" style="margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--border-default); text-align: center;">
+        <p class="disclaimer" style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-3); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+          ※当サイトは個人が運営する非公式ファンサイトです。マインクラフト公式および開発元のMojang Studios、Microsoftとは一切関係ありません。<br>
+          (NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.)
+        </p>
         <p class="copyright" style="font-size: var(--text-xs); color: var(--text-muted);">&copy; 2026 マイクラ コマンドずかん. All Rights Reserved.</p>
       </div>
     </div>
