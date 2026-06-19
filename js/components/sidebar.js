@@ -55,6 +55,14 @@ export function renderSidebar(container) {
         { name: 'バトルアリーナを作る', url: 'guides/recipes/arena.html' },
         { name: 'ミニゲームを作る', url: 'guides/recipes/mini-game.html' },
       ]
+    },
+    {
+      title: '📝 サイトについて',
+      icon: 'info',
+      items: [
+        { name: '当サイトについて', url: 'about.html' },
+        { name: 'プライバシーポリシー', url: 'privacy.html' },
+      ]
     }
   ];
 

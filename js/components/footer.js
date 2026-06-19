@@ -28,6 +28,11 @@ export function renderFooter(container) {
           <h4 class="footer-title" style="font-family: var(--font-heading); font-size: var(--text-sm); color: var(--accent-gold); margin-bottom: var(--space-3); font-weight: normal; border-bottom: 1px dashed var(--border-default); padding-bottom: var(--space-1);">サイトについて</h4>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: var(--space-2);">
+              <a href="${basePath}about.html" style="font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-1); color: var(--text-secondary); transition: color var(--transition-fast);">
+                <i data-lucide="user" style="width: 14px; height: 14px; color: var(--accent-green);"></i> 当サイトについて
+              </a>
+            </li>
+            <li style="margin-bottom: var(--space-2);">
               <a href="${basePath}privacy.html" style="font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-1); color: var(--text-secondary); transition: color var(--transition-fast);">
                 <i data-lucide="shield" style="width: 14px; height: 14px; color: var(--accent-green);"></i> プライバシーポリシー
               </a>
