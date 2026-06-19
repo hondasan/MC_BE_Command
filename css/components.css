@@ -668,12 +668,20 @@
 
 /* もしもアフィリエイトかんたんリンクのカードデザインの統合 */
 .moshimo-card {
-  padding: var(--space-4) !important;
+  padding: 0 !important;
+  background-color: var(--bg-secondary) !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /* かんたんリンク内部のレイアウト・配色のリセット */
 .moshimo-card div[id^="msmaflink-"] {
   width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
 }
 
 .moshimo-card div[id^="msmaflink-"] .easyLinkMain {
@@ -683,10 +691,23 @@
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 0 !important;
+  padding: var(--space-10) var(--space-4) var(--space-4) var(--space-4) !important; /* 上部のバッジスペースを確保 */
   margin: 0 !important;
   width: 100% !important;
-  text-align: left !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  flex-grow: 1 !important;
+  justify-content: space-between !important;
+}
+
+/* 横並びを解除するためのラッパー上書き */
+.moshimo-card div[id^="msmaflink-"] .easyLinkImageWrapper,
+.moshimo-card div[id^="msmaflink-"] .easyLinkInfoWrapper {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .moshimo-card div[id^="msmaflink-"] .easyLinkImage {
@@ -702,11 +723,14 @@
   overflow: hidden !important;
   padding: var(--space-2) !important;
   box-sizing: border-box !important;
+  float: none !important;
 }
 
 .moshimo-card div[id^="msmaflink-"] .easyLinkImage img {
   max-height: 160px !important;
+  max-width: 100% !important;
   width: auto !important;
+  height: auto !important;
   object-fit: contain !important;
   transition: transform var(--transition-normal) !important;
 }
@@ -721,10 +745,12 @@
   display: flex !important;
   flex-direction: column !important;
   flex-grow: 1 !important;
+  float: none !important;
 }
 
 .moshimo-card div[id^="msmaflink-"] .easyLinkTitle {
-  margin: 0 0 var(--space-2) 0 !important;
+  margin: 0 0 var(--space-4) 0 !important;
+  text-align: left !important;
 }
 
 .moshimo-card div[id^="msmaflink-"] .easyLinkTitle a {
@@ -789,7 +815,11 @@
 
 /* 控えめな（ライト）バージョン向けの調整 */
 .recommendations-light .moshimo-card {
-  padding: var(--space-3) !important;
+  padding: 0 !important;
+}
+
+.recommendations-light .moshimo-card div[id^="msmaflink-"] .easyLinkMain {
+  padding: var(--space-8) var(--space-3) var(--space-3) var(--space-3) !important;
 }
 
 .recommendations-light .moshimo-card div[id^="msmaflink-"] .easyLinkImage {
