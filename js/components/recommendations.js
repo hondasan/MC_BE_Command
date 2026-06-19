@@ -30,6 +30,15 @@ export function renderRecommendations(container) {
   // もしもアフィリエイトの初期化
   initMoshimoAffiliate();
 
+  // もしもアフィリエイトのかんたんリンク等を強制的に別タブ（_blank）で開くように設定
+  container.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+
   // Lucideアイコンの初期化（CDN経由で読み込まれている場合）
   if (window.lucide) {
     window.lucide.createIcons();
