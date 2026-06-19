@@ -666,212 +666,42 @@
   font-size: var(--text-2xl);
 }
 
-/* ==========================================
-   もしもアフィリエイトかんたんリンクの極限オーバーライド（詳細度最大化）
-   ========================================== */
-
-/* 1. カード全体のコンテナ */
-html body .recommendation-card.moshimo-card {
-  padding: var(--space-4) !important;
-  background-color: var(--bg-secondary) !important;
-  border: 2px solid var(--border-default) !important;
-  border-radius: var(--radius-lg) !important;
-  box-shadow: none !important;
-  display: flex !important;
-  flex-direction: column !important;
-  height: 100% !important;
-  box-sizing: border-box !important;
+/* もしもアフィリエイトかんたんリンクの自然な縦並び配置 */
+.moshimo-recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-top: var(--space-6);
+  width: 100%;
 }
 
-/* 2. かんたんリンク全体のラッパー */
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] {
-  width: 100% !important;
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  flex-grow: 1 !important;
-  background: transparent !important;
-  background-color: transparent !important;
+.moshimo-item-wrapper {
+  width: 100%;
+  max-width: 680px; /* パソコンでも綺麗に見える幅 */
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* 3. メインコンテナ（横並びを解除し、縦並びに強制） */
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkMain {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  box-sizing: border-box !important;
-  flex-grow: 1 !important;
-  justify-content: space-between !important;
+.moshimo-badge-label {
+  display: inline-block;
+  background-color: var(--bg-header);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  margin-bottom: var(--space-2);
 }
 
-/* 4. 画像と情報のラッパー（テーブル・フロートを完全にリセット） */
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkImageWrapper,
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkInfoWrapper {
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  float: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+/* ライトバージョン用の調整 */
+.recommendations-light .moshimo-recommendations {
+  gap: var(--space-6);
+  margin-top: var(--space-4);
 }
 
-/* 5. 画像表示エリア */
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkImage {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 180px !important;
-  width: 100% !important;
-  background-color: var(--bg-primary) !important;
-  border-radius: var(--radius-md) !important;
-  border: 1px solid var(--border-default) !important;
-  margin: var(--space-6) 0 var(--space-4) 0 !important; /* バッジスペース分のマージン */
-  overflow: hidden !important;
-  padding: var(--space-2) !important;
-  box-sizing: border-box !important;
-  float: none !important;
-}
-
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkImage a {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkImage img {
-  max-height: 160px !important;
-  max-width: 100% !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-  border: none !important;
-  box-shadow: none !important;
-  transition: transform var(--transition-normal) !important;
-}
-
-html body .recommendation-card.moshimo-card:hover div[id^="msmaflink-"] .easyLinkImage img {
-  transform: scale(1.05) !important;
-}
-
-/* 6. 情報表示エリア */
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkInfo {
-  width: 100% !important;
-  padding: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  flex-grow: 1 !important;
-  float: none !important;
-}
-
-/* 7. タイトル（本サイトのスタイルを強制） */
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkTitle {
-  margin: 0 0 var(--space-4) 0 !important;
-  text-align: left !important;
-  padding: 0 !important;
-}
-
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkTitle a {
-  font-family: var(--font-body) !important;
-  font-size: var(--text-md) !important;
-  font-weight: bold !important;
-  color: var(--text-primary) !important;
-  text-decoration: none !important;
-  line-height: 1.5 !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical !important;
-  overflow: hidden !important;
-}
-
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkTitle a:hover {
-  color: var(--accent-green) !important;
-  text-decoration: underline !important;
-}
-
-/* 8. 余計な説明テキストの非表示 */
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkDescription {
-  display: none !important;
-}
-
-/* 9. ボタン類の100%幅均等サイズ化 */
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList {
-  margin-top: auto !important;
-  padding-top: var(--space-2) !important;
-  width: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: var(--space-2) !important;
-}
-
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList div {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: block !important;
-}
-
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList a {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: var(--space-2) !important;
-  width: 100% !important;
-  padding: var(--space-3) !important;
-  background: linear-gradient(135deg, var(--accent-green-dark) 0%, var(--accent-green) 100%) !important;
-  color: var(--text-inverse) !important;
-  font-weight: bold !important;
-  font-size: var(--text-sm) !important;
-  border-radius: var(--radius-md) !important;
-  border: none !important;
-  box-shadow: var(--shadow-sm) !important;
-  text-decoration: none !important;
-  transition: transform var(--transition-fast), opacity var(--transition-fast) !important;
-  box-sizing: border-box !important;
-}
-
-html body .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList a:hover {
-  opacity: 0.95 !important;
-  transform: scale(1.02) !important;
-}
-
-/* ==========================================
-   控えめな（ライト）バージョン向けの調整
-   ========================================== */
-html body .recommendations-light .recommendation-card.moshimo-card {
-  padding: var(--space-3) !important;
-}
-
-html body .recommendations-light .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkMain {
-  padding: 0 !important;
-}
-
-html body .recommendations-light .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkImage {
-  height: 120px !important;
-  margin: var(--space-5) 0 var(--space-3) 0 !important;
-}
-
-html body .recommendations-light .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkImage img {
-  max-height: 100px !important;
-}
-
-html body .recommendations-light .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkTitle a {
-  font-size: var(--text-sm) !important;
-}
-
-html body .recommendations-light .recommendation-card.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList a {
-  padding: var(--space-2) !important;
-  font-size: var(--text-xs) !important;
+.recommendations-light .moshimo-item-wrapper {
+  max-width: 580px;
 }
 
 

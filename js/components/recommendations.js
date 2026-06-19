@@ -8,10 +8,10 @@ export function renderRecommendations(container) {
     <h2 class="section-title" style="margin-top: var(--space-12);">✨ おすすめのマイクラ本＆グッズ</h2>
     <p class="section-intro">もっとマイクラが楽しくなる、おすすめの攻略本やグッズを紹介するよ！</p>
     
-    <div class="recommendations-grid">
+    <div class="moshimo-recommendations">
       ${RECOMMENDATIONS_DATA.map(item => `
-        <div class="recommendation-card moshimo-card">
-          <div class="recommendation-badge">${item.badge}</div>
+        <div class="moshimo-item-wrapper">
+          <div class="moshimo-badge-label">${item.badge}</div>
           <div id="msmaflink-${item.eid}">リンク</div>
         </div>
       `).join('')}
