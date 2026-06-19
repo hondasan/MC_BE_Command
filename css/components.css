@@ -666,6 +666,150 @@
   font-size: var(--text-2xl);
 }
 
+/* もしもアフィリエイトかんたんリンクのカードデザインの統合 */
+.moshimo-card {
+  padding: var(--space-4) !important;
+}
+
+/* かんたんリンク内部のレイアウト・配色のリセット */
+.moshimo-card div[id^="msmaflink-"] {
+  width: 100% !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkMain {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkImage {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 180px !important;
+  width: 100% !important;
+  background-color: var(--bg-primary) !important;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border-default) !important;
+  margin: 0 0 var(--space-4) 0 !important;
+  overflow: hidden !important;
+  padding: var(--space-2) !important;
+  box-sizing: border-box !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkImage img {
+  max-height: 160px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  transition: transform var(--transition-normal) !important;
+}
+
+.moshimo-card:hover div[id^="msmaflink-"] .easyLinkImage img {
+  transform: scale(1.05) !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkInfo {
+  width: 100% !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkTitle {
+  margin: 0 0 var(--space-2) 0 !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkTitle a {
+  font-family: var(--font-body) !important;
+  font-size: var(--text-md) !important;
+  font-weight: bold !important;
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+  line-height: 1.4 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkTitle a:hover {
+  color: var(--accent-green) !important;
+  text-decoration: underline !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkDescription {
+  display: none !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList {
+  margin-top: auto !important;
+  padding-top: var(--space-2) !important;
+  width: 100% !important;
+  display: flex !important;
+  gap: var(--space-2) !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList div {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--space-2) !important;
+  width: 100% !important;
+  padding: var(--space-3) !important;
+  background: linear-gradient(135deg, var(--accent-green-dark) 0%, var(--accent-green) 100%) !important;
+  color: var(--text-inverse) !important;
+  font-weight: bold !important;
+  font-size: var(--text-sm) !important;
+  border-radius: var(--radius-md) !important;
+  border: none !important;
+  box-shadow: var(--shadow-sm) !important;
+  text-decoration: none !important;
+  transition: transform var(--transition-fast), opacity var(--transition-fast) !important;
+  box-sizing: border-box !important;
+}
+
+.moshimo-card div[id^="msmaflink-"] .easyLinkBrandList a:hover {
+  opacity: 0.95 !important;
+  transform: scale(1.02) !important;
+}
+
+/* 控えめな（ライト）バージョン向けの調整 */
+.recommendations-light .moshimo-card {
+  padding: var(--space-3) !important;
+}
+
+.recommendations-light .moshimo-card div[id^="msmaflink-"] .easyLinkImage {
+  height: 120px !important;
+  margin-bottom: var(--space-3) !important;
+}
+
+.recommendations-light .moshimo-card div[id^="msmaflink-"] .easyLinkImage img {
+  max-height: 100px !important;
+}
+
+.recommendations-light .moshimo-card div[id^="msmaflink-"] .easyLinkTitle a {
+  font-size: var(--text-sm) !important;
+}
+
+.recommendations-light .moshimo-card div[id^="msmaflink-"] .easyLinkBrandList a {
+  padding: var(--space-2) !important;
+  font-size: var(--text-xs) !important;
+}
+
 
 
 

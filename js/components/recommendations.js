@@ -1,11 +1,8 @@
 /* js/components/recommendations.js */
 import { RECOMMENDATIONS_DATA } from '../data/recommendations.js';
-import { getBasePath } from './header.js';
 
 export function renderRecommendations(container) {
   if (!container) return;
-
-  const basePath = getBasePath();
 
   container.innerHTML = `
     <h2 class="section-title" style="margin-top: var(--space-12);">✨ おすすめのマイクラ本＆グッズ</h2>
@@ -13,19 +10,9 @@ export function renderRecommendations(container) {
     
     <div class="recommendations-grid">
       ${RECOMMENDATIONS_DATA.map(item => `
-        <div class="recommendation-card">
+        <div class="recommendation-card moshimo-card">
           <div class="recommendation-badge">${item.badge}</div>
-          <div class="recommendation-image-wrapper">
-            <img src="${basePath}${item.image}" alt="${item.title}" class="recommendation-image">
-          </div>
-          <div class="recommendation-info">
-            <h3 class="recommendation-title">${item.title}</h3>
-            <p class="recommendation-desc">${item.description}</p>
-            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="recommendation-btn">
-              <span>Amazonでチェックする</span>
-              <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
-            </a>
-          </div>
+          <div id="msmaflink-${item.eid}">リンク</div>
         </div>
       `).join('')}
     </div>
@@ -35,14 +22,33 @@ export function renderRecommendations(container) {
       <div class="support-icon">💝</div>
       <div class="support-content">
         <h4 class="support-title">マイクラ コマンドずかん を応援してください！</h4>
-        <p class="support-desc">当サイトの紹介リンクからAmazonでお買い物をしていただくと、紹介料の一部がサイト運営（サーバー代・ドメイン維持費）に役立てられます。ご協力いただけると嬉しいです！</p>
+        <p class="support-desc">当サイトの紹介リンクからお買い物をしていただくと、紹介料の一部がサイト運営（サーバー代・ドメイン維持費）に役立てられます。ご協力いただけると嬉しいです！</p>
       </div>
     </div>
-
   `;
+
+  // もしもアフィリエイトの初期化
+  initMoshimoAffiliate();
 
   // Lucideアイコンの初期化（CDN経由で読み込まれている場合）
   if (window.lucide) {
     window.lucide.createIcons();
   }
+}
+
+function initMoshimoAffiliate() {
+  // もしもアフィリエイトのスクリプトローダーを実行
+  (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+  b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+  ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+  c.getElementById(a)||(d=c.createElement(f),d.src=g,
+  d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+  (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+
+  // 各商品の設定を適用して描画
+  RECOMMENDATIONS_DATA.forEach(item => {
+    if (item.moshimoConfig) {
+      window.msmaflink(item.moshimoConfig);
+    }
+  });
 }
