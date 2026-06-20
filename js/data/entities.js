@@ -96,6 +96,7 @@ export const ENTITIES = [
   { id: 'sniffer', name: 'スニッファー', nameKana: 'すにっふぁー', category: 'passive', emoji: '🦕' },
   { id: 'strider', name: 'ストライダー', nameKana: 'すとらいだー', category: 'passive', emoji: '👾' },
   { id: 'armadillo', name: 'アルマジロ', nameKana: 'あるまじろ', category: 'passive', emoji: '🛡️' },
+  { id: 'sulfur_cube', name: 'イオウキューブ', nameKana: 'いおうきゅーぶ', category: 'passive', emoji: '🟨' },
 
   // --- 乗り物・その他 (vehicle) ---
   { id: 'minecart', name: 'トロッコ', nameKana: 'とろっこ', category: 'vehicle', emoji: '🛒' },

@@ -89,6 +89,7 @@ export const ITEMS = [
   { id: 'lava_bucket', name: '溶岩入りバケツ', nameKana: 'ようがんいりばけつ', category: 'tool', emoji: '🪣' },
   { id: 'powder_snow_bucket', name: '粉雪入りバケツ', nameKana: 'こなゆきいりばけつ', category: 'tool', emoji: '🪣' },
   { id: 'milk_bucket', name: '牛乳', nameKana: 'ぎゅうにゅう', category: 'tool', emoji: '🥛' },
+  { id: 'sulfur_cube_bucket', name: 'イオウキューブ入りのバケツ', nameKana: 'いおうきゅーぶいりばけつ', category: 'tool', emoji: '🪣' },
   { id: 'bundle', name: 'バンドル', nameKana: 'ばんどる', category: 'tool', emoji: '🎒' },
   { id: 'minecart', name: 'トロッコ', nameKana: 'とろっこ', category: 'tool', emoji: '🛒' },
   { id: 'chest_minecart', name: 'チェスト付きトロッコ', nameKana: 'ちぇすとつきとろっこ', category: 'tool', emoji: '🛒' },
@@ -208,6 +209,14 @@ export const ITEMS = [
   { id: 'item_frame', name: '額縁', nameKana: 'がくぶち', category: 'block', emoji: '🖼️' },
   { id: 'glow_item_frame', name: '輝く額縁', nameKana: 'かがやくがくぶち', category: 'block', emoji: '🖼️' },
   { id: 'painting', name: '絵画', nameKana: 'かいが', category: 'block', emoji: '🖼️' },
+  { id: 'sulfur', name: 'イオウブロック', nameKana: 'いおうぶろっく', category: 'block', emoji: '🟨' },
+  { id: 'polished_sulfur', name: '磨かれたイオウ', nameKana: 'みがかれたいおう', category: 'block', emoji: '🟨' },
+  { id: 'sulfur_bricks', name: 'イオウレンガ', nameKana: 'いおうれんが', category: 'block', emoji: '🧱' },
+  { id: 'potent_sulfur', name: '強力なイオウ', nameKana: 'きょうりょくないおう', category: 'block', emoji: '🟡' },
+  { id: 'sulfur_spike', name: 'イオウの鍾乳石', nameKana: 'いおうのしょうにゅうせき', category: 'block', emoji: '🔺' },
+  { id: 'cinnabar', name: '辰砂ブロック', nameKana: 'しんしゃぶろっく', category: 'block', emoji: '🟥' },
+  { id: 'polished_cinnabar', name: '磨かれた辰砂', nameKana: 'みがかれたしんしゃ', category: 'block', emoji: '🟥' },
+  { id: 'cinnabar_bricks', name: '辰砂レンガ', nameKana: 'しんしゃれんが', category: 'block', emoji: '🧱' },
 
   // --- レアアイテム (rare) ---
   { id: 'barrier', name: 'バリアブロック', nameKana: 'ばりあぶろっく', category: 'rare', emoji: '🚫' },
@@ -235,6 +244,7 @@ export const ITEMS = [
   { id: 'heavy_core', name: 'ヘビーコア', nameKana: 'へびーこあ', category: 'rare', emoji: '🔘' },
   { id: 'trial_key', name: '試練の鍵', nameKana: 'しれんのかぎ', category: 'rare', emoji: '🔑' },
   { id: 'ominous_trial_key', name: '不吉な試練の鍵', nameKana: 'ふきつなしれんのかぎ', category: 'rare', emoji: '🔑' },
+  { id: 'music_disc_bounce', name: '音楽ディスク（Bounce）', nameKana: 'おんがくでぃすくばうんす', category: 'rare', emoji: '💿' },
 
   // --- レッドストーン (redstone) ---
   { id: 'redstone', name: 'レッドストーンダスト', nameKana: 'れっどすとーんだすと', category: 'redstone', emoji: '🔴' },
