@@ -43,12 +43,17 @@ export function renderFooter(container) {
         <!-- 問い合わせ・Amazonアソシエイト表記 -->
         <div class="footer-section footer-contact">
           <h4 class="footer-title" style="font-family: var(--font-heading); font-size: var(--text-sm); color: var(--accent-gold); margin-bottom: var(--space-3); font-weight: normal; border-bottom: 1px dashed var(--border-default); padding-bottom: var(--space-1);">お問い合わせ</h4>
+          <div style="margin-bottom: var(--space-3);">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfchnq0wOs4rB1YWUxIlPULcUHwxF4L2oH4iEPDS6O-NH9lNA/viewform" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-1); color: var(--accent-green); transition: color var(--transition-fast);">
+              <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> お問い合わせフォーム
+            </a>
+          </div>
           <p class="footer-email" style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.4; margin-bottom: var(--space-3);">
             <span style="display: flex; align-items: center; gap: var(--space-1); margin-bottom: var(--space-1);">
               <i data-lucide="mail" style="width: 14px; height: 14px; color: var(--accent-green);"></i> 
               <strong style="color: var(--text-primary);">hondasan0925 [at] gmail.com</strong>
             </span>
-            <span class="email-note" style="font-size: var(--text-xs); color: var(--text-muted); display: block; padding-left: 18px;">※ [at] を @ に書き換えて送信してください</span>
+            <span class="email-note" style="font-size: var(--text-xs); color: var(--text-muted); display: block; padding-left: 18px;">※フォームが動作しない場合は、[at] を @ に書き換えてメールにてご連絡ください</span>
           </p>
           <div class="footer-amazon-notice" style="font-size: var(--text-xs); color: var(--text-muted); line-height: 1.4; background-color: rgba(0, 0, 0, 0.2); padding: var(--space-2); border-radius: var(--radius-sm); border: 1px solid var(--border-default);">
             <p>当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>

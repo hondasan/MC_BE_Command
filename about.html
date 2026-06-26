@@ -186,17 +186,29 @@
       <section class="guide-step animate-on-scroll" style="margin-bottom: var(--space-8); background-color: var(--bg-secondary); padding: var(--space-6); border-radius: var(--radius-lg); border: 1px solid var(--border-default);">
         <h2 style="font-family: var(--font-heading); color: var(--accent-gold); font-size: var(--text-xl); border-bottom: 2px dashed var(--border-default); padding-bottom: var(--space-2); margin-top: 0;">✉️ お問い合わせ</h2>
         <p style="margin-top: var(--space-3); line-height: 1.8;">
-          サイトの内容に関するご質問、誤りのご指摘、ご要望などがございましたら、以下のメールアドレスまでお気軽にご連絡ください。
+          サイトの内容に関するご質問、誤りのご指摘、ご要望などがございましたら、以下のお問い合わせフォームまたはメールアドレスよりご連絡ください。
         </p>
+
+        <!-- Googleフォーム埋め込み（iframe） -->
+        <div class="iframe-container" style="position: relative; width: 100%; height: 600px; overflow: hidden; border-radius: var(--radius-md); border: 1px solid var(--border-default); margin: var(--space-4) 0; background: #ffffff;">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfchnq0wOs4rB1YWUxIlPULcUHwxF4L2oH4iEPDS6O-NH9lNA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" style="border: none;">読み込んでいます…</iframe>
+        </div>
+
+        <div style="margin-bottom: var(--space-4);">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfchnq0wOs4rB1YWUxIlPULcUHwxF4L2oH4iEPDS6O-NH9lNA/viewform" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: var(--space-2); background-color: var(--accent-green); color: var(--bg-primary); padding: var(--space-2) var(--space-4); border-radius: var(--radius-md); font-weight: bold; transition: background-color var(--transition-fast); margin-top: var(--space-1);">
+            <i data-lucide="external-link" style="width: 16px; height: 16px;"></i> フォームを別ウィンドウで開く
+          </a>
+        </div>
+
         <div style="background-color: var(--bg-primary); padding: var(--space-4); border-radius: var(--radius-lg); border: 1px dashed var(--border-default); margin: var(--space-4) 0;">
           <strong style="color: var(--accent-gold); display: flex; align-items: center; gap: var(--space-1);">
-            <i data-lucide="mail" style="width: 18px; height: 18px; color: var(--accent-green);"></i> メールアドレス
+            <i data-lucide="mail" style="width: 18px; height: 18px; color: var(--accent-green);"></i> メールアドレス（予備）
           </strong>
           <p style="margin-top: var(--space-2); font-size: var(--text-lg); font-family: var(--font-code); color: var(--text-primary); font-weight: bold;">
             hondasan0925 [at] gmail.com
           </p>
           <p style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-1);">
-            ※迷惑メール対策のため、表記を変更しています。送信の際は [at] を @ に書き換えてください。
+            ※フォームが動作しない場合や、直接メールで連絡したい場合は、[at] を @ に書き換えて送信してください。
           </p>
         </div>
         <p style="margin-top: var(--space-3); line-height: 1.8;">

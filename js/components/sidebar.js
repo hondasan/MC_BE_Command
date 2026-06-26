@@ -62,6 +62,7 @@ export function renderSidebar(container) {
       items: [
         { name: '当サイトについて', url: 'about.html' },
         { name: 'プライバシーポリシー', url: 'privacy.html' },
+        { name: 'お問い合わせ', url: 'https://docs.google.com/forms/d/e/1FAIpQLSfchnq0wOs4rB1YWUxIlPULcUHwxF4L2oH4iEPDS6O-NH9lNA/viewform' },
       ]
     }
   ];
@@ -80,17 +81,23 @@ export function renderSidebar(container) {
     `;
 
     section.items.forEach(item => {
-      const fullUrl = basePath + item.url;
-      // アクティブ判定: URLの末尾が一致するかどうか
-      const isActive = currentPath.endsWith(item.url) || 
+      const isExternal = item.url.startsWith('http://') || item.url.startsWith('https://');
+      const fullUrl = isExternal ? item.url : basePath + item.url;
+      const targetAttr = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
+      
+      // アクティブ判定: URLの末尾が一致するかどうか（外部リンクは除外）
+      const isActive = !isExternal && (
+                      currentPath.endsWith(item.url) || 
                       (item.url === 'commands/index.html' && currentPath.endsWith('commands/')) ||
                       (item.url === 'guides/index.html' && currentPath.endsWith('guides/')) ||
-                      (item.url === 'guides/recipes/index.html' && currentPath.endsWith('recipes/'));
+                      (item.url === 'guides/recipes/index.html' && currentPath.endsWith('recipes/'))
+      );
       
       html += `
         <li class="sidebar-item">
-          <a href="${fullUrl}" class="sidebar-link ${isActive ? 'active' : ''}">
-            ${item.name}
+          <a href="${fullUrl}" class="sidebar-link ${isActive ? 'active' : ''}" ${targetAttr} style="display: flex; justify-content: space-between; align-items: center;">
+            <span>${item.name}</span>
+            ${isExternal ? '<i data-lucide="external-link" style="width: 12px; height: 12px; opacity: 0.7;"></i>' : ''}
           </a>
         </li>
       `;
