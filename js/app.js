@@ -2,7 +2,7 @@ import { renderHeader, getBasePath } from './components/header.js';
 import { renderSidebar } from './components/sidebar.js';
 import { renderBreadcrumb } from './components/breadcrumb.js';
 import { renderFooter } from './components/footer.js';
-import { renderRecommendations } from './components/recommendations.js';
+import { renderRecommendations } from './components/recommendations.js?v=20260629';
 import { initCodeBlocks } from './components/code-block.js';
 
 document.addEventListener('DOMContentLoaded', () => {
