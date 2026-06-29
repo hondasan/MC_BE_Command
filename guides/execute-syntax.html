@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC37LDTHZ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZC37LDTHZ3');
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>新executeの構文とサブコマンド完全解説｜マイクラ統合版 コマンドずかん</title>
+  <meta name="description" content="マイクラ統合版（Switch/スマホ/PC対応）で新しくなった/execute（エグゼキュート）コマンドの書き方と、全11種類のサブコマンドを小学生向けに分かりやすく解説！">
+  <meta name="keywords" content="マイクラ,コマンド,統合版,execute,新構文,サブコマンド,Switch,小学生">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css?v=20260616_3">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="guides-execute-syntax"
+      data-breadcrumb='[{"label":"ホーム","url":"/MC_BE_Command/index.html"},{"label":"ガイド一覧","url":"/MC_BE_Command/guides/index.html"},{"label":"新executeの構文・サブコマンド"}]'>
+
+  <!-- ヘッダー（JSで動的挿入） -->
+  <header id="site-header"></header>
+
+  <!-- サイドバー（JSで動的挿入） -->
+  <aside id="site-sidebar"></aside>
+  <div id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- パンくず（JSで挿入） -->
+      <nav id="breadcrumb"></nav>
+
+      <section class="detail-header">
+        <h1 class="hero-title">🎯 新executeコマンド完全解説</h1>
+        <p class="detail-desc">統合版で新しくなった「/execute」コマンドの書き方と、11個の「サブコマンド」の使い方をぜんぶ解説するよ！</p>
+      </section>
+
+      <!-- 1. 新executeってなに？ -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">1</div>
+        <h2 class="guide-step-title">新execute（エグゼキュート）ってなに？</h2>
+        <p><code>/execute</code> は、「だれが」「どこで」「どんなときに」コマンドを実行するかを細かく決められる、マイクラで一番重要といってもいい超強力なコマンドだよ！</p>
+        <p>統合版（Switchやスマホ）のバージョン1.19.50から、それまでの古い書き方（旧構文）から、より高機能な<strong>「新構文」</strong>にアップデートされました。</p>
+        
+        <div class="tip-box" style="background-color: rgba(167, 139, 250, 0.05); border-color: var(--accent-purple); margin: var(--space-4) 0;">
+          <i data-lucide="info" class="tip-box-icon" style="color: var(--accent-purple);"></i>
+          <div class="tip-box-content">
+            <strong>新executeのメリット</strong><br/>
+            昔の書き方に比べて、英語のパーツ（サブコマンド）をパズルのように何個でもつなげて、複雑な条件をかんたんに書くことができるようになったんだ！
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 基本の書き方 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">2</div>
+        <h2 class="guide-step-title">基本の書き方のルール</h2>
+        <p>新executeは、いくつかのパーツ（サブコマンド）を繋げて書いて、最後に実行したいコマンドを <code>run</code> のあとに書きます。</p>
+        
+        <div style="background-color: var(--bg-secondary); padding: var(--space-4); border-radius: var(--radius-lg); border: 1px solid var(--border-default); margin: var(--space-3) 0; font-family: var(--font-code); font-size: var(--text-md); overflow-x: auto; white-space: nowrap;">
+          /execute <span style="color: var(--accent-gold); font-weight: bold;">[サブコマンド1]</span> <span style="color: var(--accent-blue); font-weight: bold;">[サブコマンド2]</span> ... <span style="color: var(--accent-green); font-weight: bold;">run [動かしたいコマンド]</span>
+        </div>
+        
+        <p>たとえば、「すべてのゾンビの場所（at）で、雷を落とす（summon）」場合はこのように書きます。</p>
+        <div class="mc-code-block" data-command="/execute at @e[type=zombie] run summon lightning_bolt" data-explanation="「at @e[type=zombie]」というサブコマンドと、「run summon lightning_bolt」をつないでいるよ！"></div>
+      </section>
+
+      <!-- 3. 全11個 of サブコマンド一覧 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">3</div>
+        <h2 class="guide-step-title">11個のサブコマンド一覧</h2>
+        <p>統合版で使える11個のサブコマンドの役割をまとめたよ！</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm);">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-default); text-align: left;">
+              <th style="padding: var(--space-2); color: var(--accent-gold); width: 120px;">サブコマンド</th>
+              <th style="padding: var(--space-2); color: var(--accent-gold);">役割（何をするもの？）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">as</td>
+              <td style="padding: var(--space-2);"><strong>「だれ」</strong>が実行するか（実行する人・エンティティ）を変える。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">at</td>
+              <td style="padding: var(--space-2);"><strong>「どこで」</strong>実行するか（場所や向き、ディメンション）を指定エンティティと同じにする。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">positioned</td>
+              <td style="padding: var(--space-2);">実行する<strong>「座標（座標のみ）」</strong>を別の場所や指定エンティティの位置に変える。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">rotated</td>
+              <td style="padding: var(--space-2);">実行時の<strong>「向き（回転角度）」</strong>を特定の角度や指定エンティティの向きに変える。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">facing</td>
+              <td style="padding: var(--space-2);">実行時の向きを指定した<strong>「座標」や「エンティティ」の方向</strong>に向けさせる。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">anchored</td>
+              <td style="padding: var(--space-2);">ローカル座標（^ ^ ^）を使うときの基準位置を<strong>「目（eyes）」または「足元（feet）」</strong>にする。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">align</td>
+              <td style="padding: var(--space-2);">実行座標の小数点を丸めて、<strong>「ブロックの角」</strong>に位置をぴったり揃える。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">in</td>
+              <td style="padding: var(--space-2);">実行する<strong>「ディメンション（世界）」</strong>（オーバーワールド、ネザー、エンド）を変える。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">if</td>
+              <td style="padding: var(--space-2);">もし〜なら（指定した<strong>条件が合っているとき</strong>）コマンドを実行する。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">unless</td>
+              <td style="padding: var(--space-2);">もし〜でないなら（指定した<strong>条件が間違っているとき</strong>）コマンドを実行する。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: var(--space-2); font-family: var(--font-code); font-weight: bold; color: var(--accent-green);">run</td>
+              <td style="padding: var(--space-2);">サブコマンドのあとに、<strong>「実際に実行したいコマンド」</strong>を指定する（必須の締め言葉）。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 4. 各サブコマンドのくわしい説明 -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">4</div>
+        <h2 class="guide-step-title">各サブコマンドのくわしい使い方</h2>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">1. as（〜として実行）</h3>
+        <p>コマンドの実行者（「だれが言ったか」の主語）を変更するよ！対象モブに <code>@s</code> （自分自身）で自分を対象にさせたいときなどに使います。</p>
+        <p><strong style="color: var(--accent-red);">注意：</strong> <code>as</code> は実行する「人」を変えるだけなので、<strong>実行される「場所」は変わりません！</strong>（コマンドブロックの位置や、元のプレイヤーの位置のまま）。場所も変えたい場合は、このあ後の <code>at</code> も一緒に使いましょう！</p>
+        <div class="mc-code-block" data-command="/execute as @e[type=pig] run say ブー！" data-explanation="すべての豚が、それぞれ自分で「ブー！」と喋ります。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">2. at（〜の場所で実行）</h3>
+        <p>コマンドを実行する「座標（場所）」「向き（回転角度）」「ディメンション」を、指定したモブと同じものに変更します。場所だけを変えたいときは <code>at</code> が一番よく使われます。</p>
+        <div class="mc-code-block" data-command="/execute at @p run setblock ~ ~-1 ~ diamond_block" data-explanation="一番近くのプレイヤー（@p）の足元に、ダイヤブロックを置きます。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">3. as と at の組み合わせ（超定番！）</h3>
+        <p>「ゾンビになって（as）、そのゾンビのいる場所で（at）実行する」というように組み合わせて使うことで、エンティティを基準にした仕掛けを完ぺきに作れます。</p>
+        <div class="mc-code-block" data-command="/execute as @e[type=zombie] at @s run teleport @s ~ ~1 ~" data-explanation="すべてのゾンビが（as）、自分の場所から（at @s）、自分自身を（teleport @s）1マス上にテレポートさせます。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">4. positioned（位置だけを変更）</h3>
+        <p>実行する「座標（場所）」だけを変更します。<code>at</code> と違って、実行する向き（回転角度）やディメンションは変更しません。</p>
+        <ul>
+          <li><code>positioned ~ ~5 ~</code>: 今の場所から5マス上の座標に変更する。</li>
+          <li><code>positioned as @p</code>: プレイヤーと同じ座標に変更する（向きは変わらない）。</li>
+        </ul>
+        <div class="mc-code-block" data-command="/execute positioned as @p run summon pig" data-explanation="プレイヤーの場所に豚を召喚します。※atと違い、プレイヤーの向きは引き継ぎません。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">5. rotated（向きを変更）</h3>
+        <p>実行時の「向き（回転角度）」を変更します。プレイヤーやモブの向きに合わせて別の処理をしたいときに使います。</p>
+        <ul>
+          <li><code>rotated 0 0</code>: 北を向いている（水平0度、垂直0度）状態にします。</li>
+          <li><code>rotated as @p</code>: プレイヤーが見ている向きと同じにします。</li>
+        </ul>
+        <div class="mc-code-block" data-command="/execute rotated as @p run teleport @e[type=armor_stand] ~ ~ ~" data-explanation="防具立て（armor_stand）を、プレイヤーとまったく同じ向きにします。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">6. facing（〜の方向を向く）</h3>
+        <p>実行位置から、指定した座標やエンティティの方を向かせた状態にします。ローカル座標 <code>^</code> を使って「指定したモブの方向へ何かを飛ばす・動かす」というときに大活躍します！</p>
+        <ul>
+          <li><code>facing 0 60 0</code>: 座標「0, 60, 0」の方向に向かせます。</li>
+          <li><code>facing entity @p eyes</code>: プレイヤーの「目（eyes）」の方向に向かせます（足元を向かせる場合は `feet`）。</li>
+        </ul>
+        <div class="mc-code-block" data-command="/execute at @e[type=armor_stand] facing entity @p eyes run teleport @s ~ ~ ~ ~ ~" data-explanation="防具立てが、常に一番近くのプレイヤーの方向をじっと見つめ続けるようにします。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">7. anchored（目の高さ基準）</h3>
+        <p>実行座標の基準（アンカー）を「足元（feet）」にするか「目（eyes）」にするかを設定します。ローカル座標 <code>^ ^ ^</code> を使って「見ている方向にビームやブロックを出す」というときに、目線の高さから出すために使います。</p>
+        <div class="mc-code-block" data-command="/execute as @p at @s anchored eyes run setblock ^ ^ ^3 stone" data-explanation="プレイヤーが見ている目の高さから、前方に3マス進んだ位置に「石ブロック」を置きます。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">8. align（グリッドに揃える）</h3>
+        <p>実行座標の小数点を切り捨てて、ブロックの境界にぴったり揃えます（ブロックの角や中心に位置をあわせるのに便利です）。指定した軸（x、y、z）で揃えられます。</p>
+        <div class="mc-code-block" data-command="/execute at @p align x z run setblock ~ ~-1 ~ glass" data-explanation="プレイヤーのいるブロックの位置に、正確にガラスブロックを設置します。位置の微妙なズレを防げます。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">9. in（世界を変更）</h3>
+        <p>実行するディメンション（世界）を変更します。異なるディメンションにいるプレイヤーやモブを検知・操作したいときに使います。</p>
+        <ul>
+          <li><code>in overworld</code>: 通常世界（オーバーワールド）</li>
+          <li><code>in nether</code>: 暗黒界（ネザー）</li>
+          <li><code>in the_end</code>: 果ての世界（ジ・エンド）</li>
+        </ul>
+        <div class="mc-code-block" data-command="/execute in nether run teleport @a 0 60 0" data-explanation="全員をネザーの座標「0, 60, 0」へワープさせます。"></div>
+      </section>
+
+      <!-- 5. 条件分岐 if / unless -->
+      <section class="guide-step animate-on-scroll">
+        <div class="guide-step-num">5</div>
+        <h2 class="guide-step-title">条件を決める if と unless</h2>
+        <p>新executeでは、<code>if</code> （もし〜なら）と <code>unless</code> （もし〜でなければ）を使って、コマンドの実行条件を細かく決められます。</p>
+        <p>※統合版には Java版にある <code>if data</code> や <code>if predicate</code> などは存在しないため、以下の4つの条件を使います。</p>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">① block（特定のブロックがあるか）</h3>
+        <p>指定した座標に、特定のブロックがあるかどうかを調べます。</p>
+        <div class="mc-code-block" data-command="/execute if block ~ ~-1 ~ diamond_block run say ダイヤブロックの上にのっているよ！" data-explanation="もし足元が「ダイヤブロック」なら、チャットで言います。"></div>
+        <div class="mc-code-block" data-command="/execute unless block ~ ~-1 ~ air run say 地面に足がついています！" data-explanation="もし足元が「空気（air）」でなければ（＝何かしらのブロックの上なら）、チャットで言います。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">② blocks（エリアのブロックが一致するか）</h3>
+        <p>指定した「開始位置から終了位置までのエリア」のブロックが、「目的地エリア」のブロックと同じかどうかを調べます。</p>
+        <ul>
+          <li><code>if blocks <x1> <y1> <z1> <x2> <y2> <z2> <dest_x> <dest_y> <dest_z> all</code>: すべて完全に一致するか。</li>
+          <li><code>if blocks <x1> ... masked</code>: 空気以外のブロックが一致するか（空気部分は無視）。</li>
+        </ul>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">③ entity（特定のモブやプレイヤーがいるか）</h3>
+        <p>指定したターゲット（モブやプレイヤー）が存在するかどうかを調べます。一番よく使われます。</p>
+        <div class="mc-code-block" data-command="/execute if entity @e[type=creeper,r=10] run say 近くにクリーパーがいるぞ！あぶない！" data-explanation="もし半径10マス以内にクリーパーがいれば、チャットで叫びます。"></div>
+
+        <h3 style="color: var(--accent-gold); margin-top: var(--space-4);">④ score（スコアボードの点数を比べる）</h3>
+        <p>スコアボードの点数を比べたり、範囲内に入っているかを調べます。</p>
+        <ul>
+          <li>スコアの比較演算子: <code>&lt;</code>, <code>&lt;=</code>, <code>=</code>, <code>&gt;</code>, <code>&gt;=</code></li>
+          <li><code>matches [範囲]</code>: スコアが範囲内に入っているか（例：`1..5` は 1〜5点、`..10` は 10点以下、`5..` は 5点以上）。</li>
+        </ul>
+        <div class="mc-code-block" data-command="/execute as @p if score @s points matches 10.. run say 10ポイント以上たまったよ！" data-explanation="もしプレイヤーの「points」というスコアが10点以上なら、チャットで言います。"></div>
+      </section>
+
+      <!-- 6. 実践的な組み合わせ例 -->
+      <section class="guide-step animate-on-scroll" style="border-color: var(--accent-gold);">
+        <div class="guide-step-num">6</div>
+        <h2 class="guide-step-title">複数のパーツを繋げてみよう！（実践例）</h2>
+        <p>これらのパーツを繋げて、複雑な仕掛けを作ってみよう！</p>
+
+        <h3 style="color: var(--accent-green);">例①：「金ブロックの上にいる時だけ、スピードが早くなる」</h3>
+        <p><code>as</code>, <code>at</code>, <code>if block</code> をつなぎます。</p>
+        <div class="mc-code-block" data-command="/execute as @a at @s if block ~ ~-1 ~ gold_block run effect give @s speed 1 1 true" data-explanation="すべてのプレイヤーについて（as）、自分の場所の（at @s）、足元が金ブロックなら（if block）、スピードのバフを与えるよ！"></div>
+
+        <h3 style="color: var(--accent-green);">例②：「ゾンビがプレイヤーから15マス以内に近づいた時、ゾンビが燃え出す」</h3>
+        <p><code>as</code>, <code>at</code>, <code>if entity</code> をつなぎます。</p>
+        <div class="mc-code-block" data-command="/execute as @e[type=zombie] at @s if entity @p[r=15] run damage @s 2 fire" data-explanation="すべてのゾンビについて（as）、その場所で（at @s）、自分から15マス以内にプレイヤーがいれば（if entity）、自分に火属性のダメージを与えるよ！"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@0.394.0/dist/umd/lucide.min.js"></script>
+  <script type="module" src="../js/app.js?v=20260629"></script>
+</body>
+</html>

@@ -42,6 +42,7 @@ export function renderSidebar(container) {
         { name: 'コマンドブロックの使い方', url: 'guides/command-block.html' },
         { name: 'ターゲットセレクター', url: 'guides/target-selector.html' },
         { name: 'ざひょう (座標) のしくみ', url: 'guides/coordinates.html' },
+        { name: '新executeの構文・サブコマンド', url: 'guides/execute-syntax.html' },
         { name: 'レッドストーンの基本', url: 'guides/redstone.html' },
       ]
     },
