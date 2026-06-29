@@ -17,14 +17,6 @@ export function renderRecommendations(container) {
       `).join('')}
     </div>
 
-    <!-- 応援枠（サポートエリア） -->
-    <div class="support-banner">
-      <div class="support-icon">💝</div>
-      <div class="support-content">
-        <h4 class="support-title">マイクラ コマンドずかん を応援してください！</h4>
-        <p class="support-desc">当サイトの紹介リンクからお買い物をしていただくと、紹介料の一部がサイト運営（サーバー代・ドメイン維持費）に役立てられます。ご協力いただけると嬉しいです！</p>
-      </div>
-    </div>
   `;
 
   // もしもアフィリエイトの初期化
